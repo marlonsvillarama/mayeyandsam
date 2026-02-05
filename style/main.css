@@ -6,42 +6,77 @@ html {
 }
 
 body {
-    height: 100%;
-    min-height: 100%;
-    /* border: 2px solid red; */
+    height: 100vh;
     background-color: antiquewhite;
     font-family: "Nunito Sans", sans-serif;
     font-size: 16px;
-    /* -ms-overflow-style: none;
-    scrollbar-width: none; */
 }
 
-/* body::-webkit-scrollbar {
-    display: none;
-    width: 0;
-    height: 0;
-} */
-
-body > div {
-    /* background-attachment: fixed;
-    background-position-x: center;
-    background-size: cover;
-    height: 100%; */
+section {
     position: relative;
-}
-
-body > div > * {
-    position: absolute;
-}
-
-#hero {
-    background-image: url(/images/marielle_and_sam_02.jpg);
-    background-attachment: fixed;
-    background-position-x: center;
-    background-size: cover;
-    height: 100%;
+    height: 100vh;
+    overflow: hidden;
     color: antiquewhite;
-    /* border: 2px solid green; */
+}
+
+/* PARALLAX */
+.parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    z-index: -1;
+}
+
+#hero .parallax {
+    background-image: url(/images/marielle_and_sam_02.jpg);
+}
+
+#story .parallax {
+    background-image: url(/images/marielle_and_sam_04.jpg);
+}
+
+#event .parallax {
+    background-image: url(/images/marielle_and_sam_03.jpg);
+}
+
+#seeyou .parallax {
+    background-image: url(/images//marielle_and_sam_01.jpg);
+}
+
+
+/* CONTENT */
+.content {
+    position: relative;
+    height: 100vh;
+    z-index: 1;
+    border: 3px solid red;
+}
+
+
+
+/* HERO */
+.title {
+    position: absolute;
+    top: 7%;
+    left: 0;
+    right: 0;
+    font-family: "Tangerine", cursive;
+    font-size: 4.25rem;
+    font-weight: 700;
+    line-height: 4rem;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .title {
+        font-size: 6rem;
+        line-height: 5.5rem;
+    }
 }
 
 #hero a {
@@ -54,88 +89,15 @@ body > div > * {
     text-underline-offset: 0.5rem;
 }
 
-/* .hero > * { */
-    /* position: absolute; */
-    /* top: 6rem; */
-    /* left: 50%;
-    transform: translateX(-50%); */
-/* } */
-
-/* NOT USED */
-/* .banner > .container {
-    width: 60%;
-    border: 0px solid red;
-    position: absolute;
-    top: 6rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: grid;
-} */
-
-/* NOT USED */
-/* .banner > .container > div {
-    border: 0px solid green;
-    position: relative;
-} */
-
-/* .hero > .container {
-    border: 2px solid green;
-    position: relative;
-    padding: 4rem 0;
-    height: 100%;
-    * display: grid;
-    justify-content: space-between; *
-} */
-
-.title {
-    /* position: absolute; */
-    top: 7%;
-    left: 0;
-    right: 0;
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
-    font-family: "Tangerine", cursive;
-    font-size: 4.25rem;
-    font-weight: 700;
-    line-height: 4rem;
-    text-align: center;
-    /* border: 1px solid red; */
-    /* margin-top: 4rem; */
-}
-
-@media (min-width: 640px) {
-    .title {
-        font-size: 6rem;
-        line-height: 5.5rem;
-    }
-}
-
-/* .subtitle {
-    color: #FDFDFD;
-    font-size: 1.25rem;
-    font-weight: 200;
-    letter-spacing: 0.25px;
-    line-height: 1.5rem;
-    text-align: center;
-} */
-
 .details {
-    /* position: absolute; */
-    /* top: 6rem; */
-    /* left: 50%; */
-    /* transform: translateX(-50%); */
+    position: absolute;
     left: 0;
     right: 0;
     bottom: 20%;
     text-align: center;
     display: grid;
     gap: 4rem;
-    /* border: 1px solid red; */
 }
-
-/* .first > * {
-    font-weight: 400;
-} */
 
 .first {
     display: grid;
@@ -146,8 +108,6 @@ body > div > * {
     font-size: 1.125rem;
     font-weight: 700;
     letter-spacing: 5px;
-    /* font-size: 0.75rem;
-    letter-spacing: 12px; */
 }
 
 .first > h3 {
@@ -201,37 +161,4 @@ body > div > * {
 #event {
     border: 0px solid green;
     color: #333;
-}
-
-#story {
-    background-image: url(/images/marielle_and_sam_04.jpg);
-    /* background-attachment: fixed;
-    background-position-x: center;
-    background-size: cover;
-    background-color: antiquewhite;
-    height: 100%; */
-    /* color: #fff; */
-    /* position: relative; */
-    /* border: 2px solid green; */
-}
-
-#event {
-    background-image: url(/images/marielle_and_sam_03.jpg);
-    /* background-attachment: fixed;
-    background-position-x: center;
-    background-size: cover;
-    background-color: beige;
-    height: 100%; */
-    /* color: #fff; */
-    /* position: relative; */
-    /* border: 2px solid green; */
-}
-
-#seeyou {
-    background-image: url(/images//marielle_and_sam_01.jpg);
-    /* background-attachment: fixed;
-    background-position-x: center;
-    background-size: cover;
-    background-color: beige;
-    height: 100%; */
 }
