@@ -18,6 +18,12 @@ section {
     overflow: hidden;
     color: antiquewhite;
 }
+/* @media (min-width: 640px) {
+    section .col_2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
 
 /* PARALLAX */
 .parallax {
@@ -31,6 +37,17 @@ section {
     background-attachment: fixed;
     z-index: -1;
 }
+/* @media (min-width: 640px) {
+    section.col_2 > .parallax {
+        width: 50%;
+        border: 3px solid red;
+    }
+    section.col_2.reverse > .parallax {
+        left: 50%;
+        right: 0;
+        width: 50%;
+    }
+} */
 
 #hero .parallax {
     background-image: url(/images/marielle_and_sam_02.jpg);
@@ -54,7 +71,7 @@ section {
     position: relative;
     height: 100vh;
     z-index: 1;
-    border: 3px solid red;
+    border: 0px solid red;
 }
 
 
@@ -96,7 +113,7 @@ section {
     bottom: 20%;
     text-align: center;
     display: grid;
-    gap: 4rem;
+    gap: 3rem;
 }
 
 .first {
@@ -116,11 +133,11 @@ section {
     letter-spacing: 2px;
 }
 
-.first > p {
+.details p {
     font-size: 1.125rem;
     font-weight: 300;
     letter-spacing: 2px;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 
 .second {
@@ -128,6 +145,10 @@ section {
     gap: 0.25rem;
     border: 0px solid red;
     justify-content: center;
+}
+
+.second p {
+    font-weight: 600;
 }
 
 .second > a,
