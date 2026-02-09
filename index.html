@@ -19,21 +19,49 @@
                 <span>to celebrate the wedding of</span>
                 <h2>Sam & Marielle</h2>
             </div>
-            <div class="details">
-                <div class="first">
+            <div class="dates">
+                <div class="date">
                     <h2>26 DECEMBER, 2026</h2>
                     <h3>Saturday - Welcome Party</h3>
                 </div>
-                <div class="first">
+                <div class="date">
                     <h2>27 DECEMBER, 2026</h2>
                     <h3>Sunday</h3>
                     <h3>Ceremony and Reception</h3>
                 </div>
-                <p>Boracay, Philippines</p>
+                <div class="booknow">
+                    <button id="avail">
+                        <span>Boracay, Philippines</span>
+                        <img src="/images/airplane-takeoff.svg">
+                    </button>
+                    <span>Click to avail our block room rate</span>
+                </div>
             </div>
         </div>
     </section>
-    
+
+    <dialog>
+        <form method="dialog">
+            <div class="header">
+                <h2>Ceremony and reception will be at</h2>
+                <span class="title">Movenpick Boracay</span>
+            </div>
+            <p class="blurb">
+                Please submit the following form to avail our block room rate.
+            </p>
+            <div class="fields">
+                <div class="field">
+                    <label for="your_email">Your email address</label>
+                    <input type="text" id="your_email" name="your_email">
+                </div>
+                <div class="field">
+                    <label for="your_msg">Your message</label>
+                    <textarea id="your_msg" name="your_msg"></textarea>
+                </div>
+            </div>
+            <button>Submit</button>
+        </form>
+    </dialog>
     <!-- <section id="story" class="col_2">
         <div class="parallax"></div>
         <div class="content">
@@ -56,20 +84,6 @@
         </div>
     </section> -->
 
-    <script>
-        const moveTo = (id) => {
-            document.getElementById(id).scrollIntoView({
-                behavior: 'smooth',
-                block: 'center'
-            });
-            return false;
-        };
-        // document.addEventListener('DOMContentLoaded', () => {
-            // let links = document.querySelectorAll('.next');
-            // links.forEach(link => {
-            //     document.addEventListener('')
-            // });
-        // });
-    </script>
+    <script src="/script/main.js"></script>
 </body>
 </html>
