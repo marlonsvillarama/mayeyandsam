@@ -50,20 +50,20 @@ section {
 } */
 
 #hero .parallax {
-    background-image: url(/images/marielle_and_sam_05.png);
+    background-image: url(/images/marielle_and_sam_05.webp);
 }
 
-#story .parallax {
+/* #story .parallax {
     background-image: url(/images/marielle_and_sam_04.jpg);
-}
+} */
 
-#event .parallax {
+/* #event .parallax {
     background-image: url(/images/marielle_and_sam_03.jpg);
-}
+} */
 
-#seeyou .parallax {
+/* #seeyou .parallax {
     background-image: url(/images//marielle_and_sam_01.jpg);
-}
+} */
 
 
 /* CONTENT */
