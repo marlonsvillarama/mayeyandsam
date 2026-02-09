@@ -282,6 +282,7 @@ dialog #cancel_avail {
     border-radius: 50%;
     cursor: pointer;
     height: 3rem;
+    width: 3rem;
     padding: 0;
     position: absolute;
     top: 0;
