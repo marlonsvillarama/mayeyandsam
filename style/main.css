@@ -124,7 +124,7 @@ section {
 } */
 
 .dates {
-    margin-bottom: clamp(6rem, calc(6rem + 1vw), 8rem);
+    margin-bottom: clamp(3rem, calc(3rem + 1vw), 4rem);
     text-align: center;
     display: grid;
     gap: clamp(2rem, calc(2rem + 1vw), 3rem);
@@ -181,10 +181,13 @@ section {
 }
 
 dialog {
+    background-color: transparent;
     border: 0;
-    border-radius: 1rem;
+    /* border-radius: 1rem; */
+    display: relative;
     margin: auto;
     max-width: 50rem;
+    padding: 1rem;
     width: 90%;
     transition: all 150ms ease-in-out;
 }
@@ -199,8 +202,9 @@ dialog::backdrop {
 
 dialog > form {
     background-color: antiquewhite;
+    border-radius: 1rem;
     color: #333;
-    padding: 1.5rem;
+    padding: 2rem 1.5rem;
 }
 dialog .header {
     border-bottom: 1px solid #cecece;
@@ -265,10 +269,30 @@ dialog form button {
     font-size: clamp(1.125rem, calc(1.125rem + 1vw), 1.25rem);
     font-weight: 500;
     letter-spacing: 2px;
-    margin: 1.25rem auto 1.5rem;
+    margin: 1.25rem auto 0;
     padding: 0.75rem;
     text-align: center;
     text-transform: uppercase;
+    width: 100%;
+}
+
+dialog #cancel_avail {
+    background-color: transparent;
+    border: 0px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 3rem;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* transform: translateX(50%) translateY(-50%); */
+    z-index: 10;
+}
+dialog #cancel_avail img {
+    background-color: antiquewhite;
+    border-radius: 50%;
+    height: 100%;
     width: 100%;
 }
 /* .dates h2 { */
