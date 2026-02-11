@@ -16,7 +16,7 @@ section {
     position: relative;
     height: 100vh;
     overflow-y: auto;
-    color: antiquewhite;
+    color: var(--almond);
 }
 
 .hidden {
@@ -71,6 +71,7 @@ section {
 }
 
 .content > .header > h1 {
+    color: white;
     font-family: "Eyesome", cursive;
     font-size: clamp(3rem, calc(3rem + 4vw), 10rem);
     font-weight: 400;
@@ -84,13 +85,14 @@ section {
 }
 
 .content > .header > span {
-    color: var(--almond);
-    font-size: clamp(0.6rem, calc(0.6rem + 1vw), 1rem);
+    /* color: white; */
+    font-size: clamp(0.6rem, calc(0.6rem + 1vw), 0.875rem);
     font-weight: 700;
     letter-spacing: 3px;
     /* opacity: 0.8; */
 }
 .content > .header > h2 {
+    color: white;
     font-size: clamp(1.25rem, calc(1.25rem + 2vw), 2rem);
     letter-spacing: 3px;
     margin-top: 0.25rem;
@@ -124,6 +126,7 @@ section {
 }
 
 .date > h2 {
+    color: white;
     font-size: clamp(1rem, calc(1rem + 1vw), 1.25rem);
     font-weight: 500;
     letter-spacing: 1px;
