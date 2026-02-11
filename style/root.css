@@ -7,3 +7,7 @@
     font-family: "Glacial";
     src: url("/fonts/GlacialIndifference-Regular.otf");
 }
+
+:root {
+    --chocolate: #7B3F00;
+}
