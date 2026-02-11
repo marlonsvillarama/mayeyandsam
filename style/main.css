@@ -127,13 +127,13 @@ section {
 
 .date > h2 {
     color: white;
-    font-size: clamp(1rem, calc(1rem + 1vw), 1.25rem);
-    font-weight: 500;
+    font-size: clamp(1.125rem, calc(1.125rem + 1vw), 1.375rem);
+    font-weight: 700;
     letter-spacing: 1px;
 }
 
 .date > h3 {
-    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 0.875rem);
+    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
     font-weight: 600;
     /* letter-spacing: 2px; */
     opacity: 0.8;
@@ -166,7 +166,7 @@ section {
 }
 .booknow > span {
     /* font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1.125rem); */
-    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 0.875rem);
+    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
     letter-spacing: 0.25px;
 }
 
