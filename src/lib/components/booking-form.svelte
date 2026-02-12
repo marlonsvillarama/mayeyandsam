@@ -46,13 +46,15 @@
                 <label for="your_name">Email address</label>
                 <input type="email" id="your_email" name="your_email" pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/" required>
             </div>
-            <div class="field">
-                <label for="check_in">Check in</label>
-                <input type="date" id="check_in" name="check_in" required>
-            </div>
-            <div class="field">
-                <label for="check_in">Check out</label>
-                <input type="date" id="check_out" name="check_out" required>
+            <div class="dates">
+                <div class="field">
+                    <label for="check_in">Check in</label>
+                    <input type="date" id="check_in" name="check_in" required>
+                </div>
+                <div class="field">
+                    <label for="check_in">Check out</label>
+                    <input type="date" id="check_out" name="check_out" required>
+                </div>
             </div>
         {:else if step === 2}
             <div class="field">
@@ -231,6 +233,14 @@ select,
     padding-left: 4px;
     color: var(--chocolate);
     font-size: 0.875rem;
+}
+
+@media (min-width: 640px) {
+    .dates {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.625rem;
+    }
 }
 .yesno {
     margin-top: 1rem;
