@@ -1,0 +1,32 @@
+@import url(style/root.css);
+@import url(style/reset.css);
+/* @import url(style/main.css); */
+
+html {
+    height: 100vh;
+}
+
+body {
+    height: 100vh;
+    background-color: antiquewhite;
+    font-family: "Glacial", sans-serif;
+    font-size: 16px;
+}
+
+section {
+    position: relative;
+    height: 100vh;
+    overflow-y: auto;
+    color: var(--almond);
+}
+
+.hidden {
+    display: none !important;
+}
+
+.grid-col-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    /* border: 1px solid red; */
+}

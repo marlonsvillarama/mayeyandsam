@@ -55,6 +55,8 @@ const validateEmail = (email) => {
     return true;
 };
 
+select('dialog').showModal();
+
 getById('avail').addEventListener('click', (e) => {
     select('dialog').showModal();
 });
