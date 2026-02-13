@@ -8,7 +8,7 @@
         <div class="header">
             <h1>Save the Date</h1>
             <span>to celebrate the wedding of</span>
-            <h2>Marielle & Sam</h2>
+            <h2>Sam & Marielle</h2>
         </div>
         <div class="dates">
             <div class="inner">
