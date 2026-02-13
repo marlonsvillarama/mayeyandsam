@@ -1,0 +1,52 @@
+
+#form-fields {
+    display: grid;
+    gap: 1.625rem;
+    margin-top: 1rem;
+    /* border: 1px solid green; */
+}
+@media (min-width: 640px) {
+    #form-fields {
+        margin: 1rem 0.5rem;
+    }
+}
+
+.fields {
+    display: grid;
+    gap: 1.625rem;
+}
+.field {
+    display: grid;
+    gap: 0.125rem;
+    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
+    text-align: left;
+}
+.field > label {
+    font-weight: 200;
+    padding-left: 4px;
+}
+.field > input[type=date],
+.field > input[type=email],
+.field > input[type=number],
+.field > input[type=text],
+select,
+.field > textarea {
+    background-color: white;
+    border: 1px solid var(--almond);
+    border-radius: 0.5rem;
+    color: #666;
+    outline: 0;
+    padding: 0.625rem 1rem;
+}
+.field > input[type=date] {
+    width: 12rem;
+}
+.field > input[type=number] {
+    width: 7rem;
+    text-align: center;
+}
+.field > textarea {
+    height: 50px;
+    overflow-y: auto;
+    resize: none;
+}

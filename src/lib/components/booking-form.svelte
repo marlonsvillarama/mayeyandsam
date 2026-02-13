@@ -1,4 +1,9 @@
 <script>
+    import BookingName from "./booking-name.svelte";
+    import BookingRoom from "./booking-room.svelte";
+    import BookingSummary from "./booking-summary.svelte";
+    import BookingTransfer from "./booking-transfer.svelte";
+
     let {
         oncloseclick
     } = $props();
@@ -10,12 +15,15 @@
             'Please wait a moment...'
     )
 
-    let step = $state(1);
+    const MAX_STEP = 4;
+    let step = $state(4);
     const nextPage = (next = true) => {
         if (next === false) {
             step = step - 1;
             return;
         }
+
+        if (step === MAX_STEP) { return; }
 
         step = step + 1;
         console.log('nextPage', `step = ${step}`);
@@ -35,90 +43,21 @@
     <div class="header">
         <h2>Ceremony and reception will be at</h2>
         <span class="title">Movenpick Boracay</span>
-    <p class="blurb">
-        {blurbText}
-    </p>
+        <p class="blurb">
+            {blurbText}
+        </p>
     </div>
+    
     <div id="form-fields">
-        <div class="fields">
         {#if step === 1}
-            <div class="field">
-                <label for="your_email">Name</label>
-                <input type="text" id="your_name" name="your_name" maxlength="80" required>
-            </div>
-            <div class="field">
-                <label for="your_name">Email address</label>
-                <input type="email" id="your_email" name="your_email" pattern="/^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/" required>
-            </div>
-            <div class="dates">
-                <div class="field">
-                    <label for="check_in">Check in</label>
-                    <input type="date" id="check_in" name="check_in" required value="2026-12-26">
-                </div>
-                <div class="field">
-                    <label for="check_in">Check out</label>
-                    <input type="date" id="check_out" name="check_out" required value="2026-12-28">
-                </div>
-            </div>
+            <BookingName />
         {:else if step === 2}
-            <div class="field">
-                <label for="room_type">Room type</label>
-                <select id="room_type" name="room_type" required>
-                    <optgroup label="Rooms">
-                        <option value="1">Classic Queen</option>
-                        <option value="2">Classic Twin</option>
-                        <option value="3">Superior King</option>
-                        <option value="4">Superior Twin</option>
-                        <option value="5">Family Room</option>
-                        <option value="6">Premium King</option>
-                    </optgroup>
-                    <optgroup label="Suites">
-                        <option value="7">Junior Suite King</option>
-                        <option value="8">Premium Suite King</option>
-                        <option value="9">Sol Marina Beach Suite</option>
-                    </optgroup>
-                    <optgroup label="Villa">
-                        <option value="10">Sol Marina Villa</option>
-                    </optgroup>
-                </select>
-                <a href="https://movenpick.accor.com/en/asia/philippines/boracay/resort-spa-boracay.html" target="_blank">
-                    Click here to see and compare rooms.
-                </a>
-            </div>
-            <div class="grid-col-2">
-                <div class="field">
-                    <label for="room_count">No. of rooms</label>
-                    <input type="number" id="room_count" name="room_count" min="1" max="10" value="1" required />
-                </div>
-                <div class="field">
-                    <label for="guest_count">No. of guests</label>
-                    <input type="number" id="guest_count" name="guest_count" min="1" max="100" value="1" required />
-                </div>
-            </div>
-            <div class="field">
-                <label for="requests">Special requests</label>
-                <textarea id="requests" name="requests"></textarea>
-            </div>
+            <BookingRoom />
         {:else if step === 3}
-            <div class="field">
-                <span>Do you want Movenpick to take care of the roundtrip land and sea transfers?</span>
-                <div class="yesno">
-                    <div class="field-cb">
-                        <input type="radio" id="transfer-yes" name="transfer" value="yes" onchange={() => toggleTransfer()}>
-                        <label for="transfer-yes">YES</label>
-                    </div>
-                    <div class="field-cb">
-                        <input type="radio" id="transfer-no" name="transfer" value="no" onchange={() => toggleTransfer(false)} checked>
-                        <label for="transfer-no">NO</label>
-                    </div>
-                </div>
-                <div class="field { hasTransfers === true ? '' : 'hidden'}">
-                    <label for="transfer_count">No. of transfers</label>
-                    <input type="number" id="transfer_count" name="transfer_count" min="1" max="10" value="1" />
-                </div>
-            </div>
+            <BookingTransfer />
+        {:else if step === 4}
+            <BookingSummary />
         {/if}
-        </div>
 
         <div class={step > 1 ? 'buttons' : ''}>
             {#if step > 1}
@@ -133,7 +72,7 @@
                 e.preventDefault();
                 nextPage();
             }}>
-                {step < 3 ? 'Next' : 'Submit'}
+                {step < 3 ? 'Next' : 'Confirm'}
             </button>
         </div>
     </div>
@@ -188,15 +127,16 @@ form {
     font-size: clamp(0.875rem, calc(0.875rem + 1vw), 0.875rem);
     font-weight: 200;
     opacity: 0.8;
-    padding: clamp(1.25rem, calc(1.25rem + 1vw), 2rem) 0.5rem 0.75rem;
+    padding: clamp(1.25rem, calc(1.25rem + 1vw), 2rem) 0.5rem 0.5rem;
     text-align: center;
     /* border: 1px solid red; */
 }
 
-#form-fields {
+/* #form-fields {
     display: grid;
     gap: 1.625rem;
     margin-top: 1rem;
+    // border: 1px solid green;
 }
 
 .fields {
@@ -242,18 +182,9 @@ select,
     padding-left: 4px;
     color: var(--chocolate);
     font-size: 0.875rem;
-}
+} */
 
-.dates {
-    display: grid;
-    gap: 1.625rem;
-}
-@media (min-width: 640px) {
-    .dates {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-.yesno {
+/* .yesno {
     display: flex;
     align-items: center;
     gap: 2rem;
@@ -266,7 +197,7 @@ select,
 }
 .field-cb > label {
     background-color: white;
-    /* border: 1px solid var(--almond); */
+    // border: 1px solid var(--almond);
     border-radius: 0.5rem;
     color: #666;
     outline: 0;
@@ -281,7 +212,7 @@ select,
 .field-cb > input:checked + label {
     background-color: var(--chocolate);
     color: white;
-}
+} */
 
 .buttons {
     display: grid;

@@ -1,5 +1,6 @@
 @import './root.css';
 @import './reset.css';
+@import './form.css';
 
 html {
     height: 100vh;
@@ -30,11 +31,11 @@ section {
     /* border: 1px solid red; */
 }
 
-.booknow {
+/* .booknow {
     display: grid;
     gap: 0.5rem;
-}
-.booknow button {
+} */
+/* .booknow button {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -50,17 +51,17 @@ section {
     letter-spacing: 1px;
     text-transform: uppercase;
     margin: 0 auto;
-}
-.booknow button img {
+} */
+/* .booknow button img {
     height: 1.5rem;
-}
-.booknow > span {
-    /* font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1.125rem); */
+} */
+/* .booknow > span {
+    // font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1.125rem);
     font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
     letter-spacing: 0.25px;
-}
+} */
 
-dialog {
+/* dialog {
     background-color: transparent;
     border: 0;
     display: relative;
@@ -69,67 +70,67 @@ dialog {
     padding: 1rem;
     width: 90%;
     transition: all 150ms ease-in-out;
-}
+} */
 
-dialog::backdrop {
+/* dialog::backdrop {
     background-color: #999;
     opacity: 0.5;
-}
+} */
 
-dialog > form {
+/* dialog > form {
     background-color: antiquewhite;
     border-radius: 1rem;
     color: #333;
     padding: 2rem 1.5rem;
     position: relative;
     text-align: center;
-}
-dialog .header {
+} */
+/* dialog .header {
     border-bottom: 1px solid #cecece;
     padding-bottom: clamp(1.25rem, calc(1.25rem + 1vw), 2.5rem);
     text-align: center;
-}
+} */
 
-dialog .header > h2 {
+/* dialog .header > h2 {
     font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
     font-weight: 400;
     margin-bottom: 1rem;
-}
+} */
 
-dialog .header > .title {
+/* dialog .header > .title {
     color: var(--chocolate);
     font-family: "Eyesome", cursive;
     font-size: clamp(1.25rem, calc(1.25rem + 3vw), 4rem);
     font-weight: 700;
-    /* margin-top: 0.5rem; */
-    /* border: 1px solid red; */
-}
+    // margin-top: 0.5rem;
+    // border: 1px solid red;
+} */
 
-dialog .blurb {
+/* dialog .blurb {
     color: #333;
     font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
     font-weight: 200;
     opacity: 0.8;
     padding: 0.5rem 0.75rem;
     text-align: center;
-    /* border: 1px solid red; */
-}
+    // border: 1px solid red;
+} */
 
-#form-fields {
+/* #form-fields {
     display: grid;
     gap: 1.625rem;
-}
+} */
 
-.fields {
+/* .fields {
     display: grid;
     gap: 1.625rem;
-}
-.field {
+} */
+/* .field {
     display: grid;
     gap: 0.125rem;
     font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
-}
-.field > label {
+} */
+/* .field > label {
     font-weight: 200;
     padding-left: 4px;
     text-align: left;
@@ -143,15 +144,15 @@ dialog .blurb {
     color: #666;
     outline: 0;
     padding: 0.625rem 1rem;
-}
-.field > input[type=date] {
+} */
+/* .field > input[type=date] {
     width: 12rem;
 }
 .field > textarea {
     height: 15rem;
     overflow-y: auto;
     resize: none;
-}
+} */
 
 dialog form button {
     background-color: var(--chocolate);
