@@ -11,7 +11,6 @@
     )
 
     let step = $state(1);
-
     const nextPage = (next = true) => {
         if (next === false) {
             step = step - 1;
@@ -20,6 +19,11 @@
 
         step = step + 1;
         console.log('nextPage', `step = ${step}`);
+    };
+
+    let hasTransfers = $state(false);
+    const toggleTransfer = (show = true) => {
+        hasTransfers = show;
     };
 
     // const toggleSubmit = () => {
@@ -31,10 +35,10 @@
     <div class="header">
         <h2>Ceremony and reception will be at</h2>
         <span class="title">Movenpick Boracay</span>
-    </div>
     <p class="blurb">
         {blurbText}
     </p>
+    </div>
     <div id="form-fields">
         <div class="fields">
         {#if step === 1}
@@ -49,11 +53,11 @@
             <div class="dates">
                 <div class="field">
                     <label for="check_in">Check in</label>
-                    <input type="date" id="check_in" name="check_in" required>
+                    <input type="date" id="check_in" name="check_in" required value="2026-12-26">
                 </div>
                 <div class="field">
                     <label for="check_in">Check out</label>
-                    <input type="date" id="check_out" name="check_out" required>
+                    <input type="date" id="check_out" name="check_out" required value="2026-12-28">
                 </div>
             </div>
         {:else if step === 2}
@@ -98,15 +102,19 @@
         {:else if step === 3}
             <div class="field">
                 <span>Do you want Movenpick to take care of the roundtrip land and sea transfers?</span>
-                <div class="grid-col-2 yesno">
+                <div class="yesno">
                     <div class="field-cb">
+                        <input type="radio" id="transfer-yes" name="transfer" value="yes" onchange={() => toggleTransfer()}>
                         <label for="transfer-yes">YES</label>
-                        <input type="radio" id="transfer-yes" name="transfer" value="yes">
                     </div>
                     <div class="field-cb">
+                        <input type="radio" id="transfer-no" name="transfer" value="no" onchange={() => toggleTransfer(false)} checked>
                         <label for="transfer-no">NO</label>
-                        <input type="radio" id="transfer-no" name="transfer" value="no">
                     </div>
+                </div>
+                <div class="field { hasTransfers === true ? '' : 'hidden'}">
+                    <label for="transfer_count">No. of transfers</label>
+                    <input type="number" id="transfer_count" name="transfer_count" min="1" max="10" value="1" />
                 </div>
             </div>
         {/if}
@@ -114,7 +122,7 @@
 
         <div class={step > 1 ? 'buttons' : ''}>
             {#if step > 1}
-            <button onclick={(e) => {
+            <button class="btn-back" onclick={(e) => {
                 e.preventDefault();
                 nextPage(false);
             }}>
@@ -125,7 +133,7 @@
                 e.preventDefault();
                 nextPage();
             }}>
-                Next
+                {step < 3 ? 'Next' : 'Submit'}
             </button>
         </div>
     </div>
@@ -159,7 +167,7 @@ form {
 }
 .header {
     border-bottom: 1px solid #cecece;
-    padding-bottom: clamp(1.25rem, calc(1.25rem + 1vw), 2.5rem);
+    /* padding-bottom: clamp(1.25rem, calc(1.25rem + 1vw), 2.5rem); */
     text-align: center;
 }
 .header > h2 {
@@ -177,10 +185,10 @@ form {
 }
 .blurb {
     color: #333;
-    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
+    font-size: clamp(0.875rem, calc(0.875rem + 1vw), 0.875rem);
     font-weight: 200;
     opacity: 0.8;
-    padding: 0.5rem 0.75rem;
+    padding: clamp(1.25rem, calc(1.25rem + 1vw), 2rem) 0.5rem 0.75rem;
     text-align: center;
     /* border: 1px solid red; */
 }
@@ -188,6 +196,7 @@ form {
 #form-fields {
     display: grid;
     gap: 1.625rem;
+    margin-top: 1rem;
 }
 
 .fields {
@@ -225,7 +234,7 @@ select,
     text-align: center;
 }
 .field > textarea {
-    height: 10rem;
+    height: 100px;
     overflow-y: auto;
     resize: none;
 }
@@ -235,15 +244,20 @@ select,
     font-size: 0.875rem;
 }
 
+.dates {
+    display: grid;
+    gap: 1.625rem;
+}
 @media (min-width: 640px) {
     .dates {
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        gap: 1.625rem;
     }
 }
 .yesno {
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 1rem 0;
 }
 .field-cb {
     position: relative;
@@ -252,7 +266,7 @@ select,
 }
 .field-cb > label {
     background-color: white;
-    border: 1px solid var(--almond);
+    /* border: 1px solid var(--almond); */
     border-radius: 0.5rem;
     color: #666;
     outline: 0;
@@ -277,8 +291,9 @@ select,
 
 button {
     background-color: var(--chocolate);
-    border: 0px solid #ccc;
+    border: 2px solid var(--chocolate);
     border-radius: 0.5rem;
+    cursor: pointer;
     color: white;
     /* font-size: clamp(1.125rem, calc(1.125rem + 1vw), 1.25rem); */
     font-size: clamp(0.875rem, calc(0.875rem + 1vw), 1rem);
@@ -289,6 +304,17 @@ button {
     text-align: center;
     text-transform: uppercase;
     width: 100%;
+    transition: all 100ms ease-in-out;
+}
+
+button:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.btn-back {
+    background-color: white;
+    border-color: var(--almond);
+    color: var(--chocolate);
 }
 
 

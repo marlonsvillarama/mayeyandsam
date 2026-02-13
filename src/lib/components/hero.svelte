@@ -44,7 +44,7 @@
 }
 
 #hero .parallax {
-    background-image: url(/images/marielle_and_sam_05.webp);
+    background-image: url(images/marielle_and_sam_05.webp);
 }
 
 
