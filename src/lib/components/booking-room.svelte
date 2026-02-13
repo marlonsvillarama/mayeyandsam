@@ -23,15 +23,23 @@
     <div class="grid-col-2">
         <div class="field">
             <label for="room_count">No. of rooms</label>
-            <input type="number" id="room_count" name="room_count" min="1" max="10" required bind:value={bookingData.roomCount} />
+            <select id="room_count" name="room_count" class="numeric" bind:value={bookingData.roomCount} required>
+                {#each { length: 12 } as _, i}
+                <option value={i+1}>{i+1}</option>
+                {/each}
+            </select>
         </div>
         <div class="field">
             <label for="guest_count">No. of guests</label>
-            <input type="number" id="guest_count" name="guest_count" min="1" max="100" required bind:value={bookingData.guestCount} />
+            <select id="guest_count" name="guest_count" class="numeric" bind:value={bookingData.guestCount} required>
+                {#each { length: 20 } as _, i}
+                <option value={i+1}>{i+1}</option>
+                {/each}
+            </select>
         </div>
     </div>
     <div class="field">
-        <label for="requests">Special requests</label>
+        <label for="requests">Special requests (Optional)</label>
         <textarea id="requests" name="requests" bind:value={bookingData.requests}></textarea>
     </div>
 </div>

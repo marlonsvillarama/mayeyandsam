@@ -29,7 +29,7 @@
     <div class="row">
         <span class="label">Special Requests</span>
         <p class="value">
-            {bookingData.requests}
+            {bookingData.requests.trim() || '- None -'}
         </p>
     </div>
 </div>

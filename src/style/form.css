@@ -41,7 +41,7 @@ select,
 .field > input[type=date] {
     width: 12rem;
 }
-.field > input[type=number] {
+.field > .numeric {
     width: 7rem;
     text-align: center;
 }

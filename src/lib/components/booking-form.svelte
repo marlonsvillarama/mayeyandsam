@@ -1,42 +1,107 @@
 <script>
+    import { createBookingData } from "$lib/data/store.svelte";
     import BookingName from "./booking-name.svelte";
     import BookingRoom from "./booking-room.svelte";
     import BookingSummary from "./booking-summary.svelte";
     import BookingTransfer from "./booking-transfer.svelte";
+    import Spinner from "./spinner.svelte";
 
     let {
         oncloseclick
     } = $props();
-    
+
+    const bookingData = createBookingData();
     let isSubmitting = $state(false);
+    // let isSubmitted = $state(false);
     let blurbText = $derived(
         isSubmitting === false ?
             'Please submit your details to avail our block room rate.' :
             'Please wait a moment...'
     )
 
+    const submitForm = async () => {
+        // alert('submitting form...');
+        isSubmitting = true;
+
+        const API_URL = 'https://23quo4pddg.execute-api.ap-southeast-2.amazonaws.com/default/mayeyandsam';
+        let postResp = await fetch(API_URL, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(bookingData.data)
+        });
+        console.log('postResp', postResp);
+        bookingData.submitted = true;
+        isSubmitting = false;
+    };
+
     const MAX_STEP = 4;
-    let step = $state(4);
+    // let step = $state(1);
     const nextPage = (next = true) => {
         if (next === false) {
-            step = step - 1;
+            bookingData.step = bookingData.step - 1;
             return;
         }
 
-        if (step === MAX_STEP) { return; }
+        if (bookingData.step === MAX_STEP) {
+            submitForm();
+            return;
+        }
+        if (validateStep() === false) {
+            alert('Please fill out all required fields.')
+            return;
+        }
 
-        step = step + 1;
-        console.log('nextPage', `step = ${step}`);
+        bookingData.step = bookingData.step + 1;
+        console.log('nextPage', `new step = ${bookingData.step}`);
     };
 
-    let hasTransfers = $state(false);
-    const toggleTransfer = (show = true) => {
-        hasTransfers = show;
-    };
-
-    // const toggleSubmit = () => {
-    //     isSubmitting = !isSubmitting;
+    // let hasTransfers = $state(false);
+    // const toggleTransfer = (show = true) => {
+    //     hasTransfers = show;
     // };
+
+    const checkValues = (list) => {
+        let result = true;
+
+        for (let i = 0, count = list.length; i < count; i++) {
+            let val = bookingData[list[i]];
+            console.log(`list[${i}] = "${val}"`);
+            if (!val.toString().trim() || val.toString() === '0') return false;
+        }
+
+        return result;
+    };
+
+    const validateStep = () => {
+        switch(bookingData.step) {
+            case 1: {
+                return checkValues([
+                    'name',
+                    'email',
+                    'checkIn',
+                    'checkOut'
+                ]); 
+            }
+            case 2: {
+                return checkValues([
+                    'roomType',
+                    'roomCount',
+                    'guestCount'
+                ]); 
+            }
+            case 3: {
+                if (bookingData.withTransfer) {
+                    return checkValues([
+                        'transferCount'
+                    ]); 
+                }
+                break;
+            }
+            default: return true;
+        }
+    }
 </script>
 
 <form method="dialog">
@@ -48,51 +113,50 @@
         </p>
     </div>
     
-    <div id="form-fields">
-        {#if step === 1}
-            <BookingName />
-        {:else if step === 2}
-            <BookingRoom />
-        {:else if step === 3}
-            <BookingTransfer />
-        {:else if step === 4}
-            <BookingSummary />
-        {/if}
+    {#if isSubmitting}
+        <Spinner />
+    {:else}
+        {#if bookingData.submitted}
+            <div class="thankyou">
+                <p>Thank you for submitting your reservation! We look forward to having you there.</p><br/>
+                <p>With love,</p>
+                <p>Marielle & Sam</p>
+            </div>
+        {:else}
+            <div id="form-fields">
+                {#if bookingData.step === 1}
+                    <BookingName />
+                {:else if bookingData.step === 2}
+                    <BookingRoom />
+                {:else if bookingData.step === 3}
+                    <BookingTransfer />
+                {:else if bookingData.step === 4}
+                    <BookingSummary />
+                {/if}
 
-        <div class={step > 1 ? 'buttons' : ''}>
-            {#if step > 1}
-            <button class="btn-back" onclick={(e) => {
-                e.preventDefault();
-                nextPage(false);
-            }}>
-                Back
-            </button>
-            {/if}
-            <button onclick={(e) => {
-                e.preventDefault();
-                nextPage();
-            }}>
-                {step < 3 ? 'Next' : 'Confirm'}
-            </button>
-        </div>
-    </div>
-    <!-- <div class="spinner">
-        <div class="s">M & S</div>
-    </div> -->
-    <div id="form-loader" class="lds-roller hidden">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
+                <div class={bookingData.step > 1 ? 'buttons' : ''}>
+                    {#if bookingData.step > 1}
+                    <button class="btn-back" onclick={(e) => {
+                        e.preventDefault();
+                        nextPage(false);
+                    }}>
+                        Back
+                    </button>
+                    {/if}
+                    <button onclick={(e) => {
+                        e.preventDefault();
+                        nextPage();
+                    }}>
+                        {bookingData.step < MAX_STEP ? 'Next' : 'Confirm'}
+                    </button>
+                </div>
+            </div>
+        {/if}
+    {/if}
 </form>
 
-<button id="cancel_avail" onclick={oncloseclick}>
-    <img src="/images/close.svg">
+<button id="cancel_avail" title="Close" onclick={oncloseclick}>
+    <img src="/images/close.svg" alt="Close">
 </button>
 
 <style>
@@ -248,9 +312,9 @@ button:hover {
     color: var(--chocolate);
 }
 
-
-
-
+.thankyou {
+    margin-top: 1rem;
+}
 
 #cancel_avail {
     background-color: transparent;

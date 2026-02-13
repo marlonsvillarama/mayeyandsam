@@ -1,11 +1,17 @@
 <script>
+    import { createBookingData } from "$lib/data/store.svelte";
     import BookingForm from "./booking-form.svelte";
 
+    const bookingData = createBookingData();
+
     const closeDialog = () => {
-        document.querySelector('dialog').close();
+        // if (confirm('Any changes you have made will be lost. Are you sure?')) {
+            document.querySelector('dialog').close();
+        // }
     };
 
     const showDialog = () => {
+        bookingData.reset();
         document.querySelector('dialog').showModal();
     };
 </script>
