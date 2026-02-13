@@ -54,7 +54,7 @@ export const createBookingData = () => {
         get withTransfer () { return bookingData.withTransfer },
         get transferCount () { return bookingData.transferCount || 0 },
         get allRoomTypes () { return roomTypes },
-        get roomName () { return bookingData.roomName || '' },
+        get roomName () { return allRooms.find(r => r.id.toString() === bookingData.roomType.toString())?.name || '' },
         get step () { return bookingData.step },
         get data () { return bookingData },
         get submitted () { return bookingData.submitted },
