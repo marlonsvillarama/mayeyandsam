@@ -25,13 +25,12 @@
             </div>
         </div>
         <div class="field { hasTransfers === true ? '' : 'hidden'}">
-            <label for="transfer_count">No. of transfers</label>
+            <label for="transfer_count">No. of people</label>
             <select id="transfer_count" name="transfer_count" class="numeric" bind:value={bookingData.transferCount}>
                 {#each { length: 10 } as _, i}
                 <option value={i+1}>{i+1}</option>
                 {/each}
             </select>
-            <!-- <input type="number" id="transfer_count" name="transfer_count" min="1" max="10" value="1" /> -->
         </div>
     </div>
 </div>

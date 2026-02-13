@@ -5,7 +5,7 @@ let DEFAULT_DATA = {
     checkOut: '2026-12-28',
     roomName: '',
     roomType: 1,
-    withTransfer: false,
+    withTransfer: true,
 };
 let bookingData = $state(DEFAULT_DATA);
 let roomTypes = [
