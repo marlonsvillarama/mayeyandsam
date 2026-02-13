@@ -23,6 +23,7 @@
         // alert('submitting form...');
         isSubmitting = true;
 
+        bookingData.roomType = bookingData.roomType;
         const API_URL = 'https://23quo4pddg.execute-api.ap-southeast-2.amazonaws.com/default/mayeyandsam';
         let postResp = await fetch(API_URL, {
             headers: {

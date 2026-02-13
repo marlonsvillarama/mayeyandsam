@@ -1,11 +1,17 @@
 let DEFAULT_DATA = {
     step: 1,
     submitted: false,
+
+    name: '',
+    email: '',
     checkIn: '2026-12-26',
     checkOut: '2026-12-28',
-    roomName: '',
     roomType: 1,
+    roomName: '',
+    roomCount: 1,
+    guestCount: 1,
     withTransfer: true,
+    transferCount: 1
 };
 let bookingData = $state(DEFAULT_DATA);
 let roomTypes = [
@@ -65,7 +71,8 @@ export const createBookingData = () => {
         set checkOut (value) { bookingData.checkOut = value },
         set roomType (value) {
             bookingData.roomType = value;
-            bookingData.roomName = allRooms.find(r => r.id.toString() === bookingData.roomType.toString())?.name;
+            bookingData.roomName = allRooms.find(r => r.id.toString() === value.toString())?.name;
+            console.log('roomName', bookingData.roomName);
         },
         set roomCount (value) { bookingData.roomCount = value },
         set guestCount (value) { bookingData.guestCount = value },
