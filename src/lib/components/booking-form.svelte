@@ -17,7 +17,11 @@
         isSubmitting === false ?
             'Please submit your details to avail our block room rate.' :
             'Please wait a moment...'
-    )
+    );
+
+    const cleanData = () => {
+        
+    };
 
     const submitForm = async () => {
         // alert('submitting form...');
@@ -46,6 +50,7 @@
         }
 
         if (bookingData.step === MAX_STEP) {
+            cleanData();
             submitForm();
             return;
         }
