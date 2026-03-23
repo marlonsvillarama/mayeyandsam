@@ -3,7 +3,6 @@
     display: grid;
     gap: 1.625rem;
     margin-top: 1rem;
-    /* border: 1px solid green; */
 }
 @media (min-width: 640px) {
     #form-fields {
