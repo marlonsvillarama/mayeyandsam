@@ -27,6 +27,8 @@
 <Journey />
 <Explore />
 
+<section class="faqs" id="faqs"></section>
+
 <Budget /> <!-- Remove -->
 <!-- Summer Party -->
 <!-- FAQs -->
