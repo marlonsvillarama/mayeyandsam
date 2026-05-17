@@ -8,21 +8,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --ivory: #FAF6F0;
-  --cream: #F2EAD8;
-  --sand: #E8D9BC;
-  --gold: #C5A35A;
-  --gold-light: #D9B97A;
-  --gold-pale: #F0E4C2;
-  --ocean: #4A8FA8;
-  --ocean-dark: #2E6E88;
-  --ocean-pale: #D6EAF2;
-  --blush: #E8C4B4;
-  --rose: #C4806A;
-  --charcoal: #2A2520;
-  --brown: #5A4A38;
-  --muted: #8A7A68;
-  --white: #FDFCFA;
+  --ivory:      #F5F7F4;
+  --cream:      #EBF0EA;
+  --sand:       #D2DDD0;
+  --gold:       #1E7A8A;
+  --gold-light: #3A9BB0;
+  --gold-pale:  #D0EBF0;
+  --ocean:      #D4634A;
+  --ocean-dark: #B04530;
+  --ocean-pale: #FAE0DA;
+  --blush:      #EEC4B8;
+  --rose:       #C06050;
+  --charcoal:   #1A2E3A;
+  --brown:      #3A5248;
+  --muted:      #7A8C88;
+  --white:      #FDFEFE;
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -44,9 +44,9 @@ nav {
   display: flex; justify-content: center; align-items: center;
   gap: 36px;
   padding: 18px 32px;
-  background: rgba(250,246,240,0.9);
+  background: rgba(245,247,244,0.92);
   backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(197,163,90,0.2);
+  border-bottom: 1px solid rgba(30,122,138,0.2);
 }
 nav a {
   text-decoration: none;
@@ -83,13 +83,13 @@ nav .nav-heart {
   position: absolute; inset: 0;
   background: linear-gradient(
     180deg,
-    #1a2a3a 0%,
-    #2a4060 20%,
-    #5a6a8a 40%,
-    #c4826a 60%,
-    #e0a060 75%,
-    #e8c88a 85%,
-    #f0d8a0 100%
+    #08181E 0%,
+    #102A3A 20%,
+    #145060 40%,
+    #1A7870 60%,
+    #26A090 75%,
+    #68C8B8 85%,
+    #BEEAE0 100%
   );
 }
 /* Sun glow */
@@ -97,7 +97,7 @@ nav .nav-heart {
   position: absolute;
   width: 160px; height: 160px;
   border-radius: 50%;
-  background: radial-gradient(circle, #fce88a 0%, #f0b040 40%, rgba(240,160,60,0) 70%);
+  background: radial-gradient(circle, #C0F2E8 0%, #28B0A0 40%, rgba(40,176,160,0) 70%);
   top: 42%; left: 50%;
   transform: translate(-50%, -50%);
   opacity: 0.9;
@@ -112,7 +112,7 @@ nav .nav-heart {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 38%;
-  background: linear-gradient(180deg, #2a6888 0%, #1a4a6a 40%, #122a40 100%);
+  background: linear-gradient(180deg, #0E5068 0%, #082E42 40%, #041820 100%);
   border-radius: 60% 60% 0 0 / 20px 20px 0 0;
 }
 /* Ocean shimmer */
@@ -158,7 +158,7 @@ nav .nav-heart {
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 14%;
-  background: linear-gradient(180deg, #e8d8a8 0%, #d4c090 50%, #c8b080 100%);
+  background: linear-gradient(180deg, #C8D8B0 0%, #A8C090 50%, #8AAA78 100%);
   z-index: 1;
 }
 
@@ -170,7 +170,7 @@ nav .nav-heart {
   position: absolute;
   width: 8px; height: 12px;
   border-radius: 50% 0 50% 0;
-  background: rgba(232,196,180,0.7);
+  background: rgba(238,196,184,0.65);
   animation: fall linear infinite;
 }
 @keyframes fall {
@@ -294,7 +294,7 @@ nav .nav-heart {
 }
 .count-sep {
   font-size: 36px;
-  color: rgba(197,163,90,0.3);
+  color: rgba(30,122,138,0.35);
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -356,16 +356,16 @@ h2 em { font-style: italic; color: var(--rose); }
 .venue-scene {
   position: absolute; inset: 0;
   background: linear-gradient(180deg,
-    #1a3a5a 0%,
-    #2a5878 20%,
-    #3a7898 40%,
-    #5ab8c8 55%,
-    #7ad8e8 65%,
-    #a8e8d8 72%,
-    #d8f0e0 78%,
-    #f0f8e8 82%,
-    #e8e0b8 88%,
-    #d8d0a0 100%
+    #0A1E30 0%,
+    #122C48 20%,
+    #165A78 40%,
+    #1E8A90 55%,
+    #28B0A0 65%,
+    #60C8B8 72%,
+    #A0E0D0 78%,
+    #D0F0E8 82%,
+    #C8E0C0 88%,
+    #B0C8A0 100%
   );
 }
 .venue-scene::before {
@@ -456,7 +456,7 @@ h2 em { font-style: italic; color: var(--rose); }
   border: 1px solid var(--cream);
   transition: box-shadow 0.2s;
 }
-.route-step:hover { box-shadow: 0 4px 20px rgba(42,37,32,0.08); }
+.route-step:hover { box-shadow: 0 4px 20px rgba(26,46,58,0.1); }
 .step-num-circle {
   width: 36px; height: 36px; border-radius: 50%;
   background: var(--gold-pale);
@@ -528,7 +528,7 @@ h2 em { font-style: italic; color: var(--rose); }
   margin-top: 14px;
   font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
   color: var(--gold);
-  border: 1px solid rgba(197,163,90,0.4);
+  border: 1px solid rgba(30,122,138,0.35);
   border-radius: 100px;
   padding: 3px 12px;
 }
@@ -605,7 +605,7 @@ h2 em { font-style: italic; color: var(--rose); }
   content: '';
   position: absolute;
   width: 600px; height: 600px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(197,163,90,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(30,122,138,0.07) 0%, transparent 70%);
   top: -200px; right: -200px;
   pointer-events: none;
 }
@@ -613,7 +613,7 @@ h2 em { font-style: italic; color: var(--rose); }
   content: '';
   position: absolute;
   width: 400px; height: 400px; border-radius: 50%;
-  background: radial-gradient(circle, rgba(196,128,106,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(212,99,74,0.06) 0%, transparent 70%);
   bottom: -150px; left: -100px;
   pointer-events: none;
 }
@@ -685,7 +685,7 @@ textarea { resize: vertical; min-height: 100px; }
 .submit-btn:hover {
   background: var(--gold);
   transform: translateY(-2px);
-  box-shadow: 0 8px 28px rgba(197,163,90,0.35);
+  box-shadow: 0 8px 28px rgba(30,122,138,0.35);
 }
 
 .rsvp-success {
@@ -693,7 +693,7 @@ textarea { resize: vertical; min-height: 100px; }
   text-align: center;
   padding: 48px 24px;
   background: var(--gold-pale);
-  border: 1px solid rgba(197,163,90,0.3);
+  border: 1px solid rgba(30,122,138,0.3);
   border-radius: 20px;
 }
 .rsvp-success-icon { font-size: 48px; margin-bottom: 16px; }
@@ -720,6 +720,89 @@ footer {
 }
 .footer-date { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
 .footer-bottom { margin-top: 32px; font-size: 12px; color: rgba(255,255,255,0.2); }
+
+/* ═══════════════════════════════════════
+   FAQs SECTION
+═══════════════════════════════════════ */
+.faqs-section { background: var(--cream); }
+.faqs-inner { max-width: 860px; margin: 0 auto; }
+
+.faq-tab-nav { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+.faq-tab-btn {
+  padding: 10px 22px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sand);
+  background: transparent;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px; font-weight: 400; letter-spacing: 0.5px;
+  cursor: pointer; color: var(--muted);
+  transition: all 0.2s;
+}
+.faq-tab-btn.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: white;
+}
+.faq-tab-btn.active.teal-tab   { background: var(--gold);  border-color: var(--gold); }
+.faq-tab-btn.active.coral-tab  { background: var(--ocean); border-color: var(--ocean); }
+.faq-tab-btn.active.forest-tab { background: var(--brown); border-color: var(--brown); }
+
+.faq-panel { display: none; }
+.faq-panel.active { display: block; animation: fade-up .4s ease both; }
+
+.faq-panel-header {
+  margin-bottom: 40px; padding-bottom: 24px;
+  border-bottom: 1px solid var(--sand);
+}
+.faq-panel-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 4vw, 34px); font-weight: 300;
+  color: var(--charcoal); margin-bottom: 4px;
+}
+.faq-panel-header .faq-meta {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.topic-group { margin-bottom: 36px; }
+.topic-label {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.topic-label::after { content: ''; flex: 1; height: 1px; background: var(--sand); }
+
+.faq-item { border-bottom: 1px solid var(--sand); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  text-align: left; display: flex; justify-content: space-between;
+  align-items: center; gap: 16px; padding: 18px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem; font-weight: 400;
+  color: var(--charcoal); line-height: 1.35;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--sand);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: .7rem; color: var(--muted);
+  transition: transform .3s, background .2s, border-color .2s;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--gold); border-color: var(--gold); color: #fff;
+}
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-item.open .faq-a { max-height: 800px; }
+.faq-a-inner {
+  padding-bottom: 20px; font-size: .92rem;
+  color: var(--muted); line-height: 1.75;
+}
+.faq-a-inner a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.faq-a-inner strong { color: var(--charcoal); font-weight: 500; }
 
 /* ═══════════════════════════════════════
    ANIMATIONS
@@ -752,6 +835,7 @@ footer {
   <a href="#" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;letter-spacing:0;text-transform:none;color:var(--charcoal)">Sam & Marielle</a>
   <span class="nav-heart">✦</span>
   <a href="#todo">Explore</a>
+  <a href="#faqs">FAQs</a>
   <a href="#rsvp">RSVP</a>
 </nav>
 
@@ -1140,6 +1224,140 @@ footer {
   </div>
 </section>
 
+<!-- FAQs SECTION -->
+<section class="faqs-section" id="faqs">
+  <div class="faqs-inner" style="max-width:860px;margin:0 auto;padding:100px 32px;">
+    <span class="section-tag reveal">Frequently Asked</span>
+    <h2 class="reveal">Everything you<br><em>need to know.</em></h2>
+    <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">✦</span><div class="divider-line"></div></div>
+    <p class="section-intro reveal">We've answered the most common questions across all our celebrations — select an event below to get started.</p>
+
+    <div class="faq-tab-nav reveal">
+      <button class="faq-tab-btn active teal-tab" onclick="switchFaqTab('calgary', this)">🎉 Engagement Party</button>
+      <button class="faq-tab-btn coral-tab" onclick="switchFaqTab('dinner', this)">🌅 Welcome Dinner</button>
+      <button class="faq-tab-btn forest-tab" onclick="switchFaqTab('wedding', this)">🌺 Wedding &amp; Reception</button>
+    </div>
+
+    <!-- ── CALGARY PANEL ── -->
+    <div class="faq-panel active" id="faq-calgary">
+      <div class="faq-panel-header">
+        <h3>Engagement Party &amp; Summer Celebration</h3>
+        <p class="faq-meta">August 23, 2026 · Calgary, Alberta</p>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">The Event</div>
+        <div class="faq-item"><button class="faq-q">What is this party for? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">This is our Calgary celebration for loved ones who may not be able to travel to the Philippines for the wedding. Think of it as our way of including everyone in the joy — a summer party in your honour as much as ours!</div></div></div>
+        <div class="faq-item"><button class="faq-q">What time does the party start? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The cocktail party begins at <strong>5:00 PM</strong>. Come ready to mingle, enjoy a drink, and celebrate with us!</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is this a family-friendly event? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes! Children are absolutely welcome. We ask that little ones are supervised at all times. If you're bringing kids, please indicate this on your RSVP so we can plan accordingly.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Venue &amp; Location</div>
+        <div class="faq-item"><button class="faq-q">Where exactly is the party being held? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The party is at <strong>The Ridout House</strong>, located at <strong>76 Woodhaven Crescent SW, Calgary</strong>. We'll include a map and any additional directions with your invitation.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is there parking available at the venue? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Street parking is available in the neighbourhood. We'll include any additional parking details and public transit options with your invitation.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Dress Code</div>
+        <div class="faq-item"><button class="faq-q">What should I wear? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Dress code is <strong>smart casual / summer festive</strong>. Think sundresses, linen blazers, or your favourite summer look. It's a celebration, so feel free to dress up a little — just keep it comfortable for an outdoor August evening in Calgary.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Are there any colours to avoid? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">No strict colour rules here — it's a party! That said, we kindly ask guests not to wear all-white, as that's traditionally reserved for the bride.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Food &amp; Drinks</div>
+        <div class="faq-item"><button class="faq-q">Will food and drinks be provided? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes! We'll be hosting the food and drinks for the evening. More details on the menu will be shared closer to the date.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Can you accommodate dietary restrictions or allergies? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutely. Please note any dietary restrictions or allergies on your RSVP form and we'll do our best to make sure there's something delicious for everyone.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">RSVP &amp; Gifts</div>
+        <div class="faq-item"><button class="faq-q">How do I RSVP? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Please RSVP using the form on this website. We kindly ask that you respond by <strong>July 15, 2026</strong> so we can plan accordingly.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Should I bring a gift? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Your presence is the greatest gift of all — truly! Please do not feel any obligation to bring anything. Just come ready to celebrate with us.</div></div></div>
+      </div>
+    </div>
+
+    <!-- ── WELCOME DINNER PANEL ── -->
+    <div class="faq-panel" id="faq-dinner">
+      <div class="faq-panel-header">
+        <h3>Welcome Dinner</h3>
+        <p class="faq-meta">December 26, 2026 · Boracay, Philippines</p>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">The Event</div>
+        <div class="faq-item"><button class="faq-q">What is the Welcome Dinner? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The Welcome Dinner is our way of kicking off the wedding celebrations! It's a relaxed, intimate gathering for guests who have made the trip to Boracay, giving everyone a chance to arrive, settle in, and connect before the big day.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is attendance at the Welcome Dinner mandatory? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">It's not mandatory, but it's highly encouraged! It's a wonderful opportunity to meet other guests and spend quality time with us before the wedding day gets busy.</div></div></div>
+        <div class="faq-item"><button class="faq-q">What time does the Welcome Dinner start and end? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Timing details will be confirmed closer to the date. Plan for a sunset dinner — Boracay sunsets in December are truly magical.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Venue &amp; Getting There</div>
+        <div class="faq-item"><button class="faq-q">Where will the Welcome Dinner be held? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The venue details will be shared in your formal invitation. It will be somewhere beautiful on the island — Boracay has no shortage of stunning settings!</div></div></div>
+        <div class="faq-item"><button class="faq-q">How do I get to the dinner from my accommodation? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Boracay is a small island — most places are reachable by tricycle, e-bike, or a short walk. We'll include transport tips in your event details. If you're staying nearby, we may also arrange a group meetup point.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Dress Code</div>
+        <div class="faq-item"><button class="faq-q">What is the dress code for the Welcome Dinner? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We're going <strong>all white and beige</strong>! Beach casual attire is very much encouraged — think linen shirts, sundresses, shorts, sandals, and light fabrics. You'll be on a tropical beach, so dress comfortably and embrace the island vibe. Just keep it in those white and beige tones.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will the dinner be outdoors? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes — the Welcome Dinner will be held <strong>outdoors, weather permitting</strong>. December is Boracay's dry season, so evenings are typically warm and breezy. Expect temperatures around 26–30°C. Light, breathable fabrics are your best friend, and sandals are very much welcome!</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Travel &amp; Boracay</div>
+        <div class="faq-item"><button class="faq-q">When should I arrive in Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We recommend arriving by <strong>December 25 or 26</strong> to give yourself time to settle in and enjoy the island before the Welcome Dinner. Don't rush — arriving frazzled is never fun!</div></div></div>
+        <div class="faq-item"><button class="faq-q">How do I get to Boracay from Manila? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Fly into <strong>Caticlan Airport (MPH)</strong> — it's the closest airport to Boracay, just minutes from the port. Because Boracay is an island, getting there requires a <strong>land and sea transfer</strong>: a short drive to the port, followed by a bangka (outrigger boat) ride of roughly 15 minutes across to the island. Your hotel can arrange this transfer for you directly, so we recommend getting in touch with them ahead of your arrival.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Do I need a visa to visit the Philippines? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Many nationalities, including Canadian citizens, can enter the Philippines visa-free for up to 30 days. We recommend verifying your specific country's requirements with the nearest Philippine embassy or consulate well in advance of travel.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Where should I stay in Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Boracay has a wonderful range of accommodations at different price points — from boutique guesthouses to luxury beachfront resorts. The wedding ceremony and reception will be held at the <strong>Movenpick Resort &amp; Spa</strong>, but you are absolutely not required to stay there. If you choose to stay elsewhere on the island, the Movenpick is only a quick e-tricycle ride away.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Food &amp; Drinks</div>
+        <div class="faq-item"><button class="faq-q">Will the Welcome Dinner be hosted (food and drinks included)? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes — dinner and drinks are on us. Come hungry and ready to celebrate!</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will there be Filipino food? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We wouldn't have it any other way! Expect a spread that showcases delicious Filipino flavours alongside other dishes. If you have food allergies or restrictions, please let us know in your RSVP.</div></div></div>
+      </div>
+    </div>
+
+    <!-- ── WEDDING PANEL ── -->
+    <div class="faq-panel" id="faq-wedding">
+      <div class="faq-panel-header">
+        <h3>Wedding &amp; Reception</h3>
+        <p class="faq-meta">December 27, 2026 · Movenpick Resort, Boracay</p>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Ceremony</div>
+        <div class="faq-item"><button class="faq-q">What time does the ceremony begin? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Ceremony time will be confirmed in your formal invitation. We recommend arriving <strong>at least 20–30 minutes early</strong> to get seated and soak in the beautiful surroundings.</div></div></div>
+        <div class="faq-item"><button class="faq-q">How long will the ceremony last? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The ceremony will be approximately <strong>45 minutes to 1 hour</strong>. Following the ceremony, there will be a cocktail hour before the reception begins.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will the ceremony be indoors or outdoors? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The ceremony will be held <strong>beachfront</strong> — right on the sand with the ocean as our backdrop. The reception will be held at the <strong>Sol Marina Beachfront Garden</strong> at the Movenpick Resort. December is Boracay's dry season, so conditions should be stunning. A contingency plan is always in place — your comfort is our priority.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is photography and videography allowed during the ceremony? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We are having an <strong>unplugged ceremony</strong> — we kindly ask all guests to put phones and cameras away during the ceremony itself, so everyone can be fully present. Our professional team will capture every moment beautifully. There will be plenty of time for photos at the reception!</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Reception</div>
+        <div class="faq-item"><button class="faq-q">Where is the reception being held? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The reception will be held at the <strong>Sol Marina Beachfront Garden</strong> at Movenpick Resort &amp; Spa Boracay — the same property as the ceremony. No travel between locations needed!</div></div></div>
+        <div class="faq-item"><button class="faq-q">What is the schedule for the reception? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Following the ceremony, there will be a <strong>cocktail hour</strong> with drinks and canapés. The reception dinner, speeches, first dance, and celebrations will follow. Exact timings will be listed on your invitation.</div></div></div>
+        <div class="faq-item"><button class="faq-q">What time does the reception end? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We plan to party until late! The venue has a set end time which we'll confirm closer to the date. Keep the full day and evening free.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will there be a seating chart? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes, we will have assigned seating for dinner. Your table number will be displayed at the entrance. If you have seating preferences or need to be seated near specific guests, please mention it in your RSVP notes.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Dress Code</div>
+        <div class="faq-item"><button class="faq-q">What is the dress code for the wedding? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Dress code is <strong>Tropical Cocktail Attire</strong> — and we highly encourage colours and prints! Think vibrant florals, tropical patterns, and rich island hues.<br><br><strong>Ladies:</strong> Cocktail dresses, tea-length gowns, hi-low hemlines, or floor-length tropical prints — all welcome.<br><strong>Gentlemen:</strong> Dress shirts, tropical printed long-sleeve shirts, or a smart barong tagalog. Pair with brown or khaki trousers.<br><br><strong>Heels are entirely optional.</strong> You will be on beachfront grounds — elegant flats, strappy sandals, and block heels are all great choices.<br><br>We only ask that guests kindly avoid wearing <strong>white, ivory, or cream</strong>, which are reserved for the bride.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Can I wear a barong tagalog or filipiniana? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutely, yes — we would love it! Wearing Filipino traditional formal attire is not only appropriate, it is warmly encouraged and a beautiful way to honour the setting and culture.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Venue &amp; Logistics</div>
+        <div class="faq-item"><button class="faq-q">What is Movenpick Resort Boracay like? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Movenpick Resort &amp; Spa Boracay is a luxury beachfront resort located at the quieter <strong>Station 0</strong> end of the island — the most serene and uncrowded stretch of White Beach. It features lush tropical gardens, stunning ocean views, and world-class facilities. Truly a breathtaking setting for a wedding.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Do I need to stay at Movenpick Resort? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Staying at Movenpick is not required — Boracay has wonderful accommodations available at a range of price points. If you choose to stay elsewhere on the island, the Movenpick is only a quick e-tricycle ride away. That said, staying on-site does add a special convenience on the wedding day!</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Food &amp; Drinks</div>
+        <div class="faq-item"><button class="faq-q">Will dietary restrictions be accommodated? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. Please indicate any dietary restrictions (vegetarian, vegan, gluten-free, allergies, etc.) on your RSVP form. We'll pass these along to the Movenpick catering team to ensure you're well taken care of.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Gifts</div>
+        <div class="faq-item"><button class="faq-q">Is there anything on your wish list? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Your presence at our wedding is already the most meaningful gift we could ever ask for. We do not have a gift registry. If you would like to give something, a monetary gift is truly and warmly appreciated, as it will go towards building our life together. That said, please know there is absolutely no expectation whatsoever.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Should I bring a physical gift to Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We kindly suggest skipping physical gifts — travelling internationally with items can be quite the adventure! If you'd like to give, a card with a heartfelt note (or a monetary gift) is more than enough and will be treasured.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Other Practicalities</div>
+        <div class="faq-item"><button class="faq-q">What currency should I bring to Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The currency in the Philippines is the <strong>Philippine Peso (PHP)</strong>. There are ATMs on the island, but we recommend exchanging some cash before arriving or at the airport in Manila. Many larger establishments also accept credit cards.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is it safe to drink the tap water in Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We recommend drinking bottled or filtered water during your stay, as tap water in the Philippines is generally not safe for drinking. Bottled water is widely available and inexpensive throughout the island.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Who should I contact if I have questions not answered here? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Please reach out through the <strong>Contact</strong> page of this website or send us a message directly. We'll get back to you as soon as we can — just try not to message us in the hour before the ceremony! 😄</div></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- RSVP -->
 <section class="rsvp-section" id="rsvp">
   <div class="rsvp-inner">
@@ -1156,49 +1374,7 @@ footer {
         </div>
         <div class="form-group reveal">
           <label>Last Name</label>
-          <input type="text" placeholder="Your last name" required>
-        </div>
-        <div class="form-group full reveal">
-          <label>Email Address</label>
-          <input type="email" placeholder="your@email.com" required>
-        </div>
-        <div class="form-group full reveal">
-          <label>Travelling from</label>
-          <select required>
-            <option value="" disabled selected>Select your city / country</option>
-            <option>Calgary, Canada</option>
-            <option>Manila, Philippines</option>
-            <option>Other — Philippines</option>
-            <option>Other — International</option>
-          </select>
-        </div>
-        <div class="form-group full reveal">
-          <label>Number of guests (including yourself)</label>
-          <select required>
-            <option value="" disabled selected>How many guests?</option>
-            <option>1 — Just me</option>
-            <option>2 — Me & a plus-one</option>
-            <option>3 — Me & two guests</option>
-            <option>4 — Me & three guests</option>
-            <option>5 or more</option>
-          </select>
-        </div>
-        <div class="form-group full reveal">
-          <label>RSVP</label>
-          <div class="rsvp-choice">
-            <div class="rsvp-opt">
-              <input type="radio" name="rsvp" id="r-yes" value="yes" required>
-              <label for="r-yes">🎉 Joyfully Accepts</label>
-            </div>
-            <div class="rsvp-opt">
-              <input type="radio" name="rsvp" id="r-no" value="no">
-              <label for="r-no">💌 Regretfully Declines</label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group full reveal">
-          <label>Dietary requirements or message</label>
-          <textarea placeholder="Any dietary restrictions, allergies, or a note for Sam & Marielle…"></textarea>
+          <input type="text" placeholder="Your last name">
         </div>
         <div class="form-group full reveal">
           <button type="submit" class="submit-btn">Send My RSVP ✦</button>
@@ -1231,7 +1407,7 @@ for (let i = 0; i < 18; i++) {
   const delay = Math.random() * 12;
   const duration = 8 + Math.random() * 10;
   const size = 6 + Math.random() * 8;
-  const hue = Math.random() > 0.5 ? 'rgba(232,196,180,0.65)' : 'rgba(220,170,150,0.55)';
+  const hue = Math.random() > 0.5 ? 'rgba(238,196,184,0.6)' : 'rgba(58,155,176,0.3)';
   p.style.cssText = `left:${left}%;animation-delay:${delay}s;animation-duration:${duration}s;width:${size}px;height:${size*1.4}px;background:${hue};`;
   petalContainer.appendChild(p);
 }
@@ -1340,6 +1516,24 @@ function handleRSVP(e) {
   document.getElementById('rsvp-form').style.display = 'none';
   document.getElementById('rsvp-success').style.display = 'block';
 }
+
+// ─── FAQ TABS ───────────────────────────────
+function switchFaqTab(id, btn) {
+  document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.faq-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('faq-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ─── FAQ ACCORDION ──────────────────────────
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    btn.closest('.faq-panel').querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
 
 // ─── SCROLL REVEAL ──────────────────────────
 const obs = new IntersectionObserver((entries) => {

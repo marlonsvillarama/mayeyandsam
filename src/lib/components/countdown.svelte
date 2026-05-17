@@ -41,40 +41,67 @@
 
 <div class="countdown-bar" id="countdown">
     <div class="count-item"><span class="count-num" id="cd-days">{days}</span><span class="count-label">Days</span></div>
-    <span class="count-sep">·</span>
+    <!-- <span class="count-sep">·</span> -->
     <div class="count-item"><span class="count-num" id="cd-hours">{hours.toString().padStart(2, '0')}</span><span class="count-label">Hours</span></div>
-    <span class="count-sep">·</span>
+    <!-- <span class="count-sep">·</span> -->
     <div class="count-item"><span class="count-num" id="cd-mins">{minutes.toString().padStart(2, '0')}</span><span class="count-label">Minutes</span></div>
-    <span class="count-sep">·</span>
+    <!-- <span class="count-sep">·</span> -->
     <div class="count-item"><span class="count-num" id="cd-secs">{seconds.toString().padStart(2, '0')}</span><span class="count-label">Seconds</span></div>
 </div>
 
 <style>
+    .countdown-bar::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 84px;
+        background-image: url(/images/bg_weave.png);
+        background-size: cover;
+        opacity: 0.3;
+    }
     .countdown-bar {
-        background: var(--charcoal);
-        padding: 28px 24px;
-        display: flex; justify-content: center; align-items: center; gap: 48px;
+        padding: 16px 24px;
+        display: grid; grid-template-columns: repeat(4, 1fr); align-items: center;
+        /* gap: clamp(12px, calc(12px), 48px); */
         flex-wrap: wrap;
+    }
+    @media (min-width: 40rem) {
+        .countdown-bar::before {
+            height: 96px;
+        }
+        .countdown-bar {
+            display: flex;
+            justify-content: center;
+            gap: clamp(48px, calc(48px + 3vw), 64px);
+        }
     }
     .count-item {
         text-align: center;
     }
     .count-num {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 48px;
+        font-size: 32px;
         font-weight: 300;
-        color: var(--gold-light);
-        line-height: 1;
+        color: var(--ivory);
+        line-height: 1.2;
         display: block;
     }
+    @media (min-width: 40rem) {
+        .count-num {
+            font-size: 48px;
+        }
+        
+    }
     .count-label {
-        font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
-        color: rgba(255,255,255,0.45);
+        font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase;
+        color: var(--almond);
         margin-top: 4px;
     }
-    .count-sep {
+    /* .count-sep {
         font-size: 36px;
         color: rgba(197,163,90,0.3);
         font-family: 'Cormorant Garamond', serif;
-    }
+    } */
 </style>

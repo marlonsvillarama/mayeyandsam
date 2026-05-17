@@ -1,5 +1,6 @@
 <script>
-    import MainNav from "$lib/components/nav.svelte";
+    import Nav from "$lib/components/nav.svelte";
+    import Rsvp from "$lib/components/rsvp.svelte";
     import Hero from "$lib/components/hero.svelte";
     import Venue from "$lib/components/venue.svelte";
     import Journey from "$lib/components/journey.svelte";
@@ -17,7 +18,10 @@
     // document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 </script>
 
-<MainNav />
+<div class="nav-wrapper">
+    <Nav />
+    <Rsvp />
+</div>
 <Hero />
 <Venue />
 <Journey />
@@ -34,4 +38,9 @@
 <!-- <section>how to get there</section> -->
 
 <style>
+    .nav-wrapper {
+        position: absolute; top: 0; left: 0; right: 0; z-index: 200;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 16px clamp(9px, calc(2px + 3vw), 24px) 0 clamp(24px, calc(8px + 3vw), 36px);
+    }
 </style>

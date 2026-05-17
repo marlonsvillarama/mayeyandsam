@@ -4,41 +4,17 @@
 </script>
 
 <section class="hero" id="hero">
-    <!-- <div class="hero-bg"> -->
-        <!-- <img src="/images/marielle_and_sam_05.png" alt="Sam & Marielle" /> -->
-        <!-- <div class="hero-sky"></div>
-        <div class="hero-sun"></div>
-        <div class="hero-ocean"></div>
-        <div class="hero-beach"></div> -->
-        <!-- Palm Left (SVG) -->
-        <!-- <svg class="palm-left" viewBox="0 0 90 180" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M45 180 Q43 120 42 80 Q40 40 38 20" stroke="#1a3a18" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <path d="M38 20 Q20 10 5 18 Q12 22 18 28 Q8 30 2 40 Q12 35 22 38 Q14 45 12 55 Q22 46 30 45" fill="#2a5a20" opacity="0.9"/>
-        <path d="M38 20 Q55 8 72 14 Q62 20 58 28 Q68 26 76 34 Q64 32 56 38 Q64 44 66 54 Q56 44 46 46" fill="#2a5a20" opacity="0.85"/>
-        <path d="M40 40 Q25 32 10 38 Q18 40 24 46 Q16 48 12 56 Q20 50 28 50" fill="#234a1a" opacity="0.8"/>
-        <path d="M42 55 Q30 45 16 48 Q24 52 28 60 Q20 60 16 68 Q24 63 34 62" fill="#1e421a" opacity="0.7"/>
-        </svg> -->
-        <!-- Palm Right (SVG) -->
-        <!-- <svg class="palm-right" viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M40 160 Q38 105 37 72 Q35 36 33 18" stroke="#1a3a18" stroke-width="3.5" stroke-linecap="round" fill="none"/>
-        <path d="M33 18 Q16 8 2 16 Q10 20 16 26 Q6 28 1 38 Q11 33 20 36 Q12 43 10 52 Q20 43 28 42" fill="#2a5a20" opacity="0.9"/>
-        <path d="M33 18 Q50 6 66 12 Q56 18 52 26 Q62 24 70 32 Q58 30 50 36 Q58 42 60 52 Q50 42 40 44" fill="#2a5a20" opacity="0.85"/>
-        </svg> -->
-    <!-- </div> -->
     <div class="parallax"></div>
 
-    <!-- Petals -->
-    <div class="petals-container" id="petals"></div>
+    <!-- <div class="petals-container" id="petals"></div> -->
 
     <div class="hero-content">
-        <!-- <div class="ornament">
-        <div class="ornament-line"></div>
-        <span>✦</span> -->
-        <!-- <div class="ornament-line right"></div>
-        </div> -->
-        <h1>Sam &amp; Marielle</h1>
-        <!-- <span class="hero-ampersand">&amp;</span>
-        <h1><em>Marielle</em></h1> -->
+        <div class="title">
+            <span>Sam</span>
+            <span>&amp;</span>
+            <span>Marielle</span>
+        </div>
+        <!-- <h1>Sam &amp; Marielle</h1> -->
         <p class="hero-date">December 27, 2026</p>
         <p class="hero-venue">Boracay, Philippines</p>
     </div>
@@ -94,6 +70,7 @@
     /* Layered tropical background via CSS */
     .parallax {
         background-image: url(/images/marielle_and_sam_05.png);
+        filter: blur(5px);
         position: absolute;
         inset: 0;
         top: 0;
@@ -194,27 +171,28 @@
     } */
 
     /* Floating petals */
-    .petals-container {
+    /* .petals-container {
         position: absolute; inset: 0; pointer-events: none; z-index: 3;
-    }
-    .petal {
+    } */
+    /* .petal {
         position: absolute;
         width: 8px; height: 12px;
         border-radius: 50% 0 50% 0;
         background: rgba(232,196,180,0.7);
         animation: fall linear infinite;
-    }
-    @keyframes fall {
+    } */
+    /* @keyframes fall {
         0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
         10% { opacity: 0.8; }
         90% { opacity: 0.4; }
         100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
-    }
+    } */
 
     .hero-content {
         position: relative; z-index: 10;
         text-align: center;
         padding: 20px;
+        /* border: 1px solid red; */
     }
 
     /* Gold ornament line */
@@ -236,24 +214,36 @@
         letter-spacing: 3px;
     } */
 
-    .hero h1 {
+    /* .hero h1 { */
+    .hero-content .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+    }
+    @media (min-width: 30rem) {
+        .hero-content .title {
+            flex-direction: row;
+        }
+    }
+    .hero-content .title span {
         /* font-family: 'Cormorant Garamond', serif; */
         font-family: "Eyesome", cursive;
-        font-size: clamp(62px, 12vw, 130px);
+        font-size: clamp(62px, 12vw, 96px);
         font-weight: 300;
         color: var(--white);
         line-height: 0.95;
         letter-spacing: -2px;
         text-shadow: 0 2px 40px rgba(0,0,0,0.3);
-        margin-bottom: 4rem;
+        /* margin-bottom: 4rem; */
         animation: fade-up 1s ease 0.15s both;
     }
-    .hero h1 em {
+    /* .hero h1 em {
         font-style: italic;
         color: var(--gold-light);
-    }
+    } */
 
-    .hero-ampersand {
+    /* .hero-ampersand {
         font-family: 'Cormorant Garamond', serif;
         font-size: clamp(100px, 18vw, 200px);
         font-weight: 300;
@@ -264,7 +254,7 @@
         display: block;
         margin: -10px 0;
         animation: fade-up 1s ease 0.1s both;
-    }
+    } */
 
     .hero-date {
         font-size: 0.875rem;
@@ -283,24 +273,29 @@
         animation: fade-up 1s ease 0.4s both;
     }
 
-    .hero-scroll {
+    /* .hero-scroll {
         position: absolute; bottom: 28px; left: 50%;
         transform: translateX(-50%);
         z-index: 10;
         display: flex; flex-direction: column; align-items: center; gap: 8px;
         animation: fade-up 1s ease 1s both;
-    }
-    .hero-scroll span {
+    } */
+    /* .hero-scroll span {
         font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
         color: rgba(255,255,255,0.5);
-    }
-    .scroll-dot {
+    } */
+    /* .scroll-dot {
         width: 1px; height: 40px;
         background: linear-gradient(180deg, rgba(255,255,255,0.5), transparent);
         animation: scroll-line 2s ease-in-out infinite;
-    }
+    } */
 
+    /* .countdown::before {
+        content: "";
+    } */
     .countdown {
+        /* background-image: url(/images/bg_weave.png); */
+        /* background-size: cover; */
         position: absolute;
         bottom: 0;
         left: 0;
