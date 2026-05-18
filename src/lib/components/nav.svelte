@@ -5,12 +5,11 @@
 <nav>
     <button class="menu-toggle">&#9776;</button>
     <div class="links">
-        <a href="#venue">Venue</a>
+        <a href="#venue">Event</a>
         <a href="#travel">Travel</a>
         <a href="#explore">Explore</a>
         <a href="#faqs">FAQs</a>
     </div>
-    <!-- <Rsvp /> -->
 </nav>
 
 <style>
@@ -22,9 +21,6 @@
         border: 0;
         outline: 0;
         cursor: pointer;
-    }
-    nav .menu-toggle {
-
     }
     nav .links {
         /* position: absolute; top: 0; left: 0; right: 0; z-index: 200; */
@@ -40,7 +36,7 @@
     nav .links > a {
         text-decoration: none;
         /* font-size: 13px; */
-        font-size: clamp(13px, calc(14px + 4vw), 16px);
+        /* font-size: clamp(13px, calc(13px + 4vw), 16px); */
         letter-spacing: 2.5px;
         text-transform: uppercase;
         color: var(--ivory);

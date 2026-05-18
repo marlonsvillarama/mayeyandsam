@@ -83,7 +83,12 @@
     --spacing: 0.26rem;
 }
 
-section { padding: 100px 32px; }
+section { padding: 48px 32px; }
+@media (min-width: 48rem) {
+    section {
+        padding: 80px 32px;
+    }
+}
 
 .section-tag {
     font-size: 12px;

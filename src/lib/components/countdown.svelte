@@ -83,7 +83,7 @@
     .count-num {
         font-family: 'Cormorant Garamond', serif;
         font-size: 32px;
-        font-weight: 300;
+        font-weight: 600;
         color: var(--ivory);
         line-height: 1.2;
         display: block;
