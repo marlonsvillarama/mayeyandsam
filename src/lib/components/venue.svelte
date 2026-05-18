@@ -8,7 +8,7 @@
         <!-- <p class="section-intro reveal">Boracay is a small island that requires a short journey from the mainland. Here's how to get there from both Calgary and Manila.</p> -->
 
         <div class="venue-cards">
-            <VenueCard bg="boats" title="Welcome Party" date="26" />
+            <VenueCard bg="boats" title="Welcome Party" date="26" venue="Basta sa beach" code="Tropical cocktail" />
             <VenueCard />
         </div>
         <!-- <div class="venue-visual reveal">

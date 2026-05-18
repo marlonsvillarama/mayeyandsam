@@ -76,7 +76,7 @@
     /* Layered tropical background via CSS */
     .parallax {
         background-image: url(/images/marielle_and_sam_05.png);
-        filter: blur(2px);
+        /* filter: blur(2px); */
         position: absolute;
         inset: 0;
         top: 0;
@@ -86,8 +86,8 @@
         height: 100%;
         background-size: cover;
         background-position: center;
-        background-attachment: fixed;
-        /* z-index: 1; */
+        /* background-attachment: fixed; */
+        z-index: 1;
     }
     .nav-wrapper {
         position: absolute; top: 0; left: 0; right: 0; z-index: 200;

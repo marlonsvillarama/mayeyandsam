@@ -2,7 +2,9 @@
     let {
         bg = 'trees',
         title = 'Ceremony',
-        date = '27'
+        date = '27',
+        venue = 'Mövenpick Beachfront',
+        code = 'Tropical cocktail'
     } = $props();
 </script>
 
@@ -16,7 +18,12 @@
 
     <div class="vc-title">
         <span class="title">{title}</span>
-        <div class="title-date">December {date}</div>
+        <div class="subtitle">
+            <span class="title-date">{date}th</span>
+            <span>&#8226;</span>
+            <span class="title-venue">{venue}</span>
+        </div>
+        <span class="code">{code}</span>
     </div>
 </div>
 
@@ -36,11 +43,11 @@
         /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
         transform: translateY(-2px);
     }
-    @media (min-width: 48rem) {
+    /* @media (min-width: 48rem) {
         .vc {
             height: 36rem;
         }
-    }
+    } */
     .vc-bg {
         border: none;
         border-radius: 12px;
@@ -110,7 +117,8 @@
         position: absolute;
         text-align: center;
         /* border: 1px solid red; */
-        top: clamp(75%, calc(75% + 2vw), 80%);
+        top: 70%;
+        /* top: clamp(70%, calc(70% + 2vw), 75%); */
         left: 0;
         right: 0;
         z-index: 100;
@@ -124,12 +132,39 @@
         text-transform: uppercase;
         color: var(--primary);
     }
-    .vc-title > .title-date {
+    .subtitle {
         font-size: clamp(1rem, calc(1rem + 0.5vw), 1.25rem);
-        /* font-size: 1.125rem; */
         font-weight: 300;
         letter-spacing: 1px;
         color: var(--ivory);
+        display: flex;
+        gap: 0.25rem;
+        text-align: center;
+        justify-content: center;
+    }
+    .subtitle > .title-venue {
+        font-style: italic;
+    }
+    .subtitle > .title-date {
+        font-size: clamp(1rem, calc(1rem + 0.5vw), 1.25rem);
+        /* font-size: 1.125rem; */
+        font-weight: 500;
+        letter-spacing: 1px;
+        color: var(--ivory);
+    }
+    .subtitle > .title-venue {
+        font-size: clamp(1rem, calc(1rem + 0.5vw), 1.25rem);
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: var(--ivory);
+        font-style: italic;
+    }
+    .code {
+        font-size: clamp(0.875rem, calc(0.875rem + 0.5vw), 1rem);
+        font-weight: 300;
+        letter-spacing: 1px;
+        color: var(--ivory);
+        /* font-style: italic; */
     }
     /* .vc-title-bg {
         background-color: var(--brown);

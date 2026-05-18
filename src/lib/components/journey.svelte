@@ -14,23 +14,25 @@
 
 <section class="travel-section" id="travel">
     <div class="travel-inner">
-        <span class="section-tag reveal">Getting There</span>
-        <h2 class="reveal">Your journey<br>to <em>Boracay.</em></h2>
-        <p class="section-intro reveal">Boracay is a small island that requires a short journey from the mainland. Here's how to get there from both Calgary and Manila.</p>
+        <!-- <span class="section-tag reveal">Getting There</span> -->
+        <h2 class="reveal">Your journey to <em>Boracay.</em></h2>
+        <!-- <p class="section-intro reveal">Boracay is a small island that requires a short journey from the mainland. Here's how to get there from both Calgary and Manila.</p> -->
 
         <div class="travel-tabs reveal">
             <button class="tab-btn {activeLink === 'calgary' ? 'active' : ''}" onclick={() => switchTab('calgary')}>
-                <i class="ph-fill ph-airplane-tilt"></i> From Calgary, Canada
+                From Canada
+                <!-- <i class="ph-fill ph-airplane-tilt"></i> From Calgary, Canada -->
             </button>
             <button class="tab-btn {activeLink === 'calgary' ? '' : 'active'}" onclick={() => switchTab('manila')}>
-                <i class="ph-fill ph-boat"></i> From Manila, Philippines
+                From Manila
+                <!-- <i class="ph-fill ph-boat"></i> From Manila, Philippines -->
             </button>
         </div>
 
         <!-- CALGARY -->
         <div class="travel-panel {activeLink === 'calgary' ? 'active' : ''}" id="panel-calgary">
             <div class="route-steps">
-                <div class="route-step reveal">
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">1</div>
                     <div class="step-body">
                         <strong>Calgary (YYC) → Manila (MNL)</strong>
@@ -41,9 +43,40 @@
                         </div>
                     </div>
                     <div class="step-duration">~16–20h<small>with stopover</small></div>
+                </div> -->
+                <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-airplane-takeoff"></i>
+                        <span class="point">Vancouver, CA</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>around 16 hours with stopover</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-map-pin"></i>
+                        <span class="point">Manila, PH</span>
+                    </div>
                 </div>
                 <div class="route-connector"></div>
+
                 <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-airplane-takeoff"></i>
+                        <span class="point">Manila, PH</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>around 1 hour flight</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-map-pin"></i>
+                        <span class="point">Caticlan, Panay Island</span>
+                    </div>
+                </div>
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">2</div>
                     <div class="step-body">
                         <strong>Manila (MNL) → Caticlan (MPH)</strong>
@@ -54,9 +87,25 @@
                         </div>
                     </div>
                     <div class="step-duration">~1h<small>flight</small></div>
-                </div>
+                </div> -->
                 <div class="route-connector"></div>
+
                 <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-sailboat"></i>
+                        <span class="point">Caticlan, Panay Island</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>15 minute boat ride</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-map-pin"></i>
+                        <span class="point">Boracay Island</span>
+                    </div>
+                </div>
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">3</div>
                     <div class="step-body">
                         <strong>Caticlan Jetty Port → Boracay Island</strong>
@@ -66,9 +115,25 @@
                         </div>
                     </div>
                     <div class="step-duration">~15 min<small>boat ride</small></div>
-                </div>
+                </div> -->
                 <div class="route-connector"></div>
+
                 <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-motorcycle"></i>
+                        <span class="point">Boracay Port</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>10-20 minutes by e-trike</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-flag-checkered"></i>
+                        <span class="point">Your hotel</span>
+                    </div>
+                </div>
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">4</div>
                     <div class="step-body">
                         <strong>Boracay Port → Your Hotel / Venue</strong>
@@ -78,7 +143,7 @@
                         </div>
                     </div>
                     <div class="step-duration">~10–20 min<small>by e-trike</small></div>
-                </div>
+                </div> -->
             </div>
             <div class="travel-tip reveal">
                 <span class="tip-icon">💡</span>
@@ -90,6 +155,21 @@
         <div class="travel-panel {activeLink === 'calgary' ? '' : 'active'}" id="panel-manila">
             <div class="route-steps">
                 <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-airplane-takeoff"></i>
+                        <span class="point">Manila, PH</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>around 1 hour flight</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-map-pin"></i>
+                        <span class="point">Caticlan, Panay Island</span>
+                    </div>
+                </div>
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">1</div>
                     <div class="step-body">
                         <strong>Option A — Fly: Manila (MNL) → Caticlan (MPH)</strong>
@@ -100,9 +180,9 @@
                         </div>
                     </div>
                     <div class="step-duration">~1h<small>flight</small></div>
-                </div>
-                <div class="route-connector"></div>
-                <div class="route-step reveal">
+                </div> -->
+                <!-- <div class="route-connector"></div> -->
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">2</div>
                     <div class="step-body">
                         <strong>Option B — Bus + Ferry: Manila → Caticlan</strong>
@@ -113,9 +193,25 @@
                         </div>
                     </div>
                     <div class="step-duration">~12–16h<small>total journey</small></div>
-                </div>
+                </div> -->
                 <div class="route-connector"></div>
-                    <div class="route-step reveal">
+
+                <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-sailboat"></i>
+                        <span class="point">Caticlan, Panay Island</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>15 minute boat ride</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-map-pin"></i>
+                        <span class="point">Boracay Island</span>
+                    </div>
+                </div>
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">3</div>
                     <div class="step-body">
                         <strong>Caticlan Jetty → Boracay Island</strong>
@@ -126,9 +222,25 @@
                         </div>
                     </div>
                     <div class="step-duration">~15 min<small>boat ride</small></div>
-                </div>
+                </div> -->
                 <div class="route-connector"></div>
+
                 <div class="route-step reveal">
+                    <div class="row">
+                        <i class="ph ph-motorcycle"></i>
+                        <span class="point">Boracay Port</span>
+                    </div>
+                    <div class="row path">
+                        <!-- <div class="path"></div> -->
+                        <i class="ph ph-dots-three-vertical"></i>
+                        <span>10-20 minutes by e-trike</span>
+                    </div>
+                    <div class="row">
+                        <i class="ph ph-flag-checkered"></i>
+                        <span class="point">Your hotel</span>
+                    </div>
+                </div>
+                <!-- <div class="route-step reveal">
                     <div class="step-num-circle">4</div>
                     <div class="step-body">
                         <strong>Cagban Port → Your Hotel / Venue</strong>
@@ -138,7 +250,7 @@
                         </div>
                     </div>
                     <div class="step-duration">~10–20 min<small>by e-trike</small></div>
-                </div>
+                </div> -->
             </div>
             <div class="travel-tip reveal">
                 <span class="tip-icon">💡</span>
@@ -150,9 +262,20 @@
 
 <style>
     .travel-section { background: var(--ivory); }
-    .travel-inner { max-width: 1000px; margin: 0 auto; }
+    .travel-inner { max-width: 1100px; margin: 0 auto; }
+    .travel-inner h2 {
+        font-size: clamp(3.5rem, calc(3.5rem + 0.5vw), 5rem);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
     .travel-tabs {
-        display: flex; gap: 8px; margin-bottom: 36px;
+        display: flex; margin-bottom: 36px;
+        justify-content: space-between;
+    }
+    @media (min-width: 30rem) {
+        .travel-tabs {
+            display: flex; gap: 16px; justify-content: center;
+        }
     }
     .tab-btn {
         padding: 10px 24px;
@@ -160,11 +283,11 @@
         border: 1.5px solid var(--sand);
         background: transparent;
         font-family: 'Jost', sans-serif;
-        font-size: 14px;
+        font-size: 1.125rem;
         font-weight: 400;
-        letter-spacing: 0.5px;
+        letter-spacing: 0.75px;
         cursor: pointer;
-        color: var(--muted);
+        color: var(--charcoal);
         transition: all 0.2s;
         display: flex;
         align-items: center;
@@ -182,14 +305,56 @@
     .travel-panel.active { display: block; }
     .route-steps { display: grid; gap: 16px; }
     .route-step {
-        display: grid; grid-template-columns: 40px 1fr auto;
-        gap: 16px; align-items: center;
-        padding: 20px 24px;
+        display: grid; gap: 8px;
+        /* padding: 20px 24px; */
         background: var(--white);
         border-radius: 14px;
         border: 1px solid var(--cream);
         transition: box-shadow 0.2s;
     }
+    .route-step > .row {
+        display: grid; grid-template-columns: 40px 1fr;
+        /* display: grid; grid-template-columns: 40px 1fr auto; */
+        gap: 16px; align-items: center;
+        /* gap: 16px; align-items: center; */
+        padding: 20px 24px;
+        /* background: var(--white);
+        border-radius: 14px;
+        border: 1px solid var(--cream);
+        transition: box-shadow 0.2s; */
+    }
+    .route-step > .row:first-child {
+        padding: 12px 24px 0px;
+    }
+    .route-step > .row:last-child {
+        padding: 0px 24px 12px;
+    }
+    .route-step > .row > i {
+        font-size: 28px;
+    }
+    .route-step > .row > span {
+        font-size: 1rem;
+        letter-spacing: 0.5px;
+        opacity: 0.8;
+    }
+    .route-step > .row > span.point {
+        font-size: 1.125rem;
+        font-weight: 500;
+    }
+    .route-step > .row.path {
+        border-top: 1px solid var(--cream);
+        border-bottom: 1px solid var(--cream);
+        /* background: var(--ivory); */
+        /* padding: 1rem 0; */
+        /* height: 40px;
+        width: 1px;
+        margin-left: 13px;
+        background: var(--charcoal);
+        opacity: 0.15; */
+    }
+    /* .route-step {
+        display: grid; grid-template-columns: 40
+    } */
     .route-step:hover { box-shadow: 0 4px 20px rgba(42,37,32,0.08); }
     .step-num-circle {
         width: 36px; height: 36px; border-radius: 50%;
@@ -217,7 +382,7 @@
         font-weight: 400;
     }
     .step-body span.step-sub {
-        color: var(--muted);
+        color: var(--charcoal);
         font-size: 14px;
         /* font-style: italic; */
     }
