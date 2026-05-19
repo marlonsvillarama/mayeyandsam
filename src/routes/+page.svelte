@@ -4,6 +4,7 @@
     import Hero from "$lib/components/hero.svelte";
     import Venue from "$lib/components/venue.svelte";
     import Journey from "$lib/components/journey.svelte";
+    import WhatToBring from "$lib/components/whattobring.svelte";
     import Explore from "$lib/components/explore.svelte";
     import Budget from "$lib/components/budget.svelte";
     import Footer from "$lib/components/footer.svelte";
@@ -22,6 +23,7 @@
 <Hero />
 <Venue />
 <Journey />
+<WhatToBring />
 <Explore />
 
 <section class="faqs" id="faqs"></section>
