@@ -1,7 +1,10 @@
 <script>
+    import JourneyFaq from "./journey-faq.svelte";
     // let panelCalgary = $state(null);
     // let panelManila = $state(null);
     let activeLink = $state('calgary');
+    let activeCalgary = $state(true);
+    let activeManila = $state(false);
 
     const switchTab = (id) => {
         activeLink = id;
@@ -29,6 +32,7 @@
             </button>
         </div>
 
+        <div class="travel-content">
         <!-- CALGARY -->
         <div class="travel-panel {activeLink === 'calgary' ? 'active' : ''}" id="panel-calgary">
             <div class="travel-panel-inner">
@@ -48,7 +52,7 @@
                     <div class="route-step reveal">
                         <div class="row">
                             <i class="ph ph-airplane-takeoff"></i>
-                            <span class="point">Vancouver, CA</span>
+                            <span class="point">Canada</span>
                         </div>
                         <div class="row path">
                             <!-- <div class="path"></div> -->
@@ -99,7 +103,8 @@
                         <div class="row path">
                             <!-- <div class="path"></div> -->
                             <i class="ph ph-dots-three-vertical icon-small"></i>
-                            <span>15 minute boat ride</span>
+                            <p>15 minute boat ride<br/><strong>Pre-book transfers with your hotel</strong></p>
+                            <!-- <span>Needs to be arranged with your hotel</span> -->
                         </div>
                         <div class="row">
                             <i class="ph ph-map-pin"></i>
@@ -127,10 +132,12 @@
                         <div class="row path">
                             <!-- <div class="path"></div> -->
                             <i class="ph ph-dots-three-vertical icon-small"></i>
-                            <span>10-20 minutes by e-trike</span>
+                            <p>15 minute boat ride<br/><strong>Pre-book transfers with your hotel</strong></p>
+                            <!-- <span>10-20 minutes by e-trike</span> -->
                         </div>
                         <div class="row">
                             <i class="ph ph-flag-checkered"></i>
+                            <!-- <p>15 minute boat ride<br/><strong>Pre-book transfers with your hotel</strong></p> -->
                             <span class="point">Your hotel</span>
                         </div>
                     </div>
@@ -146,16 +153,19 @@
                         <div class="step-duration">~10–20 min<small>by e-trike</small></div>
                     </div> -->
                 </div>
-                <div class="travel-tip reveal">
-                    <strong>Traveling from Canada:</strong>
+                <!-- <div class="travel-tip reveal"> -->
+                    <!-- <strong>Traveling from Canada:</strong>
                     <ul>
                         <li>Book flights at least 3-4 months in advance for December.</li>
                         <li>Arrive in Boracay by December 25-26 to settle in nicely.</li>
                         <li>Budget roughly CAD $1,600 - $2,800 for round-trip airfare.</li>
-                    </ul>
+                    </ul> -->
                     <!-- <span class="tip-icon">💡</span> -->
                     <!-- <p>Book flights at least 3–4 months in advance for December travel. Arrive in Boracay on December 25–26 to settle in before the big day. Budget roughly <strong>CAD $1,600–$2,800</strong> for round-trip airfare from Calgary depending on your airline and stopover city.</p> -->
-                </div>
+                <!-- </div> -->
+
+                <!-- Journey FAQ -->
+                <!-- <JourneyFaq /> -->
             </div>
         </div>
 
@@ -213,10 +223,12 @@
                         <div class="row path">
                             <!-- <div class="path"></div> -->
                             <i class="ph ph-dots-three-vertical icon-small"></i>
-                            <span>15 minute boat ride</span>
+                            <p>15 minute boat ride<br/><strong>Pre-book transfers with your hotel</strong></p>
+                            <!-- <span>15 minute boat ride</span> -->
                         </div>
                         <div class="row">
                             <i class="ph ph-map-pin"></i>
+                            <!-- <p>15 minute boat ride<br/><strong>Pre-book transfers with your hotel</strong></p> -->
                             <span class="point">Boracay Island</span>
                         </div>
                     </div>
@@ -242,7 +254,8 @@
                         <div class="row path">
                             <!-- <div class="path"></div> -->
                             <i class="ph ph-dots-three-vertical icon-small"></i>
-                            <span>10-20 minutes by e-trike</span>
+                            <p>10-20 minutes by e-trike<br/><strong>Pre-book transfers with your hotel</strong></p>
+                            <!-- <span>10-20 minutes by e-trike</span> -->
                         </div>
                         <div class="row">
                             <i class="ph ph-flag-checkered"></i>
@@ -261,39 +274,56 @@
                         <div class="step-duration">~10–20 min<small>by e-trike</small></div>
                     </div> -->
                 </div>
-                <div class="travel-tip reveal">
-                    <strong>Traveling from Manila</strong>
+                <!-- <div class="travel-tip reveal"> -->
+                    <!-- <strong>Traveling from Manila</strong>
                     <ul>
                         <li>Book your flights to Caticlan at least 2-3 months ahead.</li>
                         <li>Consider flying to Kalibo as a budget alternative (will add ~1.5 hours of bus transfer to Caticlan).</li>
-                    </ul>
+                    </ul> -->
                     <!-- <span class="tip-icon">💡</span> -->
                     <!-- <p>Book flights at least 3–4 months in advance for December travel. Arrive in Boracay on December 25–26 to settle in before the big day. Budget roughly <strong>CAD $1,600–$2,800</strong> for round-trip airfare from Calgary depending on your airline and stopover city.</p> -->
-                </div>
+                <!-- </div> -->
                 <!-- <div class="travel-tip reveal"> -->
                     <!-- <span class="tip-icon">💡</span> -->
                     <!-- <p><strong>Tip for Manila guests:</strong> December is peak season — book your Caticlan flights 2–3 months ahead. Cebu Pacific often has promos. Expect round-trip flights of around <strong>₱2,500–₱5,500</strong>. Consider flying into Kalibo (KLO) as a budget alternative (add ~1.5h bus transfer to Caticlan).</p> -->
                 <!-- </div> -->
             </div>
         </div>
+        </div>
     </div>
+
+    <div class="faq-link">
+        <a href="/travel" title="Travel FAQs">
+            <span>Travel FAQs</span>
+            <i class="ph ph-question"></i>
+        </a>
+   </div>
 </section>
 
 <style>
     .travel-section { background: var(--ivory); }
-    .travel-inner { max-width: 1100px; margin: 0 auto; }
+    .travel-inner { max-width: 1100px; margin: 0 auto 1.5rem; }
     .travel-inner h2 {
         /* font-size: clamp(2.5rem, calc(3rem + 0.5vw), 2.5rem); */
         text-align: center;
         margin-bottom: 2rem;
     }
     .travel-tabs {
-        display: flex; margin-bottom: 36px;
-        justify-content: space-between;
+        display: flex; gap: 10px; margin-bottom: 36px;
+        justify-content: center;
+        /* justify-content: space-between; */
     }
     @media (min-width: 30rem) {
+        .travel-tabs { gap: 1rem; }
+    }
+    @media (min-width: 48rem) {
         .travel-tabs {
-            display: flex; gap: 16px; justify-content: center;
+            /* display: flex; gap: 2rem; justify-content: center; */
+            display: grid; align-items: center; gap: 2rem;
+            grid-template-columns: repeat(2, 1fr);
+            justify-content: center;
+            margin-bottom: 1rem;
+            /* border: 1px solid red; */
         }
     }
     .tab-btn {
@@ -309,24 +339,50 @@
         color: var(--charcoal);
         transition: all 0.2s;
         display: flex;
+        /* flex: 0; */
         align-items: center;
         gap: 0.5rem;
     }
-    /* .tab-btn i { font-size: 24px; } */
     .tab-btn.active {
         background: var(--charcoal);
         border-color: var(--charcoal);
         color: white;
     }
+    @media (min-width: 48rem) {
+        .tab-btn,
+        .tab-btn.active {
+            background: var(--ivory);
+            border-radius: 0;
+            border: 0;
+            border-bottom: 1.5px solid var(--gold);
+            padding: 1rem 0;
+            color: var(--charcoal);
+            font-size: 1.5rem;
+            font-weight: 500;
+            /* border: 1px solid red; */
+            justify-content: center;
+        }
+    }
+    /* .tab-btn i { font-size: 24px; } */
     .travel-panel { display: none; }
     .travel-panel.active { display: block; }
-    .travel-panel-inner { display: grid; gap: 2rem; }
-    @media (min-width: 40rem) {
-        .travel-panel-inner {
+    .travel-panel-inner {
+        display: grid; gap: 2rem;
+        align-items: start;
+    }
+    @media (min-width: 48rem) {
+        .travel-content {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            /* border: 1px solid red; */
+        }
+        .travel-panel { display: block; }
+        /* .travel-panel-inner {
             gap: 2rem;
             grid-template-columns: repeat(2, 1fr);
             align-items: start;
-        }
+        } */
     }
     .route-steps { display: grid; gap: 16px; }
     .route-step {
@@ -361,9 +417,11 @@
         font-size: 16px;
         margin-left: 6px;
     }
-    .route-step > .row > span {
+    .route-step > .row > span,
+    .route-step > .row > p {
         font-size: 0.875rem;
         letter-spacing: 0.5px;
+        line-height: 1.8;
         opacity: 0.8;
     }
     .route-step > .row > span.point {
@@ -431,6 +489,45 @@
     .route-connector {
         width: 2px; height: 16px; background: var(--sand);
         margin: 0 0 0 38px;
+    }
+    
+    .faq-link {
+        /* border: 1px solid red; */
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .faq-link > a {
+        padding: 0.625rem 4rem;
+        border-radius: 100px;
+        border: 1.5px solid var(--sand);
+        background: transparent;
+        font-family: 'Jost', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 400;
+        letter-spacing: 0.75px;
+        cursor: pointer;
+        color: var(--charcoal);
+        transition: all 0.2s;
+        display: flex;
+        /* flex: 0; */
+        margin: 0 auto;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+    .faq-link > a:hover {
+        background: var(--sand);
+    }
+    /* .faq-link > a > span { */
+        /* border: 1px solid red; */
+        /* transform: translateY(-3px); */
+    /* } */
+    .faq-link > a > i {
+        font-size: 1.5rem;
+        /* padding-top: 16px; */
+        /* transform: translateY(15px); */
+        /* border: 1px solid green; */
     }
 
     .travel-tip {

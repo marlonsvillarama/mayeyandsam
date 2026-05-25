@@ -110,7 +110,7 @@
         background-image: url(/images/boracay_boats.jpg);
     }
     .bg-trees {
-        background-image: url(/images/boracay_trees.jpg);
+        background-image: url(/images/beach-front.jpg);
         transform: scaleX(-1);
     }
     .vc-title {

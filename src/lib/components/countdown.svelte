@@ -40,6 +40,7 @@
 </script>
 
 <div class="countdown-bar" id="countdown">
+    <div class="overlay"></div>
     <div class="count-item"><span class="count-num" id="cd-days">{days}</span><span class="count-label">Days</span></div>
     <!-- <span class="count-sep">·</span> -->
     <div class="count-item"><span class="count-num" id="cd-hours">{hours.toString().padStart(2, '0')}</span><span class="count-label">Hours</span></div>
@@ -51,6 +52,13 @@
 
 <style>
     .countdown-bar::before {
+        background-color: var(--brown);
+        /* background-image: url(/images/bg_weave.png);
+        background-size: cover; */
+        /* opacity: 0.3; */
+        z-index: -1;
+    }
+    .overlay {
         content: "";
         position: absolute;
         bottom: 0;
@@ -60,12 +68,19 @@
         background-image: url(/images/bg_weave.png);
         background-size: cover;
         opacity: 0.3;
+        z-index: 1;
+        /* border: 1px solid red; */
     }
+    /* .countdown-bar::after {
+        content: "";
+        background-color: var(--brown);
+    } */
     .countdown-bar {
         padding: 16px 24px;
         display: grid; grid-template-columns: repeat(4, 1fr); align-items: center;
         /* gap: clamp(12px, calc(12px), 48px); */
         flex-wrap: wrap;
+        z-index: 10;
     }
     @media (min-width: 40rem) {
         .countdown-bar::before {

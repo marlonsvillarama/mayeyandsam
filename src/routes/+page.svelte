@@ -23,12 +23,12 @@
 <Hero />
 <Venue />
 <Journey />
-<WhatToBring />
+<!-- <WhatToBring /> -->
 <Explore />
 
 <section class="faqs" id="faqs"></section>
 
-<Budget /> <!-- Remove -->
+<!-- <Budget /> -->
 <!-- Summer Party -->
 <!-- FAQs -->
 <!-- RSVP -->
