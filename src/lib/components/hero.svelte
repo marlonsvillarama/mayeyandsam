@@ -21,7 +21,7 @@
             <span>Marielle</span>
         </div>
         <!-- <h1>Sam &amp; Marielle</h1> -->
-        <p class="hero-date">December 27, 2026</p>
+        <p class="hero-date">December 26-27, 2026</p>
         <p class="hero-venue">Boracay, Philippines</p>
     </div>
 

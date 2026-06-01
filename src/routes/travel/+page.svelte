@@ -1,4 +1,5 @@
 <script>
+    import Nav from "$lib/components/nav.svelte";
     import Rsvp from "$lib/components/rsvp.svelte";
     import TravelHero from "$lib/components/travel/travel-hero.svelte";
     import FAQ from "$lib/components/faq.svelte";
@@ -67,10 +68,7 @@
             label: 'What about jet lag? How bad is it?',
             content: `
                 <p>
-                    It's real, but manageable.
-                </p>
-                <p>
-                    Boracay is about 15 to 17 hours ahead of Canada depending on the time of year, so your body will definitely notice.
+                    It's real, but manageable. Boracay is about 15 to 17 hours ahead of Canada depending on the time of year, so your body will definitely notice.
                 </p>
                 <p>
                     The best thing you can do is get sunlight when you arrive, stay awake until local bedtime, and immediately start operating on island time.
@@ -140,6 +138,9 @@
             label: 'What should I pack?',
             content: `
                 <p>
+                    You really do not need heavy clothing in Boracay, although it might be good to bring a folding umbrella. Not only would it be helpful for light drizzles, but it would let you keep exploring despite the mid-morning sun.
+                </p>
+                <p>
                     Make sure to bring at least the following:
                     <ul>
                         <li>Light clothing</li>
@@ -152,27 +153,214 @@
                     </ul>
                 </p>
                 <p>
-                    You really do not need heavy clothing in Boracay, although it might be good to bring a folding umbrella. Not only would it be helpful for light drizzles, but it would let you keep exploring despite the mid-morning sun.
+                    Please take note that if you plan on bringing a Dyson hair tool, it will not work in the Philippines. Appliances made in North America operate at 120V while the Philippines is at 220V. Also, the Philippines is humid. Your hair will make its own decisions.
+                </p>
+            `
+        },
+        {
+            label: 'What adapters should I bring along?',
+            content: `
+                <p>
+                    The Philippines uses Type A outlets and plugs. Refer to the diagram below.
+                </p>
+                <img src="/images/ph-sockets.png" border="0" title="Philippines Power Outlets and Plugs">
+            `
+        },
+        {
+            label: 'Is Boracay safe?',
+            content: `
+                <p>
+                    Yes! Tourism is Boracay's main industry, so the locals do their very best to ensure tourist safety.
                 </p>
                 <p>
-                    Please take note that if you plan on bringing a Dyson hair tool, it will not work in the Philippines. Appliances made in North America operate at 120V while the Philippines is at 220V. Also, the Philippines is humid. Your hair will make its own decisions.
+                    Like anywhere, use common sense with valuables, keep an eye on your belongings at the beach, and maybe don't carry your passport around unnecessarily to avoid losing it.
+                </p>
+                <p>
+                    The biggest danger is honestly sunburn and overconfidence with tropical cocktails.
+                </p>
+            `
+        },
+        {
+            label: 'Will I get sick from the food?',
+            content: `
+                <p>
+                    It's very rare to get sick off of the food in Boracay.
+                </p>
+                <p>
+                    Just use normal travel common sense: drink bottled or filtered water, be cautious with food that's been sitting in the heat for a long time, and ease into street food if your stomach isn't adventurous.
+                </p>
+                <p>
+                    That said, Boracay is extremely tourist-friendly and used to international visitors.
+                </p>
+            `
+        },
+        {
+            label: 'What kind of food should I expect?',
+            content: `
+                <p>
+                    A bit of everything. Boracay has Filipino food, Korean BBQ, Italian, Japanese, Mediterranean, etc. It is also the perfect place to get seafood as they are caught just hours before.
+                </p>
+                <p>
+                    Please try the mangoes. This is not optional.
+                </p>
+            `
+        },
+        {
+            label: 'Are mosquitoes bad?',
+            content: `
+                <p>
+                    They're around especially during sunset, but usually manageable. Bring bug spray if mosquitoes tend to love you personally.
+                </p>
+                <p>
+                    There are no sand flies on the beach.
+                </p>
+            `
+        },
+        {
+            label: 'Do people speak English in the Philippines?',
+            content: `
+                <p>
+                    Yes, very widely. English is one of the official languages of the Philippines, so communication is generally very easy for international travelers. All the signs, menus, and information boards are in English. 
+                </p>
+                <p>
+                    You do not need to learn Tagalog, although <i>"salamat po"</i> (sah-LAH-mat poh - which means "thank you") will absolutely earn you points.
+                </p>
+            `
+        },
+        {
+            label: 'Any other Boracay tips we should know?',
+            content: `
+                <p>
+                    A few things we'd pass along:
+                    <ul>
+                        <li>Bring reef-safe sunscreen (Boracay encourages people to protect the reef).</li>
+                        <li>Check roaming plans or grab a local eSIM.</li>
+                        <li>Always carry cash with you.</li>
+                        <li>Things can occasionally run on "Filipino time" (translation: relaxed and slightly flexible), and honestly, that's part of the charm!</li>
+                        <li>E-tricycles (e-trikes) are the easiest way to get around. If you hop on a shared ride ("joiner"), it's around PHP 15 minimum per person. Private rides can jump to around PHP 100+, so save your pesos where you can.</li>
+                        <li>Vendors will approach you for trinkets, photos, and other services. Do not feel bad if you say no. You are not expected to stop and listen to what they have to offer.</li>
+                        <li>Tipping isn't expected everywhere, but it is highly appreciated for things like massages, tours, water activities, and personal services. Tips are also not percentage based. PHP 100 ($2.25) is acceptable, and PHP 300 ($6.75) is already generous. Almost all restaurant bills include service charge, so tipping is not expected.</li>
+                        <li>Tap water is NOT potable. That is the surest way to ruin your trip.</li>
+                    </ul>
+                </p>
+                <p>
+                    Try local food, swim lots, order the mango shake from Jonah's.
+                </p>
+                <p>
+                    Most importantly, enjoy Boracay!
                 </p>
             `
         }
     ];
 </script>
 
-<Rsvp floating={true} />
-<TravelHero />
-<section>
-<!-- <div class="faq-wrapper"> -->
+<div class="nav-wrapper">
+    <Nav />
+    <Rsvp floating={true} />
+</div>
+<!-- <TravelHero /> -->
+<!-- <section>
+    <h2 class="reveal">Getting to <em>Boracay.</em></h2>
+    <p class="section-intro">Everything you need to know before making the trip to Boracay.</p>
+
     <FAQ {items} />
-<!-- </div> -->
-</section>
+</section> -->
+
+<div class="faq-wrapper">
+    <div class="faq-header">
+        <h2 class="reveal">Getting to <em>Boracay</em></h2>
+        <!-- <p>Boracay is a small island that requires a short journey from the Luzon mainland.</p> -->
+        <p>Here is everything you need to know before making the trip.</p>
+        <div class="faq-img"></div>
+        <!-- <img src="/images/big_003.png"> -->
+    </div>
+    <div class="faq-content">
+        <img class="travel-stamp" src="/images/time-to-travel.png">
+        <FAQ {items} />
+    </div>
+</div>
 
 <style>
-    section {
-        padding-top: 1.5rem;
+    .faq-wrapper {
+        padding: 0 1.5rem;
+        display: grid;
+        gap: 1rem;
+        /* border: 1px solid red; */
+        margin: 3rem auto 4rem;
+    }
+    .faq-header {
+        display: grid;
+        gap: 0.75rem;
         /* border: 1px solid red; */
     }
+    .faq-header p {
+        font-size: 1rem;
+    }
+    /* .faq-header h2 {
+        border: 1px solid red;
+    } */
+    .faq-img {
+        background-image: url(/images/big_003.png);
+        background-size: cover;
+        border-radius: 0.5rem;
+        /* border: 0.5rem solid var(--gold); */
+        box-shadow: 0 4px 20px rgba(197,163,90,0.4);
+        height: 25rem;
+    }
+    .faq-content {
+        position: relative;
+    }
+    .travel-stamp {
+        display: none;
+    }
+    @media (min-width: 30rem) {
+        .travel-stamp {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: clamp(25rem, calc(25rem + 10vw), 35rem);
+            opacity: 5%;
+            transform: translateX(50%) translateY(-10%) rotate(-15deg);
+            z-index: 1;
+        }
+    }
+    @media (min-width: 48rem) {
+        .faq-wrapper {
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            padding: 0;
+            max-width: 80rem;
+            width: 100%;
+        }
+        .faq-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 25rem;
+        }
+        .faq-img {
+            margin-top: 1rem;
+            height: 60rem;
+            background-position: 20% 0;
+            background-repeat: no-repeat;
+        }
+        .faq-content {
+            margin-top: 0.875rem;
+        }
+    }
+    section {
+        /* padding-top: 1.5rem; */
+        /* border: 1px solid red; */
+        display: grid;
+        gap: 1rem;
+    }
+    .section-intro {
+        color: var(--chocolate);
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0;
+        margin-bottom: 0.5rem;
+    }
+    
 </style>

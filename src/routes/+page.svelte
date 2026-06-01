@@ -3,11 +3,13 @@
     import Rsvp from "$lib/components/rsvp.svelte";
     import Hero from "$lib/components/hero.svelte";
     import Venue from "$lib/components/venue.svelte";
-    import Journey from "$lib/components/journey.svelte";
+    import JourneySplit from "$lib/components/journey-split.svelte";
+    // import Journey from "$lib/components/journey.svelte";
     import WhatToBring from "$lib/components/whattobring.svelte";
     import Explore from "$lib/components/explore.svelte";
     import Budget from "$lib/components/budget.svelte";
     import Footer from "$lib/components/footer.svelte";
+  import Celebration from "$lib/components/celebration.svelte";
     // const obs = new IntersectionObserver((entries) => {
     //     entries.forEach((en, i) => {
     //         if (en.isIntersecting) {
@@ -21,8 +23,10 @@
 
 <Rsvp floating={true} />
 <Hero />
-<Venue />
-<Journey />
+<Celebration />
+<!-- <Venue /> -->
+<JourneySplit />
+<!-- <Journey /> -->
 <!-- <WhatToBring /> -->
 <Explore />
 

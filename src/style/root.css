@@ -110,8 +110,8 @@ h2 {
 h2 em { font-style: italic; color: var(--rose); }
 
 .section-intro {
-    font-size: 16px; line-height: 1.8; color: var(--muted);
-    max-width: 540px; margin-bottom: 56px;
+    font-size: 1rem; line-height: 1.5; color: var(--charcoal);
+    max-width: 540px; margin-bottom: 1.5rem;
 }
 
 .divider {
