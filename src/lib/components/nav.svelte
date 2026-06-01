@@ -5,10 +5,10 @@
 <nav>
     <button class="menu-toggle">&#9776;</button>
     <div class="links">
-        <a href="#venue">Event</a>
-        <a href="#travel">Travel</a>
-        <a href="#explore">Explore</a>
-        <a href="#faqs">FAQs</a>
+        <a href="/">Event</a>
+        <a href="/">Travel</a>
+        <a href="/">Explore</a>
+        <a href="/">FAQs</a>
     </div>
 </nav>
 
