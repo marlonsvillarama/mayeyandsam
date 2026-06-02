@@ -8,7 +8,7 @@
     <div class="journey-main">
         <h2 class="reveal">Your journey to <em>Boracay</em> starts here.</h2>
         <p>A few steps, but totally worth it. We'll guide you through the whole journey from airport to island.</p>
-        <FaqLink label="More info" />
+        <FaqLink label="More info" link="travel" />
     </div>
 </SplitCol>
 

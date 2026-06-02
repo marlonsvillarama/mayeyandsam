@@ -1,6 +1,7 @@
 <script>
-    import Nav from "$lib/components/nav.svelte";
-    import Rsvp from "$lib/components/rsvp.svelte";
+    import FaqNav from "$lib/components/faq-nav.svelte";
+    // import Nav from "$lib/components/nav.svelte";
+    // import Rsvp from "$lib/components/rsvp.svelte";
     import TravelHero from "$lib/components/travel/travel-hero.svelte";
     import FAQ from "$lib/components/faq.svelte";
 
@@ -254,39 +255,46 @@
     ];
 </script>
 
-<div class="nav-wrapper">
-    <Nav />
-    <Rsvp floating={true} />
-</div>
-<!-- <TravelHero /> -->
-<!-- <section>
-    <h2 class="reveal">Getting to <em>Boracay.</em></h2>
-    <p class="section-intro">Everything you need to know before making the trip to Boracay.</p>
+<div class="travel">
+    <FaqNav />
+    <!-- <div class="nav-wrapper">
+        <Nav />
+        <Rsvp />
+    </div> -->
+    <!-- <TravelHero /> -->
+    <!-- <section>
+        <h2 class="reveal">Getting to <em>Boracay.</em></h2>
+        <p class="section-intro">Everything you need to know before making the trip to Boracay.</p>
 
-    <FAQ {items} />
-</section> -->
-
-<div class="faq-wrapper">
-    <div class="faq-header">
-        <h2 class="reveal">Getting to <em>Boracay</em></h2>
-        <!-- <p>Boracay is a small island that requires a short journey from the Luzon mainland.</p> -->
-        <p>Here is everything you need to know before making the trip.</p>
-        <div class="faq-img"></div>
-        <!-- <img src="/images/big_003.png"> -->
-    </div>
-    <div class="faq-content">
-        <img class="travel-stamp" src="/images/time-to-travel.png">
         <FAQ {items} />
+    </section> -->
+
+    <div class="faq-wrapper">
+        <div class="faq-header">
+            <h2 class="reveal">Getting to <em>Boracay</em></h2>
+            <!-- <p>Boracay is a small island that requires a short journey from the Luzon mainland.</p> -->
+            <p>Here is everything you need to know before making the trip.</p>
+            <div class="faq-img"></div>
+            <!-- <img src="/images/big_003.png"> -->
+        </div>
+        <div class="faq-content">
+            <img class="travel-stamp" src="/images/time-to-travel.png">
+            <FAQ {items} />
+        </div>
     </div>
 </div>
 
 <style>
+    .travel {
+        position: relative;
+        padding-top: 6rem;
+    }
     .faq-wrapper {
         padding: 0 1.5rem;
         display: grid;
         gap: 1rem;
         /* border: 1px solid red; */
-        margin: 3rem auto 4rem;
+        margin: 0 auto 4rem;
     }
     .faq-header {
         display: grid;

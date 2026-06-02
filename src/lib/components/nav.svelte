@@ -1,6 +1,8 @@
 <script>
-    import Rsvp from "./rsvp.svelte";
+    // import Rsvp from "./rsvp.svelte";
 </script>
+
+<svelte:window onscroll={scrollNav} />
 
 <nav>
     <button class="menu-toggle">&#9776;</button>
@@ -13,6 +15,13 @@
 </nav>
 
 <style>
+    :global(nav.scrolled) {
+        background-color: var(--sand);
+        box-shadow: 0 4px 20px rgba(197,163,90,0.4);
+    }
+    :global(nav.scrolled .links a) {
+        color: var(--chocolate);
+    }
     nav .menu-toggle {
         font-size: 32px;
         color: var(--ivory);

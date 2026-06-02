@@ -30,6 +30,7 @@
     }
     .split-2 {
         display: grid;
+        width: 100%;
         /* gap: 1.5rem; */
     }
     @media (min-width: 48rem) {

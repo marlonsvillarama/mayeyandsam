@@ -1,18 +1,19 @@
 <script>
     // import BookNow from "./book-now.svelte";
     import Countdown from "./countdown.svelte";
-    import Nav from "./nav.svelte";
+    // import Nav from "./nav.svelte";
     // import Rsvp from "./rsvp.svelte";
 </script>
+
+<!-- <div class="nav-wrapper">
+    <Nav />
+    <Rsvp />
+</div> -->
 
 <section class="hero" id="hero">
     <div class="parallax"></div>
 
     <!-- <div class="petals-container" id="petals"></div> -->
-    <div class="nav-wrapper">
-        <Nav />
-        <!-- <Rsvp /> -->
-    </div>
 
     <div class="hero-content">
         <div class="title">
@@ -89,11 +90,11 @@
         /* background-attachment: fixed; */
         z-index: 1;
     }
-    .nav-wrapper {
-        position: absolute; top: 0; left: 0; right: 0; z-index: 200;
+    /* .nav-wrapper {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 200;
         display: flex; justify-content: space-between; align-items: center;
         padding: 16px clamp(9px, calc(2px + 3vw), 24px) 0 clamp(24px, calc(8px + 3vw), 36px);
-    }
+    } */
 
     /* .hero-bg {
         position: absolute; inset: 0; z-index: 0;

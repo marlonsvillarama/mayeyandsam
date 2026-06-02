@@ -1,9 +1,12 @@
 <script>
-    let { label } = $props();
+    let {
+        label,
+        link = ""
+    } = $props();
 </script>
 
 <div class="faq-link">
-    <a href="/travel" title={label}>
+    <a href="/{link}" title={label}>
         <span>{label}</span>
         <i class="ph ph-arrow-right"></i>
     </a>
