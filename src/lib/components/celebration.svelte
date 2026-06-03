@@ -6,7 +6,7 @@
 
 <div class="celebration">
     <!-- <img class="travel-stamp" src="/images/time-to-travel.png"> -->
-    <h2 class="reveal">A celebration in <em>paradise.</em></h2>
+    <!-- <h2 class="reveal">A celebration in <em>paradise.</em></h2>s -->
 
     <!-- <SplitCol>
         <div class="celeb">col 1</div>
@@ -16,11 +16,12 @@
         <div class="celeb">
             <div class="celeb-header">
                 <div class="celeb-title">Welcome Party</div>
-                <p>A perfect evening to get to know each other while enjoying good food and drinks.</p>
+                <p>December 26, 2026</p>
+                <p class="celeb-desc">A perfect evening to get to know each other while enjoying good food and drinks.</p>
             </div>
             
             <div class="celeb-detail">
-                <p class="celeb-date">December 26, 2026</p>
+                <!-- <p class="celeb-date">December 26, 2026</p> -->
                 <p>-----------------</p>
                 <p>Tropical cocktail</p>
             </div>
@@ -30,11 +31,12 @@
         <div class="celeb">
             <div class="celeb-header">
                 <div class="celeb-title">Ceremony & Reception</div>
-                <p>Join us as we exchange vows by the sea and celebrate the beginning of our forever.</p>
+                <p>December 27, 2026</p>
+                <p class="celeb-desc">Join us as we exchange vows by the sea and celebrate the beginning of our forever.</p>
             </div>
             
             <div class="celeb-detail">
-                <p class="celeb-date">December 27, 2026</p>
+                <!-- <p class="celeb-date">December 27, 2026</p> -->
                 <p>Mövenpick Beachfront</p>
                 <p>Tropical cocktail</p>
             </div>
@@ -50,7 +52,7 @@
         flex-direction: column;
         align-items: center;
         gap: 2rem;
-        padding: 8rem 0;
+        padding: 5rem 0;
         position: relative;
     }
     .celeb {
@@ -91,7 +93,7 @@
         text-underline-offset: 1.5rem;
         font-weight: 500;
         text-align: center;
-        padding-bottom: 0.25rem;
+        padding-bottom: 0.125rem;
         /* border-bottom: 1.5px solid var(--gold-light); */
     }
     .celeb-detail p {
@@ -106,6 +108,9 @@
         font-family: 'Cormorant Garamond', serif;
         font-size: 1.5rem;
         font-weight: 700;
+    }
+    p.celeb-desc {
+        font-weight: 300;
     }
     /* .travel-stamp {
         position: absolute;

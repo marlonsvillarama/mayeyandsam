@@ -11,7 +11,9 @@
     import Budget from "$lib/components/budget.svelte";
     import Footer from "$lib/components/footer.svelte";
     import Celebration from "$lib/components/celebration.svelte";
-    import ImgBreak from "$lib/components/img-break.svelte";
+    // import BeachExp from "$lib/components/beach-exp.svelte";
+    import SlowDown from "$lib/components/slow-down.svelte";
+    import IslandToRemember from "$lib/components/island-to-remember.svelte";
     // const obs = new IntersectionObserver((entries) => {
     //     entries.forEach((en, i) => {
     //         if (en.isIntersecting) {
@@ -47,14 +49,18 @@
 
 <Celebration />
 <!-- <Venue /> -->
+<IslandToRemember />
+<!-- <BeachExp /> -->
 <JourneySplit />
 <!-- <Journey /> -->
 <!-- <WhatToBring /> -->
-<ImgBreak />
-<Explore />
 <ExploreSplit />
+<SlowDown />
 
-<section class="faqs" id="faqs"></section>
+<!-- <Explore /> -->
+<!--  -->
+
+<!-- <section class="faqs" id="faqs"></section> -->
 
 <!-- <Budget /> -->
 <!-- Summer Party -->

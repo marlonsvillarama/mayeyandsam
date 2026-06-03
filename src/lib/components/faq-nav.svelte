@@ -19,7 +19,7 @@
 
 <div id="nav-wrapper" class="nav-wrapper">
     <nav>
-        <button class="menu-toggle">&#9776;</button>
+        <!-- <button class="menu-toggle">&#9776;</button> -->
 
         <div class="links">
             <i class="ph ph-arrow-left"></i>
@@ -27,11 +27,11 @@
         </div>
     </nav>
 
-    <div class="title">
+    <!-- <div class="title">
         <span>Sam</span>
         <span>&amp;</span>
         <span>Marielle</span>
-    </div>
+    </div> -->
 
     <Rsvp />
 </div>

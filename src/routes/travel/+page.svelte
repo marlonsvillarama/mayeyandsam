@@ -4,6 +4,7 @@
     // import Rsvp from "$lib/components/rsvp.svelte";
     import TravelHero from "$lib/components/travel/travel-hero.svelte";
     import FAQ from "$lib/components/faq.svelte";
+    import Footer from "$lib/components/footer.svelte";
 
     let items = [
         {
@@ -283,18 +284,21 @@
         </div>
     </div>
 </div>
+<Footer />
 
 <style>
     .travel {
         position: relative;
         padding-top: 6rem;
+        /* border: 1px solid red; */
     }
     .faq-wrapper {
-        padding: 0 1.5rem;
+        padding: 0 2.5rem;
         display: grid;
         gap: 1rem;
         /* border: 1px solid red; */
         margin: 0 auto 4rem;
+        overflow-x: hidden;
     }
     .faq-header {
         display: grid;
@@ -333,23 +337,30 @@
             z-index: 1;
         }
     }
-    @media (min-width: 48rem) {
+    @media (min-width: 60rem) {
         .faq-wrapper {
-            grid-template-columns: auto 1fr;
-            gap: 3rem;
-            padding: 0;
-            max-width: 80rem;
+            padding-left: 30%;
+            /* padding-left: clamp(35%, calc(35% + 1vw), 40%); */
+            /* grid-template-columns: auto 1fr; */
+            /* gap: 3rem; */
+            /* padding: 0; */
+            max-width: 90%;
             width: 100%;
         }
         .faq-header {
+            position: fixed;
             display: flex;
             flex-direction: column;
+            width: 27%;
+            margin-top: 0.5rem;
+            margin-left: -30%;
             gap: 0.75rem;
-            max-width: 25rem;
+            /* max-width: 25rem; */
         }
         .faq-img {
             margin-top: 1rem;
-            height: 60rem;
+            /* height: 35rem; */
+            height: clamp(25rem, calc(25rem + 2vw), 35rem);
             background-position: 20% 0;
             background-repeat: no-repeat;
         }
@@ -357,18 +368,15 @@
             margin-top: 0.875rem;
         }
     }
-    section {
-        /* padding-top: 1.5rem; */
-        /* border: 1px solid red; */
+    /* section {
         display: grid;
         gap: 1rem;
-    }
-    .section-intro {
+    } */
+    /* .section-intro {
         color: var(--chocolate);
         font-size: 1rem;
         font-weight: 400;
         letter-spacing: 0;
         margin-bottom: 0.5rem;
-    }
-    
+    } */
 </style>

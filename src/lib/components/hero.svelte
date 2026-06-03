@@ -232,6 +232,7 @@
         flex-direction: column;
         justify-content: center;
         gap: 12px;
+        margin-bottom: 4rem;
     }
     @media (min-width: 30rem) {
         .hero-content .title {
@@ -246,7 +247,8 @@
         color: var(--white);
         line-height: 0.95;
         letter-spacing: -2px;
-        text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        /* text-shadow: 0 2px 40px rgba(0,0,0,0.3); */
         /* margin-bottom: 4rem; */
         animation: fade-up 1s ease 0.15s both;
     }
