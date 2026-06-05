@@ -11,9 +11,15 @@ body {
     color: var(--charcoal);
     overflow-x: hidden;
     font-weight: 300;
-    font-size: 14px;
+    font-size: 16px;
 }
 
+.wrapper {
+    margin: 0 auto;
+    max-width: 92rem;
+    padding: 0 1.5rem;
+    /* border: 1px solid red; */
+}
 
 
 

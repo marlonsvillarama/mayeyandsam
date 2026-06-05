@@ -1,15 +1,17 @@
 <script>
     import FaqLink from "./faq-link.svelte";
     import SplitCol from "./split-col.svelte";
+    import TapedPaper from "./taped-paper.svelte";
 </script>
 
-<SplitCol bg="cream">
-    <div class="journey-img"></div>
+<SplitCol bg="ivory">
+    <!-- <div class="journey-img"></div> -->
     <div class="journey-main">
-        <h2 class="reveal">Your journey to <em>Boracay</em> starts here.</h2>
+        <h2 class="reveal">Your journey to Boracay starts here.</h2>
         <p>A few steps, but totally worth it. We'll guide you through the whole journey from airport to island.</p>
         <FaqLink label="More info" link="travel" />
     </div>
+    <TapedPaper />
 </SplitCol>
 
 <style>

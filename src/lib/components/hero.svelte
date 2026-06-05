@@ -15,6 +15,11 @@
 
     <!-- <div class="petals-container" id="petals"></div> -->
 
+        <!-- <div class="title">
+            <span>Sam</span>
+            <span>&amp;</span>
+            <span>Marielle</span>
+        </div> -->
     <div class="hero-content">
         <div class="title">
             <span>Sam</span>
@@ -31,9 +36,9 @@
         <div class="scroll-dot"></div>
     </div> -->
 
-    <div class="countdown">
+    <!-- <div class="countdown">
         <Countdown />
-    </div>
+    </div> -->
 </section>
 
 <!-- <section id="hero">
@@ -227,6 +232,29 @@
     } */
 
     /* .hero h1 { */
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 4rem;
+    }
+    @media (min-width: 30rem) {
+        .title {
+            flex-direction: row;
+        }
+    }
+    .title span {
+        /* font-family: 'Cormorant Garamond', serif; */
+        font-family: "Eyesome", cursive;
+        font-size: clamp(62px, 12vw, 96px);
+        font-weight: 300;
+        color: var(--white);
+        line-height: 0.95;
+        letter-spacing: -2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+        animation: fade-up 1s ease 0.15s both;
+    }
     .hero-content .title {
         display: flex;
         flex-direction: column;

@@ -21,7 +21,7 @@
         align-items: start;
     }
     .faq-link > a {
-        padding: 0.625rem 4rem;
+        padding: 0.625rem 2rem;
         background-color: var(--sand);
         border-radius: 100px;
         border: 0;

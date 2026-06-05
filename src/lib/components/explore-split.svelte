@@ -41,9 +41,14 @@
         flex-direction: column;
         align-items: center;
         gap: 5rem;
-        padding: 5rem 0 8rem;
+        padding: 5rem 0 1.5rem;
         position: relative;
         /* margin: 0 2rem; */
+    }
+    .explore h2 {
+        /* margin: 0 auto;
+        border: 1px solid red; */
+        text-align: center;
     }
     .explore-layout {
         /* max-width: 68.75rem; */
@@ -54,6 +59,9 @@
         gap: 1.5rem;
     }
     @media (min-width: 30rem) {
+        .explore {
+            padding-bottom: 3px;
+        }
         .explore-layout {
             display: grid;
             grid-template-columns: repeat(2, 1fr);

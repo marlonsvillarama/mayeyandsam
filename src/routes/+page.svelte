@@ -49,8 +49,9 @@
 
 <Celebration />
 <!-- <Venue /> -->
-<IslandToRemember />
+<!-- <IslandToRemember /> -->
 <!-- <BeachExp /> -->
+
 <JourneySplit />
 <!-- <Journey /> -->
 <!-- <WhatToBring /> -->

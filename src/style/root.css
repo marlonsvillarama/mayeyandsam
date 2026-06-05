@@ -13,9 +13,18 @@
     --buff: #DAA06D;
     --chocolate: #7B3F00;
 
+    --terracota: #c86a4a;
+
     --ivory: #FAF6F0;
     --cream: #F2EAD8;
+    --cream-blur: rgba(242 234 216 / 0.1); /* #F2EAD8; */
     --sand: #E8D9BC;
+    --warm-sand: #e9dcc6;
+    --coconut: #f7f3ed;
+    --rafia: #Dcc9a6;
+    --muted-palm: #6c8a6a; /* SUBHEADERS */
+    --espresso: #382a20; /* TEXT */
+
     --gold: #C5A35A;
     --gold-light: #D9B97A;
     --gold-pale: #F0E4C2;
@@ -107,6 +116,7 @@ h2 {
     letter-spacing: -1px;
     margin-bottom: 16px;
 }
+/* h2 em { font-style: italic; color: var(--rose); } */
 h2 em { font-style: italic; color: var(--rose); }
 
 .section-intro {
