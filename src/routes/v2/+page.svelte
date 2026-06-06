@@ -1,19 +1,27 @@
 <script>
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import Nav from "$lib/components/v2/global/nav.svelte";
+    import Hero from "$lib/components/v2/global/hero.svelte";
     import TornImage from "$lib/components/v2/global/torn-image.svelte";
+    import Venue from "$lib/components/v2/global/venue.svelte";
+    import Explore from "$lib/components/v2/global/explore.svelte";
+    import TriBar from "$lib/components/v2/global/tribar.svelte";
 </script>
 
 <div class="page-wrapper">
     <Anahaw />
     <Nav />
     <div class="content">
-        <div class="hero wrapper">
-            <div>header</div>
-            <TornImage left={true} bottom={true} image="/images/big_002.png" height="800">
-                <!-- <img  height="400"> -->
-            </TornImage>
+        <Hero />
+        <div class="hero-img">
+            <div></div>
+
+            <TornImage left={true} bottom={true} image="/images/marielle_and_sam_01.jpg" height="600" />
         </div>
+
+        <Venue />
+        <Explore />
+        <TriBar />
     </div>
     <Anahaw position="bottom-right" />
 </div>
@@ -24,15 +32,20 @@
         position: relative;
     }
     .content {
-        /* border-top: 1px solid red; */
+        /* border: 1px solid red; */
         margin-top: 3.25rem;
+        display: grid;
+        padding-bottom: 6rem;
+        /* gap: 1rem; */
         /* height: 1000px; */
     }
-    .hero {
+    .hero-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        /* border: 1px solid red; */
-        overflow-x:visible;
     }
     /* .hero:first-child {
     } */

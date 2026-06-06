@@ -15,12 +15,13 @@
         --tape-gray: #dbd8be;
         --tape-edge-gray: #b7b49d;
 
+        /* border: 1px solid red; */
         position: relative;
         background-image: url(/images/big_002.png);
         background-size: cover;
         background-position: center;
-        height: 25rem;
-        width: 40rem;
+        height: 20rem;
+        width: 30rem;
 
         display: flex;
         align-items: center;
@@ -64,8 +65,8 @@
     .tape-section::before,
     .tape-section::after {
         content: "";
-        width: 20vmin;
-        height: 6vmin;
+        width: 12vmin;
+        height: 5vmin;
         position: absolute;
         background-color: var(--tape-gray);
         opacity: 0.5;

@@ -9,7 +9,7 @@
         bottom = false
     } = $props();
 
-    let bgImage = $derived(`background-image:url("${image}");`);
+    let bgImage = $derived(`background-image:url("${image}"); background-size:cover;`);
     let bgHeight = $derived(`height:${height}px; width:auto;`);
 
     let leftWidth = $derived(`width:${height}px;`);

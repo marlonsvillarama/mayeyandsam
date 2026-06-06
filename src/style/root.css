@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
     font-family: "Eyesome";
     src: url("/fonts/Eyesome-Script.otf");
 }
@@ -6,6 +6,11 @@
 @font-face {
     font-family: "Glacial";
     src: url("/fonts/GlacialIndifference-Regular.otf");
+} */
+
+@font-face {
+    font-family: "Thesignature";
+    src: url("/fonts/thesignature.regular.otf");
 }
 
 :root {
@@ -108,16 +113,27 @@ section { padding: 48px 32px; }
     margin-bottom: 8px;
     display: block;
 }
-h2 {
+h1, h2, h3 {
     font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(36px, 5vw, 58px);
     font-weight: 300;
     line-height: 1.1;
     letter-spacing: -1px;
     margin-bottom: 16px;
 }
+h1 { font-size: clamp(48px, 5vw, 72px); }
+h2 { font-size: clamp(36px, 5vw, 58px); }
+h3 { font-size: clamp(32px, 5vw, 48px); }
 /* h2 em { font-style: italic; color: var(--rose); } */
-h2 em { font-style: italic; color: var(--rose); }
+h1 em, h2 em {
+    font-style: italic; color: var(--rose);
+}
+span.script {
+    color: var(--terracota);
+    font-family: "Thesignature", sans-serif;
+    font-size: 2.5rem;
+    line-height: 2rem;
+    /* border: 1px solid red; */
+}
 
 .section-intro {
     font-size: 1rem; line-height: 1.5; color: var(--charcoal);

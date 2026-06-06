@@ -6,9 +6,9 @@ html {
     scroll-behavior: smooth;
 }
 body {
-    font-family: 'Jost', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     background: var(--ivory);
-    color: var(--charcoal);
+    color: var(--espresso);
     overflow-x: hidden;
     font-weight: 300;
     font-size: 16px;
@@ -16,7 +16,7 @@ body {
 
 .wrapper {
     margin: 0 auto;
-    max-width: 92rem;
+    max-width: 80rem;
     padding: 0 1.5rem;
     /* border: 1px solid red; */
 }
