@@ -1,19 +1,26 @@
 <script>
     let {
-        position = "top-left"
+        fixed = false,
+        position = "top-left",
     } = $props();
 
-    let bg = $derived(`anahaw ${position}`);
+    let bg = $derived(`anahaw ${fixed === true ? 'anahaw-fixed' : ''} ${position}`);
 </script>
 
 <div class={bg}></div>
 
 <style>
-    .anahaw {
+    .anahaw-fixed {
         position: fixed;
+    }
+    /* .anahaw-absolute {
+        position: absolute;
+    } */
+    .anahaw {
         background-repeat: no-repeat;
         opacity: 0.3;
         display: none;
+        z-index: -1;
         /* border: 1px solid red; */
     }
     .top-left {

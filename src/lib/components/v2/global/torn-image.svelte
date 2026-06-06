@@ -45,6 +45,7 @@
     .img-wrapper {
         /* display: inline-block; */
         position: relative;
+        background-position: center;
         /* border: 1px solid blue; */
     }
     :global(.img-wrapper > img) {
@@ -81,6 +82,7 @@
         top: 0;
         left: 0;
         height: 27px;
+        /* transform: scaleY(5); */
     }
     .right {
         top: 0;

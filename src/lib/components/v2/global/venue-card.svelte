@@ -15,8 +15,14 @@
     <div class="details">
         <span class="label">{label}</span>
         <span class="date">{date}</span>
-        <span class="location">{location}</span>
-        <span class="location">Tropical Cocktail</span>
+        <span class="location">
+            <div class="image"></div>
+            {location}
+        </span>
+        <div class="attire">
+            <div class="image"></div>
+            Tropical Cocktail
+        </div>
     </div>
 </div>
 
@@ -55,26 +61,50 @@
         text-transform: uppercase;
     }
     .details > .date {
-        /* border: 1px solid red; */
+        color: var(--espresso);
         font-family: 'Cormorant Garamond', serif;
         font-size: 3.5rem;
         font-weight: 200;
         line-height: 2.25rem;
-        padding-bottom: 0.75rem;
+        padding-bottom: 1.5rem;
         border-bottom: 1.5px dotted var(--chocolate);
-        margin-bottom: 0.25rem;
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
     }
     .details > .date::after {
         content: "th";
         font-size: 1rem;
         vertical-align: super;
     }
-    .details > .location {
+    .details > .location,
+    .details > .attire {
         color: var(--espresso);
         font-size: 0.875rem;
-        font-weight: 400;
+        font-weight: 500;
         letter-spacing: 0.5px;
         opacity: 0.7;
-        /* text-transform: uppercase; */
+        display: flex;
+        align-items: center;
+    }
+    .details > .location {
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+    }
+    /* .details > .attire {
+        display: flex;
+        align-items: center;
+    } */
+    .location > .image,
+    .attire > .image {
+        background-repeat: no-repeat;
+        height: 1.5rem;
+        width: 1.75rem;
+        /* width: 50px; */
+    }
+    .location > .image {
+        background-image: url("/images/SVG/map-pin.svg");
+    }
+    .attire > .image {
+        background-image: url("/images/SVG/dress.svg");
     }
 </style>

@@ -6,10 +6,12 @@
     import Venue from "$lib/components/v2/global/venue.svelte";
     import Explore from "$lib/components/v2/global/explore.svelte";
     import TriBar from "$lib/components/v2/global/tribar.svelte";
+    import WithLove from "$lib/components/v2/global/with-love.svelte";
+    import Footer from "$lib/components/v2/global/footer.svelte";
 </script>
 
 <div class="page-wrapper">
-    <Anahaw />
+    <Anahaw fixed={true} />
     <Nav />
     <div class="content">
         <Hero />
@@ -22,6 +24,8 @@
         <Venue />
         <Explore />
         <TriBar />
+        <WithLove />
+        <Footer />
     </div>
     <Anahaw position="bottom-right" />
 </div>
@@ -35,7 +39,7 @@
         /* border: 1px solid red; */
         margin-top: 3.25rem;
         display: grid;
-        padding-bottom: 6rem;
+        /* padding-bottom: 6rem; */
         /* gap: 1rem; */
         /* height: 1000px; */
     }

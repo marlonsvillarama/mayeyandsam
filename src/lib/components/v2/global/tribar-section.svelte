@@ -31,7 +31,7 @@
         margin: 1rem;
         display: grid;
         grid-template-columns: 20% auto;
-        gap: 1rem;
+        gap: 1.5rem;
         /* padding-left: 1.5rem; */
         padding-right: 1.5rem;
     }

@@ -34,9 +34,10 @@
         cursor: pointer;
         /* color: var(--charcoal); */
         transition: all 0.2s;
+        display: inline;
         /* display: flex; */
         /* flex: 0; */
-        margin: 0 auto;
+        /* margin: 0 auto; */
         padding: 0.5rem 2rem;
         align-items: center;
         gap: 0.5rem;

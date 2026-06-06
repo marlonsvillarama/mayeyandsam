@@ -2,7 +2,7 @@
     import TribarSection from "./tribar-section.svelte";
 </script>
 
-<div class="tribar">
+<div class="tribar wrapper">
     <div class="wrapper">
         <TribarSection label="The Weekend"
             image="/images/SVG/cocktail copy.svg"
@@ -31,6 +31,9 @@
 </div>
 
 <style>
+    /* .tribar {
+        border: 1px solid red;
+    } */
     .tribar > .wrapper {
         border-radius: 1.5rem;
         padding: 0.5rem;
@@ -38,6 +41,6 @@
         grid-template-columns: repeat(3, 1fr);
         background-color: var(--cream);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-        width: 100%;
+        /* width: 100%; */
     }
 </style>
