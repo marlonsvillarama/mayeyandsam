@@ -22,13 +22,14 @@
         grid-template-columns: 1fr 1fr;
     }
     .with-love > .wrapper > .kiss {
-        background-image: url("/images/kiss.webp");
-        background-size: cover;
+        background-image: url("/images/marielle_and_sam_07.jpg");
+        background-size: 150%;
         background-position: center;
         width: 100%;
         height: 25rem;
         border-top-left-radius: 1.5rem;
         border-top-right-radius: 1.5rem;
+        /* transform: scale(2); */
     }
     .with-love > .wrapper > .details {
         /* border: 1px solid red; */

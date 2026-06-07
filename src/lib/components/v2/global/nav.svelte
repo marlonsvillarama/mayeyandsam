@@ -7,7 +7,7 @@
         <span class="title">Sam & Marielle</span>
         <nav>
             <ul>
-                <li><a href="/">Our Story</a></li>
+                <!-- <li><a href="/">Our Story</a></li> -->
                 <li><a href="/">The Weekend</a></li>
                 <li><a href="/">Travel</a></li>
                 <li class="rsvp">

@@ -31,24 +31,35 @@
         /* border: 1px solid red; */
         border-radius: 1.5rem;
         padding: 0.5rem;
-        display: grid;
-        grid-template-columns: auto 1fr;
         /* gap: 1rem; */
         background-color: var(--cream);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         width: 100%;
+        margin: 0 auto;
         /* box-shadow: var(--chocolate) 0px 3px 8px; */
     }
     :global(.img) {
-        width: 15rem;
+        /* width: 15rem; */
+        width: 100%;
         height: 13rem;
         background-size: cover;
         background-position: center;
         border-radius: 1rem;
     }
+    @media (min-width: 40rem) {
+        .venue-card {
+            display: grid;
+            grid-template-columns: auto 1fr;
+        }
+        :global(.img) {
+            /* width: clamp(10rem, calc(10rem + 6vw), 15rem); */
+            width: 13rem;
+            height: 100%;
+        }
+    }
     .details {
         padding: 0.75rem 1.25rem;
-        width: 18rem;
+        /* width: 18rem; */
         display: flex;
         flex-direction: column;
         color: var(--chocolate);

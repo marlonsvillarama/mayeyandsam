@@ -10,18 +10,23 @@
 <div class={bg}></div>
 
 <style>
-    .anahaw-fixed {
-        position: fixed;
-    }
-    /* .anahaw-absolute {
-        position: absolute;
-    } */
     .anahaw {
         background-repeat: no-repeat;
         opacity: 0.3;
         display: none;
         z-index: -1;
-        /* border: 1px solid red; */
+    }
+    .anahaw-fixed {
+        display: none;
+    }
+    @media (min-width: 40rem) {
+        .anahaw {
+            display: block;
+        }
+        .anahaw-fixed {
+            display: block;
+            position: fixed;
+        }
     }
     .top-left {
         background-image: url(/images/SVG/anahaw-2.svg);
@@ -39,10 +44,5 @@
         bottom: 0;
         right: 0;
         transform: rotate(180deg);
-    }
-    @media (min-width: 48rem) {
-        .anahaw {
-            display: block;
-        }
     }
 </style>

@@ -4,8 +4,8 @@
     import FaqLink from "./faq-link.svelte";
 </script>
 
-<div class="hero wrapper">
-    <div class="content">
+<div class="hero">
+    <div class="wrapper">
         <!-- <div class="details">
             <div class="detail-row" style="color: #382a20;">
                 <CalendarDays />
@@ -21,7 +21,7 @@
 
         <p>We can't wait to celebrate our love with you in beautiful Boracay.</p>
 
-        <FaqLink label="Read Our Story" link="travel" />
+        <!-- <FaqLink label="Read Our Story" link="travel" /> -->
 
         <Countdown />
     </div>

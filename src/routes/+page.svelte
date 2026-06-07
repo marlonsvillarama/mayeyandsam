@@ -14,18 +14,20 @@
     <Anahaw fixed={true} />
     <Nav />
     <div class="content">
-        <Hero />
+        <!-- <div class="wrapper"> -->
+        <!-- <Hero />
         <div class="hero-img">
             <div></div>
 
             <TornImage left={true} bottom={true} image="/images/marielle_and_sam_01.jpg" height="600" />
-        </div>
+        </div> -->
+        <!-- </div> -->
 
         <Venue />
-        <Explore />
-        <TriBar />
-        <WithLove />
-        <Footer />
+        <!-- <Explore /> -->
+        <!-- <TriBar /> -->
+        <!-- <WithLove /> -->
+        <!-- <Footer /> -->
     </div>
     <Anahaw position="bottom-right" />
 </div>
