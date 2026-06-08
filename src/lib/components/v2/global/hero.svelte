@@ -6,43 +6,48 @@
 
 <div class="hero">
     <div class="wrapper">
-        <!-- <div class="details">
-            <div class="detail-row" style="color: #382a20;">
-                <CalendarDays />
-                <span>December 27, 2026</span>
-            </div>
-            <div class="detail-row" style="color: #382a20;">
-                <MapPin />
-                <span>Boracay, Philippines</span>
-            </div>
-        </div> -->
+        <div>
+            <h1>A celebration in <em>paradise.</em></h1>
 
-        <h1>A celebration in <em>paradise.</em></h1>
+            <p>We can't wait to celebrate our love with you in beautiful Boracay.</p>
 
-        <p>We can't wait to celebrate our love with you in beautiful Boracay.</p>
-
-        <!-- <FaqLink label="Read Our Story" link="travel" /> -->
-
-        <Countdown />
+            <Countdown />
+        </div>
+        <div></div>
     </div>
-    <div></div>
 </div>
 
 <style>
     .hero {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        /* border: 1px solid red; */
+        /* display: grid;
+        grid-template-columns: 1fr 1fr; */
         /* overflow-x: visible; */
         padding-top: 3rem;
-        padding-bottom: 4rem;
+        padding-bottom: 3rem;
     }
-    .hero > .content {
+    .hero > .wrapper > div:first-child {
+        /* border: 1px solid red; */
         color: var(--espresso);
         display: flex;
         flex-direction: column;
         align-items: flex-start;
-        gap: 2.5rem;
+        gap: clamp(1.25rem, calc(1.25rem + 1vw), 2.5rem);
+    }
+    .hero > .wrapper > div:last-child {
+        display: none;
+    }
+    @media (min-width: 64rem) {
+        .hero {
+            padding-bottom: 4rem;
+        }
+        .hero > .wrapper {
+            display: grid;
+            grid-template-columns: 45% 55%;
+            /* max-width: 45%; */
+        }
+        .hero > .wrapper > div:last-child {
+            display: none;
+        }
     }
     /* .details {
         display: grid;
@@ -60,10 +65,11 @@
         letter-spacing: 2px;
         text-transform: uppercase;
     } */
-    .content > p {
+    .hero > .wrapper > div > p {
         color: var(--chocolate);
         /* font-size: 1.125rem; */
         font-weight: 300;
         letter-spacing: 0.25px;
+        /* border: 1px solid red; */
     }
 </style>

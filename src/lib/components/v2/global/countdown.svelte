@@ -98,7 +98,7 @@
         text-align: center;
     }
     .count-item:not(:last-child) {
-        border-right: 1.5px dotted var(--chocolate);
+        /* border-right: 1.5px dotted var(--chocolate); */
         padding-right: clamp(32px, calc(32px + 3vw), 32px);
         /* content: "";
         height: 80%;
@@ -117,7 +117,9 @@
         .count-num {
             font-size: 48px;
         }
-        
+        .count-item:not(:last-child) {
+            border-right: 1.5px dotted var(--chocolate);
+        }
     }
     .count-label {
         font-size: 13px; letter-spacing: 2.5px; text-transform: uppercase;

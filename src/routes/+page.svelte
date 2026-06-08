@@ -15,19 +15,19 @@
     <Nav />
     <div class="content">
         <!-- <div class="wrapper"> -->
-        <!-- <Hero />
+        <Hero />
         <div class="hero-img">
             <div></div>
 
             <TornImage left={true} bottom={true} image="/images/marielle_and_sam_01.jpg" height="600" />
-        </div> -->
+        </div>
         <!-- </div> -->
 
         <Venue />
-        <!-- <Explore /> -->
-        <!-- <TriBar /> -->
-        <!-- <WithLove /> -->
-        <!-- <Footer /> -->
+        <Explore />
+        <TriBar />
+        <WithLove />
+        <Footer />
     </div>
     <Anahaw position="bottom-right" />
 </div>
@@ -37,15 +37,18 @@
         position: relative;
     }
     .content {
-        margin-top: 3.25rem;
+        margin-top: 4rem;
         display: grid;
     }
-    .hero-img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        display: grid;
-        grid-template-columns: 45% 55%;
+    .hero-img { display: none; }
+    @media (min-width: 64rem) {
+        .hero-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 45% 55%;
+        }
     }
 </style>

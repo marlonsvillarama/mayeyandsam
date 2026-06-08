@@ -4,10 +4,9 @@
 
 <div class="top-nav">
     <div class="wrapper">
-        <span class="title">Sam & Marielle</span>
-        <nav>
+        <a href="/" class="title">Sam & Marielle</a>
+        <!-- <nav>
             <ul>
-                <!-- <li><a href="/">Our Story</a></li> -->
                 <li><a href="/">The Weekend</a></li>
                 <li><a href="/">Travel</a></li>
                 <li class="rsvp">
@@ -17,7 +16,7 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav> -->
     </div>
 </div>
 
@@ -30,7 +29,7 @@
         background: linear-gradient(to right, transparent 0%, var(--cream-blur) 20%, var(--cream) 50%);
         backdrop-filter: blur(3px);
         border-bottom: 1px solid var(--warm-sand);
-        z-index: 100;
+        z-index: 999;
     }
     .top-nav > .wrapper {
         display: flex;
@@ -38,15 +37,22 @@
         align-items: center;
         justify-content: space-between;
         /* padding: 0.625rem 1.75rem 0.5rem; */
-        padding: 0 1.75rem;
+        padding: 0;
         /* border-bottom: 1px solid red; */
+    }
+    @media (min-width: 60rem) {
+        .top-nav > .wrapper {
+            /* padding: 0 1.75rem; */
+        }
     }
     .top-nav .title {
         color: var(--espresso);
         font-size: 1.375rem;
         font-weight: 400;
         letter-spacing: 4px;
+        text-decoration: none;
         text-transform: uppercase;
+        padding: 1rem 1.5rem;
     }
     nav ul {
         list-style-type: none;

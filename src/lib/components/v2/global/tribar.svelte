@@ -7,7 +7,7 @@
         <TribarSection label="The Weekend"
             image="/images/SVG/cocktail copy.svg"
             link="See The Schedule"
-            href="/travel"
+            href="/welcome-party"
         >
             Join us for a relaxed welcome party on the 26th and our wedding ceremony on the 27th.
         </TribarSection>
@@ -38,9 +38,13 @@
         border-radius: 1.5rem;
         padding: 0.5rem;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         background-color: var(--cream);
         box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
         /* width: 100%; */
+    }
+    @media (min-width: 60rem) {
+        .tribar > .wrapper {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 </style>

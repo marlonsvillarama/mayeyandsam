@@ -20,8 +20,11 @@
         background-image: url(/images/big_002.png);
         background-size: cover;
         background-position: center;
-        height: 20rem;
-        width: 30rem;
+        border-radius: 1rem;
+        min-width: 100%;
+        /* height: 100%; */
+        height: clamp(15rem, calc(15rem + 4vw), 24rem);
+        /* width: clamp(24rem, calc(24rem + 4vw), 30rem); */
 
         display: flex;
         align-items: center;
@@ -29,8 +32,14 @@
         box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
         /* margin: auto;
         margin-top: 50px; */
-        transform: rotate(1.5deg);
+        /* transform: rotate(1.5deg); */
     }
+    @media (min-width: 60rem) {
+        .taped {
+        height: clamp(15rem, calc(15rem + 4vw), 24rem);
+        width: clamp(24rem, calc(24rem + 4vw), 36rem);
+        transform: rotate(1.5deg);
+        }
     .taped::after {
         content: "";
         position: absolute;
@@ -103,5 +112,6 @@
         border-left: 1px dotted var(--tape-edge-gray);
         opacity: 0.5;
         transform: rotate(1deg);
+    }
     }
 </style>

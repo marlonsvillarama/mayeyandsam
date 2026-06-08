@@ -1,9 +1,12 @@
 <script>
+    import { ArrowRight } from "@lucide/svelte";
     let {
         children,
         image,
         label = "label",
         date = "26",
+        day = "Saturday",
+        link = "/",
         location = "Mövenpick Hotel"
     } = $props();
 
@@ -11,18 +14,22 @@
 </script>
 
 <div class="venue-card">
-    <div class="img" style="{imageClass}"></div>
+    <div class="img" style={imageClass}></div>
     <div class="details">
         <span class="label">{label}</span>
         <span class="date">{date}</span>
-        <span class="location">
+        <!-- <span class="location">
             <div class="image"></div>
             {location}
-        </span>
-        <div class="attire">
+        </span> -->
+        <!-- <div class="attire">
             <div class="image"></div>
             Tropical Cocktail
-        </div>
+        </div> -->
+        <a href={link} title={label} class="more-info">
+            More Info
+            <ArrowRight />
+        </a>
     </div>
 </div>
 
@@ -33,7 +40,8 @@
         padding: 0.5rem;
         /* gap: 1rem; */
         background-color: var(--cream);
-        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        /* box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px; */
         width: 100%;
         margin: 0 auto;
         /* box-shadow: var(--chocolate) 0px 3px 8px; */
@@ -46,7 +54,7 @@
         background-position: center;
         border-radius: 1rem;
     }
-    @media (min-width: 40rem) {
+    @media (min-width: 60rem) {
         .venue-card {
             display: grid;
             grid-template-columns: auto 1fr;
@@ -66,7 +74,7 @@
         /* border: 1px solid red; */
     }
     .details > .label {
-        font-size: 0.875rem;
+        font-size: 1rem;
         font-weight: 500;
         letter-spacing: 1px;
         text-transform: uppercase;
@@ -84,13 +92,34 @@
     }
     .details > .date::after {
         content: "th";
-        font-size: 1rem;
+        font-size: 1.5rem;
         vertical-align: super;
+    }
+    .details > .more-info {
+        display: flex;
+        flex: 0;
+        /* background-color: var(--terracota); */
+        /* border-radius: 100px; */
+        color: var(--chocolate);
+        font-size: clamp(0.875rem, 2vw, 0.875rem);
+        font-weight: 500;
+        letter-spacing: 0.75px;
+        cursor: pointer;
+        /* padding: 0.5rem; */
+        align-items: center;
+        gap: 0.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 100ms ease-in-out;
+    }
+    .details > .more-info:hover {
+        transform: translateX(8px);
     }
     .details > .location,
     .details > .attire {
+        /* border: 1px solid red; */
         color: var(--espresso);
-        font-size: 0.875rem;
+        font-size: 0.9rem;
         font-weight: 500;
         letter-spacing: 0.5px;
         opacity: 0.7;
@@ -99,7 +128,7 @@
     }
     .details > .location {
         text-transform: uppercase;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
     }
     /* .details > .attire {
         display: flex;

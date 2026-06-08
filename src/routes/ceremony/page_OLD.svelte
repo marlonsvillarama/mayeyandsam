@@ -1,22 +1,16 @@
 <script>
-    import Anahaw from "$lib/components/v2/global/anahaw.svelte";
-    import Nav from "$lib/components/v2/global/nav.svelte";
-    import Quadbar from "$lib/components/v2/global/quadbar.svelte";
-    // import Hero from "$lib/components/v2/global/hero.svelte";
-    import TornImage from "$lib/components/v2/global/torn-image.svelte";
-    // import Venue from "$lib/components/v2/global/venue.svelte";
-    // import Explore from "$lib/components/v2/global/explore.svelte";
-    // import TriBar from "$lib/components/v2/global/tribar.svelte";
-    // import WithLove from "$lib/components/v2/global/with-love.svelte";
-    import Footer from "$lib/components/v2/global/footer.svelte";
-    import SplitPic from "$lib/components/v2/global/split-pic.svelte";
-    import FAQ from "$lib/components/v2/global/faq.svelte";
-    import BackLink from "$lib/components/v2/global/faq-link.svelte";
+    import Nav from "$lib/components/nav.svelte";
+    import Rsvp from "$lib/components/rsvp.svelte";
+    import TravelHero from "../../../DEPR/travel/travel-hero.svelte";
+    import FAQ from "$lib/components/faq.svelte";
 
-    let faq = [
+    let items = [
         {
             label: 'What time should I arrive?',
             content: `
+                <p>
+                    Think of it as the unofficial start of the wedding weekend.
+                </p>
                 <p>
                     The ceremony starts at 4:30 PM, but we'd love for you to arrive by 4:15 PM so you can settle in, grab some fresh <i>buko</i> juice, find your seat, and enjoy the view before things get started.
                 </p>
@@ -179,124 +173,109 @@
     ];
 </script>
 
-<div class="page-wrapper">
-    <Anahaw fixed={true} />
+<div class="nav-wrapper">
     <Nav />
-    <div class="content">
-        <div class="hero">
-            <div class="wrapper">
-                <div>
-                    <h1>Ceremony & <br/><em>Reception</em></h1>
-
-                    <p>The unofficial start of our beautiful weekend in Boracay.</p>
-
-                    <BackLink label="Back to Home" link="" />
-                </div>
-                <div></div>
-            </div>
-        </div>
-        <div class="hero-img">
-            <div></div>
-
-            <TornImage left={true} bottom={true} image="/images/ceremony.jpg" height="500" />
-        </div>
-        <!-- </div> -->
-
-        <Quadbar />
-        <!-- <SplitPic script="Expect a relaxed evening"
-            headline="Good food. Cold drinks. Great company."
-            pic="/images/sunnyside-cafe.jpg"
-            text="We'll have delicious Filipino food, refreshing drinks, and karaoke under the stars."
-        /> -->
-
-        <FAQ items={faq} />
-        <!-- <Venue /> -->
-        <!-- <Explore /> -->
-        <!-- <TriBar /> -->
-        <!-- <WithLove /> -->
-        <Footer />
-    </div>
-    <Anahaw position="bottom-right" />
+    <Rsvp floating={true} />
 </div>
+<!-- <TravelHero /> -->
+
+<div class="faq-wrapper">
+    <div class="faq-header">
+        <h2 class="reveal">Ceremony & <em>Reception</em></h2>
+        <!-- <p>Boracay is a small island that requires a short journey from the Luzon mainland.</p> -->
+        <p>Here is everything you need to know before making the trip.</p>
+        <div class="faq-img"></div>
+        <!-- <img src="/images/big_003.png"> -->
+    </div>
+    <div class="faq-content">
+        <FAQ {items} />
+    </div>
+</div>
+<!-- <img class="stamp" src="/images/plants-footer.png"> -->
 
 <style>
-    .page-wrapper {
+    .faq-wrapper {
+        padding: 0 1.5rem;
+        display: grid;
+        gap: 1rem;
+        /* border: 1px solid red; */
+        margin: 3rem auto 4rem;
+    }
+    .faq-header {
+        display: grid;
+        gap: 0.75rem;
+        /* border: 1px solid red; */
+    }
+    .faq-header p {
+        font-size: 1rem;
+    }
+    /* .faq-header h2 {
+        border: 1px solid red;
+    } */
+    .faq-img {
+        background-image: url(/images/big_001.png);
+        background-size: cover;
+        border-radius: 0.5rem;
+        /* border: 0.5rem solid var(--gold); */
+        box-shadow: 0 4px 20px rgba(197,163,90,0.4);
+        height: 25rem;
+    }
+    .faq-content {
         position: relative;
     }
-    .content {
-        margin-top: 4rem;
-        display: grid;
-    }
-    .hero-img { display: none; }
-    @media (min-width: 64rem) {
-        .hero-img {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: grid;
-            grid-template-columns: 45% 55%;
-        }
-    }
-
-    .hero {
-        /* display: grid;
-        grid-template-columns: 1fr 1fr; */
-        /* overflow-x: visible; */
-        /* border: 1px solid red; */
-    }
-    .hero > .wrapper {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
-        /* border: 1px solid green; */
-    }
-    .hero > .wrapper > div:first-child {
-        /* border: 1px solid red; */
-        color: var(--espresso);
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: clamp(1.25rem, calc(1.25rem + 1vw), 2.5rem);
-    }
-    .hero > .wrapper > div:last-child {
+    .stamp {
         display: none;
     }
-    @media (min-width: 64rem) {
-        .hero {
-            /* padding-bottom: 4rem; */
-        }
-        .hero > .wrapper {
-            display: grid;
-            grid-template-columns: 45% 55%;
-            /* padding-top: 6rem;
-            padding-bottom: 7rem; */
-            /* max-width: 45%; */
-        }
-        .hero > .wrapper > div:last-child {
-            display: none;
+    @media (min-width: 30rem) {
+        .stamp {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            /* width: clamp(25rem, calc(25rem + 10vw), 35rem); */
+            opacity: 10%;
+            transform: translateY(-50%);
+            z-index: 1;
+            /* border: 1px solid red; */
         }
     }
-    /* .details {
-        display: grid;
-        gap: 0.5rem;
-    } */
-    /* .detail-row {
-        display: flex;
-        align-items: center;
-        gap: 0.625rem;
-        color: var(--espresso);
-    } */
-    /* .detail-row > span {
-        font-size: 0.875rem;
-        font-weight: 500;
-        letter-spacing: 2px;
-        text-transform: uppercase;
-    } */
-    .hero > .wrapper > div > p {
-        color: var(--chocolate);
-        /* font-size: 1.125rem; */
-        font-weight: 300;
-        letter-spacing: 0.25px;
+    @media (min-width: 48rem) {
+        .faq-wrapper {
+            grid-template-columns: auto 1fr;
+            gap: 3rem;
+            padding: 0;
+            max-width: 80rem;
+            width: 100%;
+        }
+        .faq-header {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            max-width: 25rem;
+        }
+        .faq-img {
+            margin-top: 1rem;
+            height: 60rem;
+            background-position: 20% 0;
+            background-repeat: no-repeat;
+        }
+        .faq-content {
+            margin-top: 0.875rem;
+        }
+    }
+    section {
+        /* padding-top: 1.5rem; */
         /* border: 1px solid red; */
+        display: grid;
+        gap: 1rem;
     }
+    .section-intro {
+        color: var(--chocolate);
+        font-size: 1rem;
+        font-weight: 400;
+        letter-spacing: 0;
+        margin-bottom: 0.5rem;
+    }
+    
 </style>

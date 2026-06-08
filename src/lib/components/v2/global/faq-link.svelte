@@ -7,8 +7,10 @@
 
 <!-- <div class="faq-link"> -->
     <a href="/{link}" title={label}>
-        <span>{label}</span>
-        <i class="ph ph-arrow-right"></i>
+        {#if !link}
+        <i class="ph ph-arrow-left"></i>
+        {/if}
+        {label}
     </a>
 <!-- </div> -->
 

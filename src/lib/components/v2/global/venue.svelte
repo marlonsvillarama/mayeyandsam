@@ -7,11 +7,13 @@
         <VenueCard image="/images/welcome-party.png"
             label="Welcome Party"
             date="26"
+            link="/welcome-party"
             location="Basta sa beach"
         />
         <VenueCard image="/images/ceremony.jpg"
             label="Ceremony"
             date="27"
+            link="/ceremony"
             location="Mövenpick Beachfront"
         />
     </div>
@@ -25,7 +27,7 @@
         /* display: grid;
         grid-template-columns: 1fr 1fr; */
         /* border: 1px solid red; */
-        z-index: 999;
+        z-index: 100;
     }
     .celebration > .wrapper {
         /* border: 1px solid red; */
@@ -33,7 +35,7 @@
         align-items: center;
         gap: 1.5rem;
     }
-    @media (min-width: 60rem) {
+    @media (min-width: 40rem) {
         .celebration > .wrapper {
             /* border: 1px solid red; */
             display: flex;

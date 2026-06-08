@@ -2,7 +2,7 @@
     import FaqNav from "$lib/components/faq-nav.svelte";
     // import Nav from "$lib/components/nav.svelte";
     // import Rsvp from "$lib/components/rsvp.svelte";
-    import TravelHero from "$lib/components/travel/travel-hero.svelte";
+    import TravelHero from "../../../DEPR/travel/travel-hero.svelte";
     import FAQ from "$lib/components/faq.svelte";
     import Footer from "$lib/components/footer.svelte";
 

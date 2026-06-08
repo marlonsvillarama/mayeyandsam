@@ -1,6 +1,6 @@
 <script>
     import FaqLink from "./faq-link.svelte";
-    import TapedPaper from "$lib/components/taped-paper.svelte";
+    import TapedPaper from "$lib/components/v2/global/taped-paper.svelte";
 </script>
 
 <div class="explore">
@@ -17,7 +17,9 @@
             <!-- </div> -->
         </div>
 
-        <TapedPaper />
+        <div>
+            <TapedPaper />
+        </div>
     </div>
 </div>
 
@@ -28,10 +30,22 @@
         /* border: 1px solid red; */
     }
     .explore > .wrapper {
-        display: flex;
-        justify-content: space-between;
+        display: grid;
+        /* flex-direction: column; */
+        gap: 4rem;
         /* grid-template-columns: 1fr 1fr; */
         /* border: 1px solid red; */
+    }
+    /* .wrapper > div {
+        border: 1px solid red;
+    } */
+    @media (min-width: 40rem) {
+        .explore > .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            /* grid-template-columns: 1fr 1fr; */
+        }
     }
     .details {
         /* border: 1px solid red; */

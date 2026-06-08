@@ -1,13 +1,25 @@
-<script></script>
+<script>
+    let {
+        script = "",
+        headline = "",
+        pic = "",
+        text = ""
+    } = $props();
+
+    let backgroundImage = $derived(`background-image:url("${pic}");`);
+</script>
 
 <div class="with-love">
     <div class="wrapper">
-        <div class="kiss"></div>
+        <div class="pic" style={backgroundImage}></div>
         <div class="details">
-            <span class="script">With love,</span>
-            <h2>Sam & Marielle</h2>
-            <p>We are so grateful to have you in our lives and even more excited to celebrate this special weekend with you.</p>
-            <p>Thank you for being part of our story.</p>
+            {#if script}
+                <span class="script">{script}</span>
+            {/if}
+
+            <h2>{headline}</h2>
+            <p>{text}</p>
+            <!-- <p>Thank you for being part of our story.</p> -->
         </div>
     </div>
 </div>
@@ -21,15 +33,14 @@
         display: grid;
         /* grid-template-columns: 1fr 1fr; */
     }
-    .with-love > .wrapper > .kiss {
-        background-image: url("/images/marielle_and_sam_07.jpg");
+    .with-love > .wrapper > .pic {
         background-size: cover;
         background-position: center;
         width: 100%;
         height: 25rem;
-        border-top-left-radius: 1.5rem;
-        border-top-right-radius: 1.5rem;
-        /* transform: scale(2); */
+        border-radius: 1.5rem;
+        /* border-top-left-radius: 1.5rem; */
+        /* border-top-right-radius: 1.5rem; */
         order: 2;
     }
     .with-love > .wrapper > .details {
@@ -42,8 +53,8 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
         }
-        .with-love > .wrapper > .kiss {
-            background-size: 150%;
+        .with-love > .wrapper > .pic {
+            /* background-size: 150%; */
             order: 1;
         }
         .with-love > .wrapper > .details {
@@ -52,7 +63,7 @@
         }
     }
     .details > h2 {
-        margin-bottom: 3rem;
+        margin-bottom: 2rem;
     }
     .details > p {
         color: var(--chocolate);
