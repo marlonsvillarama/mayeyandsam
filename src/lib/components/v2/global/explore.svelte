@@ -17,7 +17,7 @@
             <!-- </div> -->
         </div>
 
-        <div>
+        <div class="pic">
             <TapedPaper />
         </div>
     </div>
@@ -36,6 +36,9 @@
         /* grid-template-columns: 1fr 1fr; */
         /* border: 1px solid red; */
     }
+    .explore > .wrapper > .pic {
+        display: none;
+    }
     /* .wrapper > div {
         border: 1px solid red;
     } */
@@ -45,6 +48,12 @@
             flex-direction: row;
             justify-content: space-between;
             /* grid-template-columns: 1fr 1fr; */
+        }
+    }
+    @media (min-width: 60rem) {
+        .explore > .wrapper > .pic {
+            display: block;
+            transform: translateX(-4rem);
         }
     }
     .details {

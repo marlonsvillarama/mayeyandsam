@@ -5,15 +5,15 @@
 <div class="top-nav">
     <div class="wrapper">
         <a href="/" class="title">Sam & Marielle</a>
+        <button role="button" href="/">
+            RSVP
+            <!-- <ArrowRight size={14} /> -->
+        </button>
         <!-- <nav>
             <ul>
                 <li><a href="/">The Weekend</a></li>
                 <li><a href="/">Travel</a></li>
                 <li class="rsvp">
-                    <a role="button">
-                        RSVP
-                        <ArrowRight size={14} />
-                    </a>
                 </li>
             </ul>
         </nav> -->
@@ -46,13 +46,34 @@
         }
     }
     .top-nav .title {
+        /* border: 1px solid red; */
         color: var(--espresso);
         font-size: 1.375rem;
         font-weight: 400;
         letter-spacing: 4px;
         text-decoration: none;
         text-transform: uppercase;
+        padding: 1rem 0 1rem 1.5rem;
+    }
+    .top-nav button {
+        background-color: var(--terracota);
+        /* border: 1px solid red; */
+        border: 0;
+        border-radius: 100px;
+        color: var(--ivory);
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 4px;
+        text-decoration: none;
+        text-transform: uppercase;
+        margin-right: 1.5rem;
         padding: 1rem 1.5rem;
+        transition: all 150ms ease-in-out;
+    }
+    .top-nav button:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        transform: translateY(-2px);
     }
     nav ul {
         list-style-type: none;

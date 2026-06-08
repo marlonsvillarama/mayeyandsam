@@ -36,82 +36,82 @@
     }
     @media (min-width: 60rem) {
         .taped {
-        height: clamp(15rem, calc(15rem + 4vw), 24rem);
-        width: clamp(24rem, calc(24rem + 4vw), 36rem);
-        transform: rotate(1.5deg);
+            height: clamp(15rem, calc(15rem + 4vw), 24rem);
+            width: clamp(24rem, calc(24rem + 4vw), 36rem);
+            transform: rotate(1.5deg);
         }
-    .taped::after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(
-            var(--transparent),
-            50%,
-            var(--paper-dark),
-            51%,
-            var(--transparent)
-        ),
-        linear-gradient(
-            to right,
-            var(--transparent),
-            50%,
-            var(--paper-dark),
-            51%,
-            var(--transparent)
-        );
-    }
-    .tape-section {
-        position: absolute;
-        width: 100%;
-    }
-    .tape-section:first-of-type {
-        top: 0;
-    }
-    .tape-section:last-of-type {
-        bottom: 0;
-    }
-    .tape-section::before,
-    .tape-section::after {
-        content: "";
-        width: 12vmin;
-        height: 5vmin;
-        position: absolute;
-        background-color: var(--tape-gray);
-        opacity: 0.5;
-        border-right: 1px dotted var(--tape-edge-gray);
-        border-left: 1px dotted var(--tape-edge-gray);
-    }
-    .tape-section:last-of-type::after {
-        transform: rotate(-45deg);
-        right: -8vmin;
-        top: -6vmin;
-    }
-    .tape-section:first-of-type::before {
-        transform: rotate(-35deg);
-        left: -8vmin;
-    }
-    .tape-section:first-of-type::after {
-        transform: rotate(45deg);
-        right: -8vmin;
-        top: 0vmin;
-    }
-    .tape-section:last-of-type::before {
-        transform: rotate(45deg);
-        left: -8vmin;
-        bottom: 0vmin;
-    }
-    .top-tape {
-        position: absolute;
-        height: 10vmin;
-        top: -1rem;
-        /* left: -2.5rem; */
-        width: 110%;
-        background-color: var(--tape-gray);
-        border-right: 1px dotted var(--tape-edge-gray);
-        border-left: 1px dotted var(--tape-edge-gray);
-        opacity: 0.5;
-        transform: rotate(1deg);
-    }
+        .taped::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                var(--transparent),
+                50%,
+                var(--paper-dark),
+                51%,
+                var(--transparent)
+            ),
+            linear-gradient(
+                to right,
+                var(--transparent),
+                50%,
+                var(--paper-dark),
+                51%,
+                var(--transparent)
+            );
+        }
+        .tape-section {
+            position: absolute;
+            width: 100%;
+        }
+        .tape-section:first-of-type {
+            top: 0;
+        }
+        .tape-section:last-of-type {
+            bottom: 0;
+        }
+        .tape-section::before,
+        .tape-section::after {
+            content: "";
+            width: 12vmin;
+            height: 5vmin;
+            position: absolute;
+            background-color: var(--tape-gray);
+            opacity: 0.5;
+            border-right: 1px dotted var(--tape-edge-gray);
+            border-left: 1px dotted var(--tape-edge-gray);
+        }
+        .tape-section:last-of-type::after {
+            transform: rotate(-45deg);
+            right: -8vmin;
+            top: -6vmin;
+        }
+        .tape-section:first-of-type::before {
+            transform: rotate(-35deg);
+            left: -8vmin;
+        }
+        .tape-section:first-of-type::after {
+            transform: rotate(45deg);
+            right: -8vmin;
+            top: 0vmin;
+        }
+        .tape-section:last-of-type::before {
+            transform: rotate(45deg);
+            left: -8vmin;
+            bottom: 0vmin;
+        }
+        .top-tape {
+            position: absolute;
+            height: 10vmin;
+            top: -1rem;
+            /* left: -2.5rem; */
+            width: 110%;
+            background-color: var(--tape-gray);
+            border-right: 1px dotted var(--tape-edge-gray);
+            border-left: 1px dotted var(--tape-edge-gray);
+            opacity: 0.5;
+            transform: rotate(1deg);
+        }
     }
 </style>
