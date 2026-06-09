@@ -17,7 +17,7 @@
     <div class="img" style={imageClass}></div>
     <div class="details">
         <span class="label">{label}</span>
-        <span class="date">{date}</span>
+        <div class="date"><span class="month">December</span>{date}</div>
         <!-- <span class="location">
             <div class="image"></div>
             {location}
@@ -80,21 +80,29 @@
         text-transform: uppercase;
     }
     .details > .date {
+        align-items: baseline;
+        /* border: 1px solid red; */
         color: var(--espresso);
+        display: flex;
         font-family: 'Cormorant Garamond', serif;
-        font-size: 3.5rem;
+        font-size: 3rem;
         font-weight: 200;
+        gap: 0.5rem;
         line-height: 2.25rem;
-        padding-bottom: 1.5rem;
+        padding-bottom: 1rem;
         border-bottom: 1.5px dotted var(--chocolate);
-        margin-top: 0.5rem;
-        margin-bottom: 1rem;
+        /* margin-top: 0.5rem; */
+        margin-bottom: 0.75rem;
     }
-    .details > .date::after {
+    .details > .date > .month {
+        font-size: 1.5rem;
+        font-weight: 300;
+    }
+    /* .details > .date::after {
         content: "th";
         font-size: 1.5rem;
         vertical-align: super;
-    }
+    } */
     .details > .more-info {
         display: flex;
         flex: 0;

@@ -11,7 +11,9 @@
     import Footer from "$lib/components/v2/global/footer.svelte";
     import SplitPic from "$lib/components/v2/global/split-pic.svelte";
     import FAQ from "$lib/components/v2/global/faq.svelte";
-    import BackLink from "$lib/components/v2/global/faq-link.svelte";
+    // import BackLink from "$lib/components/v2/global/faq-link.svelte";
+    import BackToHome from "$lib/components/v2/global/back-to-home.svelte";
+  import Rsvp from "$lib/components/v2/global/rsvp.svelte";
 
     let faq = [
         {
@@ -179,6 +181,11 @@
     ];
 </script>
 
+<svelte:head>
+	<title>Sam & Marielle - Ceremony</title>
+</svelte:head>
+
+<Rsvp />
 <div class="page-wrapper">
     <Anahaw fixed={true} />
     <Nav />
@@ -190,7 +197,8 @@
 
                     <p>The unofficial start of our beautiful weekend in Boracay.</p>
 
-                    <BackLink label="Back to Home" link="" />
+                    <!-- <BackLink label="Back to Home" link="" /> -->
+                    <BackToHome />
                 </div>
                 <div></div>
             </div>
@@ -239,12 +247,12 @@
         }
     }
 
-    .hero {
+    /* .hero { */
         /* display: grid;
         grid-template-columns: 1fr 1fr; */
         /* overflow-x: visible; */
         /* border: 1px solid red; */
-    }
+    /* } */
     .hero > .wrapper {
         padding-top: 3rem;
         padding-bottom: 3rem;

@@ -1,11 +1,16 @@
 <script>
     import { ArrowRight } from "@lucide/svelte";
+    import RSVP from "./rsvp.svelte";
+    // import { createRSVPData } from "$lib/data/rsvp.svelte";
+
+    // let rsvpData = createRSVPData();
+    let showModal = $state(false);
 </script>
 
 <div class="top-nav">
     <div class="wrapper">
         <a href="/" class="title">Sam & Marielle</a>
-        <button role="button" href="/">
+        <button type="button" onclick={() => showModal = true }>
             RSVP
             <!-- <ArrowRight size={14} /> -->
         </button>
@@ -19,6 +24,8 @@
         </nav> -->
     </div>
 </div>
+
+<RSVP bind:show={showModal} />
 
 <style>
     .top-nav {

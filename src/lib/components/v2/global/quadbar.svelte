@@ -41,7 +41,6 @@
             icon="drinks"
         >
             Filipino food, drinks, & karaoke
-            <!-- Kindly RSVP by October 31, 2026 so we can save you a seat and plan all the details. -->
         </QuadbarSection>
     </div>
 </div>

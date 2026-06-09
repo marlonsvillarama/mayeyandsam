@@ -6,7 +6,7 @@
 </script>
 
 <svelte:head>
-	<title>Sam & Marielle - SAVE THE DATE</title>
+	<title>Sam & Marielle</title>
 	<link rel="icon" href={favicon} />
 </svelte:head>
 

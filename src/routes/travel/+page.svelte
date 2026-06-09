@@ -263,6 +263,10 @@
     ];
 </script>
 
+<svelte:head>
+	<title>Sam & Marielle - Getting To Boracay</title>
+</svelte:head>
+
 <div class="page-wrapper">
     <Anahaw fixed={true} />
     <Nav />
