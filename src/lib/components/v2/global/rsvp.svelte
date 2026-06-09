@@ -39,8 +39,8 @@
             <div class="attending selection">
                 <span>Will you be attending?</span>
                 <div class="options">
-                    <FieldRadio label="See you at the beach!" id="attendingYes" name="attending" bind:checked={attending} />
-                    <FieldRadio label="Celebrating from afar" id="attendingNo" name="attending" bind:checked={attending} />
+                    <FieldRadio label="See you there!" id="attendingYes" name="attending" value={true} bind:group={attending} />
+                    <FieldRadio label="Celebrate from afar" id="attendingNo" name="attending" value={false} bind:group={attending} />
                 </div>
             </div>
             <div class="restrictions selection">
@@ -75,6 +75,7 @@
         height: 100%;
         width: 100%;
         max-width: 30rem;
+        max-height: 40rem;
         background-color: var(--ivory);
         border: 0;
         border-left: 4px solid var(--terracota);

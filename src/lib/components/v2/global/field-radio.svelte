@@ -1,15 +1,15 @@
 <script>
     let {
-        checked = $bindable(),
         id = "fld-id",
         group = $bindable(),
         label = "Label",
-        name = "fld-grp"
+        name = "fld-grp",
+        value = ""
     } = $props();
 </script>
 
 <div class="field">
-    <input type="radio" {name} {id} {checked} />
+    <input type="radio" {name} {id} {value} bind:group={group} />
     <label for={id}>{label}</label>
 </div>
 
@@ -26,7 +26,7 @@
         font-size: 0.875rem;
         font-weight: 400;
         letter-spacing: 0.5px;
-        padding: 1rem 0;
+        padding: 0.5rem 0;
         text-align: center;
         transition: all 100ms ease-in-out;
     }
