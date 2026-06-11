@@ -17,8 +17,8 @@
         let half = Math.ceil((height - 27) / 2);
         return `transform: translateX(-${half}px) translateY(${half - 2}px) rotate(90deg);`;
     });
-    console.log('leftWidth', leftWidth);
-    console.log('leftTransform', leftTransform);
+    // console.log('leftWidth', leftWidth);
+    // console.log('leftTransform', leftTransform);
 </script>
 
 <div class="img-wrapper" style="{bgImage}; {bgHeight}">

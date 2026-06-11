@@ -1,9 +1,7 @@
 <script>
     import { ArrowRight } from "@lucide/svelte";
     import RSVP from "./rsvp.svelte";
-    // import { createRSVPData } from "$lib/data/rsvp.svelte";
 
-    // let rsvpData = createRSVPData();
     let showModal = $state(false);
 </script>
 
@@ -12,16 +10,7 @@
         <a href="/" class="title">Sam & Marielle</a>
         <button type="button" onclick={() => showModal = true }>
             RSVP
-            <!-- <ArrowRight size={14} /> -->
         </button>
-        <!-- <nav>
-            <ul>
-                <li><a href="/">The Weekend</a></li>
-                <li><a href="/">Travel</a></li>
-                <li class="rsvp">
-                </li>
-            </ul>
-        </nav> -->
     </div>
 </div>
 
@@ -43,17 +32,14 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        /* padding: 0.625rem 1.75rem 0.5rem; */
         padding: 0;
-        /* border-bottom: 1px solid red; */
     }
-    @media (min-width: 60rem) {
+    /* @media (min-width: 60rem) {
         .top-nav > .wrapper {
-            /* padding: 0 1.75rem; */
+            padding: 0 1.75rem;
         }
-    }
+    } */
     .top-nav .title {
-        /* border: 1px solid red; */
         color: var(--espresso);
         font-size: 1.375rem;
         font-weight: 400;
@@ -64,7 +50,6 @@
     }
     .top-nav button {
         background-color: var(--terracota);
-        /* border: 1px solid red; */
         border: 0;
         border-radius: 100px;
         color: var(--ivory);
@@ -82,7 +67,7 @@
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transform: translateY(-2px);
     }
-    nav ul {
+    /* nav ul {
         list-style-type: none;
         margin: 0;
         padding: 0;
@@ -104,7 +89,6 @@
         outline: none;
         padding: 1rem 1.5rem;
         text-decoration: none;
-        /* border: 1px solid red; */
         text-align: center;
         text-transform: uppercase;
         transition: all 150ms ease-in-out;
@@ -113,5 +97,5 @@
     nav ul li button:hover {
         background-color: var(--terracota);
         color: var(--ivory);
-    }
+    } */
 </style>
