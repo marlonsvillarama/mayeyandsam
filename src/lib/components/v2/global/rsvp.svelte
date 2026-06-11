@@ -84,8 +84,8 @@
 
     const sanitizeAttendee = (options) => {
         return {
-            first_name: options.first_name.toUpperCase(),
-            last_name: options.last_name.toUpperCase(),
+            first_name: options.first_name,
+            last_name: options.last_name,
             restrictions: options.restrictions,
         };
     };
@@ -168,8 +168,8 @@
         </div>
         <div class="form">
             <div class="split">
-                <FieldText label="First Name" id="firstName" bind:value={first_name} uppercase={true} />
-                <FieldText label="Last Name" id="lastName" bind:value={last_name} uppercase={true} />
+                <FieldText label="First Name" id="firstName" bind:value={first_name} />
+                <FieldText label="Last Name" id="lastName" bind:value={last_name} />
             </div>
             <div class="attending selection">
                 <span>Will you be attending?</span>
@@ -218,8 +218,8 @@
         </div>
         <div class="form">
             <div class="col">
-                <FieldText label="First Name" id="firstName" bind:value={newGuest.first_name} uppercase={true} />
-                <FieldText label="Last Name" id="lastName" bind:value={newGuest.last_name} uppercase={true} />
+                <FieldText label="First Name" id="firstName" bind:value={newGuest.first_name} />
+                <FieldText label="Last Name" id="lastName" bind:value={newGuest.last_name} />
             </div>
             <FieldText label="Dietary restrictions and allergies." id="restrictions" bind:value={newGuest.restrictions} />
         </div>

@@ -13,8 +13,8 @@ export const load = async () => {
 
     const rows = await response.json();
     rows.sort((a, b) => {
-        let aName = `${a.last_name}-${a.first_name}`
-        let bName = `${b.last_name}-${b.first_name}`
+        let aName = `${a.last_name.toUpperCase()}-${a.first_name.toUpperCase()}`
+        let bName = `${b.last_name.toUpperCase()}-${b.first_name.toUpperCase()}`
         if (aName < bName) return -1;
         if (aName > bName) return 1;
         return 0;

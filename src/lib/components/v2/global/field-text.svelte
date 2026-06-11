@@ -2,16 +2,16 @@
     let {
         id,
         label,
-        uppercase = false,
+        transform = "capitalize",
         value = $bindable()
     } = $props();
 
-    let textCasing = $derived(uppercase ? `text-transform:uppercase` : '');
+    // let textCasing = $derived(`text-transform:${transform};`);
 </script>
 
 <div class="field">
     <label for={id}>{label}</label>
-    <input type="text" {id} bind:value onfocus={(e) => e.currentTarget.select()} style={textCasing}>
+    <input type="text" {id} bind:value onfocus={(e) => e.currentTarget.select()}>
 </div>
 
 <style>
