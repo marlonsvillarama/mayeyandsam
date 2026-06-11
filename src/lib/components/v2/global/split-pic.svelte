@@ -19,7 +19,6 @@
 
             <h2>{headline}</h2>
             <p>{text}</p>
-            <!-- <p>Thank you for being part of our story.</p> -->
         </div>
     </div>
 </div>
@@ -29,9 +28,7 @@
         margin-top: 4rem;
     }
     .with-love > .wrapper {
-        /* border: 1px solid red; */
         display: grid;
-        /* grid-template-columns: 1fr 1fr; */
     }
     .with-love > .wrapper > .pic {
         background-size: cover;
@@ -39,12 +36,9 @@
         width: 100%;
         height: 25rem;
         border-radius: 1.5rem;
-        /* border-top-left-radius: 1.5rem; */
-        /* border-top-right-radius: 1.5rem; */
         order: 2;
     }
     .with-love > .wrapper > .details {
-        /* border: 1px solid red; */
         padding: 0 0 3rem;
         order: 1;
     }
@@ -54,7 +48,6 @@
             grid-template-columns: 1fr 1fr;
         }
         .with-love > .wrapper > .pic {
-            /* background-size: 150%; */
             order: 1;
         }
         .with-love > .wrapper > .details {

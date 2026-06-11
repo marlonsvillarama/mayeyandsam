@@ -1,16 +1,10 @@
 <script>
-    // import { createRSVPData } from "$lib/data/rsvp.svelte";
-    // import { json } from "@sveltejs/kit";
     import { PUBLIC_SUPABASE_API_URL, PUBLIC_ANON_PUBLIC_KEY } from "$env/static/public";
     import FieldRadio from "./field-radio.svelte";
     import FieldText from "./field-text.svelte";
     import AddGuest from "./add-guest.svelte";
     import RemoveGuest from "./remove-guest.svelte";
     import { X } from "@lucide/svelte";
-
-    // console.log('PUBLIC_SUPABASE_API_URL', PUBLIC_SUPABASE_API_URL);
-    // console.log('PUBLIC_ANON_PUBLIC_KEY', PUBLIC_ANON_PUBLIC_KEY);
-    // console.log('SECRET_KEY', SECRET_KEY);
 
     let {
         show = $bindable()
@@ -39,7 +33,6 @@
     });
 
     const addAttendee = () => {
-        // console.log('newGuest', newGuest);
         if (!newGuest.first_name.trim() || !newGuest.last_name.trim()) {
             alert('Please enter the attendee\'s first and last name.');
             return;
@@ -49,10 +42,7 @@
             attendees.push(newGuest);
         }
         
-        console.log('attendees', attendees);
-        // clearData();
         addGuestModal.close();
-        // console.log({ firstName, lastName, attending, guests });
     };
 
     const clearData = () => {
@@ -61,11 +51,6 @@
             last_name: '',
             restrictions: ''
         };
-        // newGuest.firstName = '';
-        // newGuest.lastName = '';
-        // newGuest.restrictions = '';
-        // attendees = [];
-        console.log('Cleared data...');
     };
 
     const editGuest = (index) => {
@@ -88,12 +73,10 @@
     };
 
     const removeGuest = (index) => {
-        // alert(`removing guest ${index}`);
         attendees.splice(index, 1);
     };
 
     const showAddGuest = () => {
-        console.log('rsvp showAddGuest');
         editAttendeeForm = false;
         clearData();
         addGuestModal.showModal();
@@ -108,13 +91,13 @@
     };
 
     const submitForm = async () => {
-        console.log(`firstName = ${first_name}\nlastName = ${last_name}\nattending = ${attending}\nrestrictions = ${restrictions}`);
+        // console.log(`firstName = ${first_name}\nlastName = ${last_name}\nattending = ${attending}\nrestrictions = ${restrictions}`);
         if (!first_name || !last_name) {
             alert('Please fill out your first and last name.');
             return;
         }
 
-        console.log('attendees', attendees);
+        // console.log('attendees', attendees);
         let key = getRandomString();
         let finalAttendees = attendees.map(a => {
             return {
@@ -132,7 +115,7 @@
             attending,
             key
         });
-        console.log('finalAttendees', finalAttendees);
+        // console.log('finalAttendees', finalAttendees);
 
         first_name = '';
         last_name = '';
@@ -151,7 +134,7 @@
                 },
                 body: JSON.stringify(finalAttendees)
             });
-            console.log(`code = ${response.code}`, response);
+            // console.log(`code = ${response.code}`, response);
 
             if (!response.ok) {
                 alert('Oops... something went wrong!');
@@ -252,24 +235,14 @@
 
 <style>
     dialog {
-        /* position: fixed; */
-        /* width: 100%; */
         margin: auto;
-        /* top: 1rem; */
-        /* left: 1rem; */
-        /* top: 0.5rem;
-        left: 0.5rem;
-        right: calc(100vw - 0.5rem);
-        bottom: 0.5rem; */
         min-height: 25rem;
         width: 100%;
         max-width: 30rem;
-        /* min-height: 30rem; */
         background-color: var(--ivory);
         border: 0;
         border-left: 4px solid var(--terracota);
         border-radius: 1rem;
-        /* display: flex; */
         box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
         z-index: 9999;
     }
@@ -282,65 +255,40 @@
         display: grid;
         grid-template-rows: auto 1fr;
     }
-    /* .rsvp > .wrapper { */
-        /* border: 1px solid red; */
-        /* padding: 0.5rem 1rem; */
-    /* } */
     .content > .heading {
         display: flex;
         align-items: center;
         justify-content: space-between;
         position: relative;
-        /* overflow: visible; */
-        /* border: 1px solid red; */
         padding: 1rem 1.5rem 0;
     }
     .heading > h2 {
         color: var(--chocolate);
-        /* font-family: "Cormorant Garamond"; */
-        /* font-family: "Thesignature"; */
         font-size: 2.65rem;
         font-weight: 500;
         padding-bottom: 0.25rem;
-        /* font-style: italic; */
     }
     .heading > button {
-        /* position: absolute; */
         width: 50px;
         height: 50px;
         background-color: var(--transparent);
         color: var(--chocolate);
         border: 0;
-        /* border: 1px solid red; */
-        /* border-radius: 50px; */
         cursor: pointer;
         z-index: 10000;
         right: 0;
         top: 0;
-        /* transform: translateX(30%) translateY(-30%); */
     }
     .subheading {
-        /* border: 1px solid red; */
         padding: 0 1.5rem 0;
     }
     dialog > .content > .form {
-        /* border: 1px solid red; */
         padding: 1rem 2rem 2rem;
         margin-top: 1rem;
         display: grid;
         gap: 1.5rem;
         overflow-y: auto;
     }
-    /* .rsvp > .content > .form > .split {
-        display: flex;
-        gap: 1rem;
-        border: 1px solid red;
-    } */
-    /* .attending { */
-        /* border: 1px solid red; */
-        /* display: grid; */
-        /* gap: 0.25rem; */
-    /* } */
     .selection > span,
     .guests > span {
         /* border: 1px solid red; */
@@ -352,8 +300,8 @@
         opacity: 0.6;
     }
     dialog > .content > .form > .split,
-    .attending > .options,
-    .restrictions > .options {
+    .attending > .options {
+        /* .restrictions > .options { */
         display: grid;
         grid-template-columns: 1fr 1fr;
         align-items: center;

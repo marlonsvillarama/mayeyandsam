@@ -2,18 +2,12 @@
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import Nav from "$lib/components/v2/global/nav.svelte";
     import Quadbar from "$lib/components/v2/global/quadbar.svelte";
-    // import Hero from "$lib/components/v2/global/hero.svelte";
     import TornImage from "$lib/components/v2/global/torn-image.svelte";
-    // import Venue from "$lib/components/v2/global/venue.svelte";
-    // import Explore from "$lib/components/v2/global/explore.svelte";
-    // import TriBar from "$lib/components/v2/global/tribar.svelte";
-    // import WithLove from "$lib/components/v2/global/with-love.svelte";
     import Footer from "$lib/components/v2/global/footer.svelte";
     import SplitPic from "$lib/components/v2/global/split-pic.svelte";
     import FAQ from "$lib/components/v2/global/faq.svelte";
-    // import BackLink from "$lib/components/v2/global/faq-link.svelte";
     import BackToHome from "$lib/components/v2/global/back-to-home.svelte";
-  import Rsvp from "$lib/components/v2/global/rsvp.svelte";
+    import Rsvp from "$lib/components/v2/global/rsvp.svelte";
 
     let faq = [
         {
@@ -194,10 +188,7 @@
             <div class="wrapper">
                 <div>
                     <h1>Ceremony & <br/><em>Reception</em></h1>
-
                     <p>The unofficial start of our beautiful weekend in Boracay.</p>
-
-                    <!-- <BackLink label="Back to Home" link="" /> -->
                     <BackToHome />
                 </div>
                 <div></div>
@@ -208,20 +199,9 @@
 
             <TornImage left={true} bottom={true} image="/images/ceremony.jpg" height="500" />
         </div>
-        <!-- </div> -->
 
         <Quadbar />
-        <!-- <SplitPic script="Expect a relaxed evening"
-            headline="Good food. Cold drinks. Great company."
-            pic="/images/sunnyside-cafe.jpg"
-            text="We'll have delicious Filipino food, refreshing drinks, and karaoke under the stars."
-        /> -->
-
         <FAQ items={faq} />
-        <!-- <Venue /> -->
-        <!-- <Explore /> -->
-        <!-- <TriBar /> -->
-        <!-- <WithLove /> -->
         <Footer />
     </div>
     <Anahaw position="bottom-right" />
@@ -270,9 +250,9 @@
         display: none;
     }
     @media (min-width: 64rem) {
-        .hero {
+        /* .hero { */
             /* padding-bottom: 4rem; */
-        }
+        /* } */
         .hero > .wrapper {
             display: grid;
             grid-template-columns: 45% 55%;
