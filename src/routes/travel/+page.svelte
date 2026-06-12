@@ -6,7 +6,8 @@
     import Footer from "$lib/components/v2/global/footer.svelte";
     import SplitPic from "$lib/components/v2/global/split-pic.svelte";
     import FAQ from "$lib/components/v2/global/faq.svelte";
-    import BackLink from "$lib/components/v2/global/faq-link.svelte";
+    // import BackLink from "$lib/components/v2/global/faq-link.svelte";
+    import BackToHome from "$lib/components/v2/global/back-to-home.svelte";
 
     let faq = [
         {
@@ -271,7 +272,8 @@
                 <div>
                     <h1>Getting to <br/><em>Boracay</em></h1>
                     <p>Here is everything you need to know before making the trip.</p>
-                    <BackLink label="Back to Home" link="" />
+                    <BackToHome />
+                    <!-- <BackLink label="Back to Home" link="" /> -->
                 </div>
                 <div></div>
             </div>
