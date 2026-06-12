@@ -20,7 +20,7 @@
                 <div class="links">
                     <!-- <FaqLink label="Book Now" link="travel" /> -->
                     <button type="button" onclick={() => showModal = true }>
-                        Book Now
+                        Reserve Now
                     </button>
                     
                     <a href="/travel" title="More Info" class="more-info">
