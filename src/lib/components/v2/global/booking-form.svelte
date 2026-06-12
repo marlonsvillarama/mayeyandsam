@@ -110,7 +110,7 @@
     }
 </script>
 
-<form method="dialog">
+<dialog method="dialog">
     <div class="header">
         <h2>Ceremony and reception will be at</h2>
         <span class="title">Movenpick Boracay</span>
@@ -159,14 +159,14 @@
             </div>
         {/if}
     {/if}
-</form>
+</dialog>
 
 <button id="cancel_avail" title="Close" onclick={oncloseclick}>
     <img src="/images/close.svg" alt="Close">
 </button>
 
 <style>
-form {
+dialog {
     background-color: antiquewhite;
     border-radius: 1rem;
     color: #333;
