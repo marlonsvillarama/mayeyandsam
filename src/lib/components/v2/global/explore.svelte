@@ -1,6 +1,9 @@
 <script>
     import FaqLink from "./faq-link.svelte";
+    import BookingForm from "./booking-form.svelte";
     import TapedPaper from "$lib/components/v2/global/taped-paper.svelte";
+    
+    let showBooking = $state(false);
 </script>
 
 <div class="explore">
@@ -13,7 +16,7 @@
                     White sand, turquoise water, golden sunsets - Boracay is the perfect place to celebrate and make unforgettable memories together.
                 </p>
 
-                <FaqLink label="Travel & Stay" link="travel" />
+                <FaqLink label="Travel Info" link="travel" />
             <!-- </div> -->
         </div>
 
