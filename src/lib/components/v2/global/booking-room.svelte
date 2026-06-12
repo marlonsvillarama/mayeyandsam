@@ -16,11 +16,11 @@
                 </optgroup>
             {/each}
         </select>
-        <a href="https://movenpick.accor.com/en/asia/philippines/boracay/resort-spa-boracay.html" target="_blank">
+        <a class="compare" href="https://movenpick.accor.com/en/asia/philippines/boracay/resort-spa-boracay.html" target="_blank">
             Click here to see and compare rooms.
         </a>
     </div>
-    <div class="grid-col-2">
+    <div class="split">
         <div class="field">
             <label for="room_count">No. of rooms</label>
             <select id="room_count" name="room_count" class="numeric" bind:value={bookingData.roomCount} required>
@@ -44,4 +44,35 @@
     </div>
 </div>
 
-<style></style>
+<style>
+    .fields {
+        gap: 0.75rem;
+    }
+    .fields > .split {
+        /* .restrictions > .options { */
+        display: flex;
+        /* grid-template-columns: 1fr 1fr; */
+        align-items: center;
+        gap: 0.75rem;
+        justify-content: space-between;
+    }
+    .field {
+        color: var(--espresso);
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+    .field > label {
+        font-weight: 400;
+        letter-spacing: 0.25px;
+        opacity: 0.5;
+    }
+    .field > input[type=date],
+    .field > input[type=text],
+    .field > input[type=email] {
+        letter-spacing: 0.25px;
+        padding: 0.5rem 0.75rem;
+    }
+    a.compare {
+        margin-left: 0.25rem;
+    }
+</style>

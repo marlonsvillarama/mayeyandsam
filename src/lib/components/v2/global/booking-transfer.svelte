@@ -13,7 +13,7 @@
 
 <div class="fields">
     <div class="field">
-        <span>Do you want Movenpick to take care of the roundtrip land and sea transfers?</span>
+        <span>Do you want Mövenpick to take care of the roundtrip land and sea transfers?</span>
         <div class="yesno">
             <div class="field-cb">
                 <input type="radio" id="transfer-yes" name="transfer" value={true} onchange={() => toggleTransfer()} bind:group={bookingData.withTransfer}>
@@ -42,6 +42,25 @@
         gap: 2rem;
         margin: 1rem 0;
     }
+    .fields {
+        gap: 0.75rem;
+    }
+    .field {
+        color: var(--espresso);
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+    .field > label {
+        font-weight: 400;
+        letter-spacing: 0.25px;
+        opacity: 0.5;
+    }
+    /* .field > input[type=date],
+    .field > input[type=text],
+    .field > input[type=email] {
+        letter-spacing: 0.25px;
+        padding: 0.5rem 0.75rem;
+    } */
     .field-cb {
         position: relative;
         display: flex;

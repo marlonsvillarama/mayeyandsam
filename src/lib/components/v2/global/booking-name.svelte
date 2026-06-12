@@ -26,9 +26,30 @@
 </div>
 
 <style>
+    .fields {
+        gap: 0.75rem;
+    }
+    .field {
+        color: var(--espresso);
+        font-size: 0.875rem;
+        font-weight: 400;
+    }
+    .field > label {
+        font-weight: 400;
+        letter-spacing: 0.25px;
+        opacity: 0.5;
+    }
+    .field > input[type=date],
+    .field > input[type=text],
+    .field > input[type=email] {
+        letter-spacing: 0.25px;
+        padding: 0.5rem 0.75rem;
+        width: 100%;
+    }
     .dates {
-        display: grid;
-        gap: 1.625rem;
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
     }
     @media (min-width: 640px) {
         .dates {

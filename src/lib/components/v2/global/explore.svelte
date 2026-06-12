@@ -1,9 +1,10 @@
 <script>
+    import { ArrowRight } from "@lucide/svelte";
     import FaqLink from "./faq-link.svelte";
     import BookingForm from "./booking-form.svelte";
     import TapedPaper from "$lib/components/v2/global/taped-paper.svelte";
     
-    let showBooking = $state(false);
+    let showModal = $state(false);
 </script>
 
 <div class="explore">
@@ -16,7 +17,17 @@
                     White sand, turquoise water, golden sunsets - Boracay is the perfect place to celebrate and make unforgettable memories together.
                 </p>
 
-                <FaqLink label="Travel Info" link="travel" />
+                <div class="links">
+                    <!-- <FaqLink label="Book Now" link="travel" /> -->
+                    <button type="button" onclick={() => showModal = true }>
+                        Book Now
+                    </button>
+                    
+                    <a href="/travel" title="More Info" class="more-info">
+                        More Info
+                        <ArrowRight />
+                    </a>
+                </div>
             <!-- </div> -->
         </div>
 
@@ -25,6 +36,8 @@
         </div>
     </div>
 </div>
+
+<BookingForm bind:show={showModal} />
 
 <style>
     .explore {
@@ -75,4 +88,51 @@
     /* .explore > .wrapper > *:last-of-type {
         border: 1px solid red;
     } */
+    .details > .links {
+        /* border: 1px solid red; */
+        display: flex;
+        /* grid-templa */
+        align-items: center;
+        gap: 2rem;
+    }
+    .links > button {
+        background-color: var(--terracota);
+        border: 0;
+        border-radius: 100px;
+        color: var(--ivory);
+        cursor: pointer;
+        font-size: 0.875rem;
+        font-weight: 500;
+        letter-spacing: 1px;
+        text-decoration: none;
+        text-transform: uppercase;
+        /* margin-right: 1.5rem; */
+        padding: 0.75rem 1.25rem;
+        transition: all 150ms ease-in-out;
+    }
+    .links > button:hover {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* transform: translateY(-2px); */
+    }
+    .links > .more-info {
+        display: flex;
+        flex: 1;
+        /* border: 1px solid red; */
+        /* background-color: var(--terracota); */
+        /* border-radius: 100px; */
+        color: var(--chocolate);
+        font-size: clamp(0.875rem, 2vw, 0.875rem);
+        font-weight: 500;
+        letter-spacing: 0.75px;
+        cursor: pointer;
+        /* padding: 0.5rem; */
+        align-items: center;
+        gap: 0.5rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: all 100ms ease-in-out;
+    }
+    .links > .more-info:hover {
+        transform: translateX(8px);
+    }
 </style>
