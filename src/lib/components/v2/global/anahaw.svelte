@@ -13,11 +13,12 @@
     .anahaw {
         background-repeat: no-repeat;
         opacity: 0.3;
-        display: none;
+        display: block;
         z-index: -1;
     }
     .anahaw-fixed {
-        display: none;
+        display: block;
+        position: fixed;
     }
     @media (min-width: 40rem) {
         .anahaw {
