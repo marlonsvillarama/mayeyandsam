@@ -84,22 +84,23 @@
         }
         .tape-section:last-of-type::after {
             transform: rotate(-45deg);
-            right: -8vmin;
-            top: -6vmin;
+            right: -5vmin;
+            top: -3vmin;
         }
         .tape-section:first-of-type::before {
             transform: rotate(-35deg);
-            left: -8vmin;
+            top: -2vmin;
+            left: -5vmin;
         }
         .tape-section:first-of-type::after {
             transform: rotate(45deg);
-            right: -8vmin;
-            top: 0vmin;
+            right: -6vmin;
+            top: -2vmin;
         }
         .tape-section:last-of-type::before {
             transform: rotate(45deg);
-            left: -8vmin;
-            bottom: 0vmin;
+            left: -5vmin;
+            bottom: -2vmin;
         }
         .top-tape {
             position: absolute;
