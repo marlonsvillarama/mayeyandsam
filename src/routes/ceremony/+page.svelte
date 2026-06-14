@@ -1,7 +1,10 @@
 <script>
+    import { Clock, MapPin, Martini, Shirt } from "@lucide/svelte";
+    
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import Nav from "$lib/components/v2/global/nav.svelte";
     import Quadbar from "$lib/components/v2/global/quadbar.svelte";
+    import QuadbarSection from "$lib/components/v2/global/quadbar-section.svelte";
     import TornImage from "$lib/components/v2/global/torn-image.svelte";
     import Footer from "$lib/components/v2/global/footer.svelte";
     import SplitPic from "$lib/components/v2/global/split-pic.svelte";
@@ -9,6 +12,12 @@
     import BackToHome from "$lib/components/v2/global/back-to-home.svelte";
     import Rsvp from "$lib/components/v2/global/rsvp.svelte";
 
+    let quad = [
+        { Icon: Clock, title: "4:30 PM", text: "Ceremony begins right before sunset" },
+        { Icon: MapPin, title: "Mövenpick Boracay", text: "Beachfront ceremony and garden reception" },
+        { Icon: Shirt, title: "Tropical cocktail", text: "Light and airy, prints and colours encouraged" },
+        { Icon: Martini, title: "Cocktails and reception", text: "Sol Marina Gardens, Mövenpick" }
+    ];
     let faq = [
         {
             label: 'What time should I arrive?',
@@ -52,6 +61,17 @@
             label: 'What\'s the rough run of the day?',
             content: `
                 <p>
+                    Ceremony. Cocktails and hors d'oeuvres. Dinner. Speeches. Dancing. Questionable dance moves.
+                </p>
+                <p>
+                    Pretty much exactly what you'd want from a Boracay wedding.
+                </p>
+            `
+        },
+        {
+            label: 'What\'s the dress code for the wedding?',
+            content: `
+                <p>
                     Tropical cocktail. Think resort wedding, Filipino summer, and beach vacation.
                 </p>
                 <p>
@@ -70,7 +90,7 @@
             label: 'Are there any colours I should avoid?',
             content: `
                 <p>
-                    We kindly ask guests to avoid all white, since we'd like to keep that one reserved for the bride. Everything else is fair game.
+                    We kindly ask guests to avoid white, since we'd like to keep that one reserved for the bride. Everything else is fair game.
                 </p>
             `
         },
@@ -160,7 +180,7 @@
                     A card, kind message, or monetary gift is more than enough.
                 </p>
                 <p>
-                    Save your luggage space for outfits and pasalubong.
+                    Save your luggage space for outfits and <em>pasalubong</em>.
                 </p>
             `
         },
@@ -187,8 +207,8 @@
         <div class="hero">
             <div class="wrapper">
                 <div>
-                    <h1>Ceremony & <br/><em>Reception</em></h1>
-                    <p>The unofficial start of our beautiful weekend in Boracay.</p>
+                    <h1>Ceremony & <br/><span class="em">Reception</span></h1>
+                    <p>A beachfront ceremony followed by cocktails, dinner, and a night of celebration.</p>
                     <BackToHome />
                 </div>
                 <div></div>
@@ -200,7 +220,12 @@
             <TornImage left={true} bottom={true} image="/images/ceremony.jpg" height="500" />
         </div>
 
-        <Quadbar />
+        <Quadbar>
+            {#each quad as q}
+            <QuadbarSection Icon={q.Icon} label={q.title}>{q.text}</QuadbarSection>
+            {/each}
+        </Quadbar>
+
         <FAQ items={faq} />
         <Footer />
     </div>

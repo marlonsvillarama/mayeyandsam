@@ -69,6 +69,11 @@
         display: grid;
         gap: 0.75rem;
     }
+    :global(.answer li) {
+        margin-inline-start: 2rem;
+        line-height: 2rem;
+    }
+
     /* :global(.answer > p) {
     } */
 </style>

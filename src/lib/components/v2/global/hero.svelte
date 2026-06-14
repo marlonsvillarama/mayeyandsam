@@ -7,9 +7,9 @@
 <div class="hero">
     <div class="wrapper">
         <div>
-            <h1>A celebration in <em>paradise.</em></h1>
+            <h1>Save us a dance in <span class="em">Boracay.</span></h1>
 
-            <p>We can't wait to celebrate our love with you in beautiful Boracay.</p>
+            <p>Celebrate with us in Boracay as we begin our next chapter together.</p>
 
             <Countdown />
         </div>

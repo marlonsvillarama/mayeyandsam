@@ -1,7 +1,10 @@
 <script>
+    import { Map, PlaneTakeoff, TreePine, ShipWheel } from "@lucide/svelte";
+
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import Nav from "$lib/components/v2/global/nav.svelte";
     import Quadbar from "$lib/components/v2/global/quadbar.svelte";
+    import QuadbarSection from "$lib/components/v2/global/quadbar-section.svelte";
     import TornImage from "$lib/components/v2/global/torn-image.svelte";
     import Footer from "$lib/components/v2/global/footer.svelte";
     import SplitPic from "$lib/components/v2/global/split-pic.svelte";
@@ -9,12 +12,18 @@
     // import BackLink from "$lib/components/v2/global/faq-link.svelte";
     import BackToHome from "$lib/components/v2/global/back-to-home.svelte";
 
+    let quad = [
+        { Icon: PlaneTakeoff, title: "Getting There", text: "Fly to Manila, then Caticlan" },
+        { Icon: ShipWheel, title: "Boracay Transfer", text: "Arrange with your hotel" },
+        { Icon: TreePine, title: "Arrive by Christmas", text: "Give yourself time to rest" },
+        { Icon: Map, title: "Explore", text: "Travel to other islands in the Philippines" },
+    ];
     let faq = [
         {
             label: 'Do I need a visa to visit the Philippines?',
             content: `
                 <p>
-                    Most guests traveling on a Canadian, UK, Australian, or US passport do not need a visa for tourist stays up to 30 days in the Philippines
+                    Most guests traveling on a Canadian, UK, Australian, or US passport do not need a visa for tourist stays up to 30 days in the Philippines.
                 </p>
                 <p>
                     Your passport should generally be valid for at least 6 months after your trip, and you may be asked to show proof of onward travel when checking in for your flight.
@@ -65,7 +74,7 @@
                     The entire transfer process from Caticlan Airport to your hotel usually takes around 30 to 45 minutes, depending on boat wait times and traffic. Just prepare for a little organized chaos and you'll be completely fine.
                 </p>
                 <p>
-                    It's all part of the Boracay experience. :-)
+                    It's all part of the Boracay experience. :)
                 </p>
             `
         },
@@ -118,7 +127,7 @@
             label: 'When should I plan to arrive?',
             content: `
                 <p>
-                    We recommend arriving by December 24 if you can.
+                    We recommend arriving by December 24 if you can, but it won't be the end of the world if you arrive by December 25.
                 </p>
                 <p>
                     That gives you time to settle in, recover from the flight, unpack, and actually enjoy Boracay a bit before wedding events start.
@@ -152,7 +161,7 @@
                         <li>Swimsuits</li>
                         <li>Sandals</li>
                         <li>Reef-safe sunscreen</li>
-                        <li>Something nicer for wedding events (refer to <strong>this FAQ</strong> for dress codes)</li>
+                        <li>Something nicer for wedding events (refer to <a href="/ceremony" target="_blank"><strong>this FAQ</strong></a> for dress codes)</li>
                         <li>Something casual for wandering the island</li>
                         <li>Books</li>
                     </ul>
@@ -255,6 +264,49 @@
                     Most importantly, enjoy Boracay!
                 </p>
             `
+        },
+        {
+            label: 'Where should I go after the wedding?',
+            content: `
+                <p>
+                    Since you're already flying all the way to the Philippines, it's worth adding a few extra days if you can.
+                </p>
+                <p>
+                    <strong>Bohol</strong> is home to the Chocolate Hills, Philippine tarsiers, and the famous Loboc River.
+                </p>
+                <img src="/images/bohol.webp" border="0" title="Tropical cocktail outfit suggestions">
+                <p>
+                    <strong>Cebu</strong> has a good mix of beaches, waterfalls, and history. It is where Catholicism started in the Philippines. You can also swim with whale sharks year-round.
+                </p>
+                <img src="/images/cebu.webp" border="0" title="Tropical cocktail outfit suggestions">
+                <p>
+                    <strong>Siargao</strong> is the Surfing Capital of the Philippines, also famous for its night life.
+                </p>
+                <img src="/images/siargao.webp" border="0" title="Tropical cocktail outfit suggestions">
+                <p>
+                    <strong>Palawan</strong> is famous for dramatic limestone cliffs, island-hopping, and some of the clearest water you'll ever see. It is also home to the subterranean river, a UNESCO World Heritage Site and one of the New 7 Wonders of Nature.
+                </p>
+                <img src="/images/palawan-kayak.jpg" border="0" title="Tropical cocktail outfit suggestions">
+                <p>
+                    If you're spending time in Manila, there's lots to explore too.
+                </p>
+                <p>
+                        <b>Intramuros</b> is the old walled city and a good place to start if you want a piece of Spanish-era history.
+                        <img src="/images/intramuros.webp" border="0" title="Tropical cocktail outfit suggestions">
+                    </p>
+                    <p>
+                        The <b>National Museum</b> is an amazing place to understand more of the Philippine history, culture, and biodiversity.
+                        <img src="/images/museum.webp" border="0" title="Tropical cocktail outfit suggestions">
+                    </p>
+                    <p><b>Quezon City</b> has great food and shopping malls.</p>
+                    <p>
+                        <b>Corregidor</b> is a powerful day trip if you're interested in World War II history. It was once an island fortress at the entrance of Manila Bay, with old barracks, tunnels, and ruins that tell a huge part of the Philippines' wartime history.
+                        <img src="/images/corregidor.webp" border="0" title="Tropical cocktail outfit suggestions">
+                    </p>
+                <p>
+                    Pick one or two places that match your travel style and give yourself enough time to actually enjoy them.
+                </p>
+            `
         }
     ];
 </script>
@@ -270,10 +322,9 @@
         <div class="hero">
             <div class="wrapper">
                 <div>
-                    <h1>Getting to <br/><em>Boracay</em></h1>
+                    <h1>Getting to <br/><span class="em">Boracay</span></h1>
                     <p>Here is everything you need to know before making the trip.</p>
                     <BackToHome />
-                    <!-- <BackLink label="Back to Home" link="" /> -->
                 </div>
                 <div></div>
             </div>
@@ -284,7 +335,11 @@
             <TornImage left={true} bottom={true} image="/images/big_003.png" height="500" />
         </div>
 
-        <Quadbar />
+        <Quadbar>
+            {#each quad as q}
+            <QuadbarSection Icon={q.Icon} label={q.title}>{q.text}</QuadbarSection>
+            {/each}
+        </Quadbar>
 
         <FAQ items={faq} />
         <Footer />

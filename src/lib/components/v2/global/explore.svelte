@@ -14,7 +14,7 @@
                 <span class="script">Come for the love,</span>
                 <h3>Stay for the island.</h3>
                 <p>
-                    White sand, turquoise water, golden sunsets - Boracay is the perfect place to celebrate and make unforgettable memories together.
+                    Come celebrate with us, then stay a little longer for the beach, sunsets, food, and everything that makes Boracay so special.
                 </p>
 
                 <div class="links">

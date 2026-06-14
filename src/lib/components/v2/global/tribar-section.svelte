@@ -74,9 +74,11 @@
         /* border: 1px solid green; */
     }
     .details {
+        /* border: 1px solid red; */
         display: flex;
+        align-items: flex-start;
         flex-direction: column;
-        justify-content: space-between;
+        /* justify-content: space-between; */
     }
     .details > .title {
         /* color: var(--es); */

@@ -85,8 +85,8 @@
         color: var(--espresso);
         display: flex;
         font-family: 'Cormorant Garamond', serif;
-        font-size: 3rem;
-        font-weight: 200;
+        font-size: 1.75rem;
+        font-weight: 600;
         gap: 0.5rem;
         line-height: 2.25rem;
         padding-bottom: 1rem;
@@ -95,8 +95,8 @@
         margin-bottom: 0.75rem;
     }
     .details > .date > .month {
-        font-size: 1.5rem;
-        font-weight: 300;
+        font-size: 1.75rem;
+        font-weight: 600;
     }
     /* .details > .date::after {
         content: "th";

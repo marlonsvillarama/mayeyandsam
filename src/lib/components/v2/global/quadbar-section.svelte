@@ -7,14 +7,14 @@
         label = "Label",
         link = "Link",
         href = "/",
-        icon = ""
+        Icon = ""
     } = $props();
 </script>
 
 <div class="tribar-section">
     <div class="icon" style="color:#c86a4a">
         <!-- <img src={image} style="height: 7rem;" title={label}> -->
-        {#if icon === "clock"}
+        <!-- {#if icon === "clock"}
             <Clock size={48} />
         {:else if icon === "map"}
             <MapPin size={48} />
@@ -22,7 +22,8 @@
             <Martini size={48} />
         {:else if icon === "shirt"}
             <Shirt size={48} />
-        {/if}
+        {/if} -->
+        <Icon size={48} />
     </div>
     <div class="details">
         <!-- <div class="heading"> -->

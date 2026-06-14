@@ -1,47 +1,47 @@
 <script>
     import QuadbarSection from "./quadbar-section.svelte";
+
+    let { children } = $props();
 </script>
 
 <div class="tribar wrapper">
     <div class="wrapper">
-        <QuadbarSection label="5:00 PM"
+        {@render children?.()}
+        <!-- <QuadbarSection label="5:00 PM"
             image="/images/SVG/cocktail copy.svg"
             link="See The Schedule"
             href="/travel"
             icon="clock"
         >
             Party starts around sunset
-            <!-- Join us for a relaxed welcome party on the 26th and our wedding ceremony on the 27th. -->
-        </QuadbarSection>
+        </QuadbarSection> -->
 
-        <QuadbarSection label="Boracay"
+        <!-- <QuadbarSection label="Boracay"
             image="/images/SVG/luggage.svg"
             link="Plan Your Trip"
             href="/travel"
             icon="map"
         >
             Outdoor venue weather-permitting
-            <!-- Find travel tips, hotel recommendations, and everything you need to know for your trip. -->
-        </QuadbarSection>
+        </QuadbarSection> -->
 
-        <QuadbarSection label="White & Beige"
+        <!-- <QuadbarSection label="White & Beige"
             image="/images/SVG/heart-mail.svg"
             link="RSVP Now"
             href="/travel"
             icon="shirt"
         >
             Casual Dress Code
-            <!-- Kindly RSVP by October 31, 2026 so we can save you a seat and plan all the details. -->
-        </QuadbarSection>
+        </QuadbarSection> -->
 
-        <QuadbarSection label="Food, Drinks & Karaoke"
+        <!-- <QuadbarSection label="Food, Drinks & Karaoke"
             image="/images/SVG/heart-mail.svg"
             link="RSVP Now"
             href="/travel"
             icon="drinks"
         >
             Filipino food, drinks, & karaoke
-        </QuadbarSection>
+        </QuadbarSection> -->
     </div>
 </div>
 

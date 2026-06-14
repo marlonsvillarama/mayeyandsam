@@ -1,13 +1,22 @@
 <script>
+    import { Clock, MapPin, Martini, Shirt } from "@lucide/svelte";
+    
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import Nav from "$lib/components/v2/global/nav.svelte";
     import Quadbar from "$lib/components/v2/global/quadbar.svelte";
+    import QuadbarSection from "$lib/components/v2/global/quadbar-section.svelte";
     import TornImage from "$lib/components/v2/global/torn-image.svelte";
     import Footer from "$lib/components/v2/global/footer.svelte";
     import SplitPic from "$lib/components/v2/global/split-pic.svelte";
     import FAQ from "$lib/components/v2/global/faq.svelte";
     import BackToHome from "$lib/components/v2/global/back-to-home.svelte";
 
+    let quad = [
+        { Icon: Clock, title: "5:00 PM", text: "Party starts around sunset" },
+        { Icon: MapPin, title: "SeaWind Boracay", text: "Beachfront, weather-permitting" },
+        { Icon: Shirt, title: "Casual", text: "White and beige, see below for details" },
+        { Icon: Martini, title: "Welcome Feast", text: "Filipino food, drinks, and karaoke" }
+    ];
     let faq = [
         {
             label: 'What is the Welcome Party?',
@@ -40,13 +49,14 @@
                 <p>
                     The Welcome Party will start at 5pm. We're planning it around sunset because Boracay sunsets are kind of ridiculous in the best way. Here is a sneak peek:
                 </p>
+                <img src="/images/boracay-sunset.webp" border="0" title="Boracay Sunset">
             `
         },
         {
             label: 'Where is it being held?',
             content: `
                 <p>
-                    The Welcome Party will be at ___________.
+                    The Welcome Party will be at Seawind Boracay in Station 1. About a 9-minute tricycle ride from Mövenpick.
                 </p>
             `
         },
@@ -59,6 +69,7 @@
                 <p>
                     Think breezy casual vacation dinner by the beach. Linen, sandals, flowy dresses, relaxed shirts, shorts, light fabrics, all of that works perfectly.
                 </p>
+                <img src="/images/welcome-party-dress-code.webp" border="0" title="Welcome Party Dress Code">
             `
         },
         {
@@ -105,7 +116,7 @@
         <div class="hero">
             <div class="wrapper">
                 <div>
-                    <h1>Join us at the <em>Welcome Party</em></h1>
+                    <h1>Join us at the <span class="em">Welcome Party.</span></h1>
                     <p>The unofficial start of our beautiful weekend in Boracay.</p>
                     <BackToHome />
                 </div>
@@ -118,7 +129,12 @@
             <TornImage left={true} bottom={true} image="/images/welcome-party.png" height="500" />
         </div>
 
-        <Quadbar />
+        <Quadbar>
+            {#each quad as q}
+            <QuadbarSection Icon={q.Icon} label={q.title}>{q.text}</QuadbarSection>
+            {/each}
+        </Quadbar>
+
         <FAQ items={faq} />
         <Footer />
     </div>

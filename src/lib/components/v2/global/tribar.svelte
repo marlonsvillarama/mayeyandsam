@@ -9,7 +9,7 @@
             link="See The Schedule"
             href="/welcome-party"
         >
-            Join us for a relaxed welcome party on the 26th and our wedding ceremony on the 27th.
+            A few days to gather, celebrate, and make lifelong memories together.
         </TribarSection>
 
         <TribarSection label="Travel & Stay"
@@ -25,7 +25,7 @@
             link="RSVP Now"
             href="/travel"
         >
-            Kindly RSVP by October 31, 2026 so we can save you a seat and plan all the details.
+            Kindly RSVP by September 15, 2026 so we can save you a seat and plan all the details.
         </TribarSection>
     </div>
 </div>

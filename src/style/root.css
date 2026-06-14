@@ -124,8 +124,9 @@ h1 { font-size: clamp(48px, 5vw, 72px); }
 h2 { font-size: clamp(36px, 5vw, 58px); }
 h3 { font-size: clamp(32px, 5vw, 48px); }
 /* h2 em { font-style: italic; color: var(--rose); } */
-h1 em, h2 em {
-    font-style: italic; color: var(--rose);
+h1 .em, h2 .em {
+    /* font-style: italic; */
+    /* color: var(--rose); */
 }
 span.script {
     color: var(--terracota);
