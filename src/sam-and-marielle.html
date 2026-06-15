@@ -1,0 +1,1550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sam & Marielle — December 27, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ivory:      #F5F7F4;
+  --cream:      #EBF0EA;
+  --sand:       #D2DDD0;
+  --gold:       #1E7A8A;
+  --gold-light: #3A9BB0;
+  --gold-pale:  #D0EBF0;
+  --ocean:      #D4634A;
+  --ocean-dark: #B04530;
+  --ocean-pale: #FAE0DA;
+  --blush:      #EEC4B8;
+  --rose:       #C06050;
+  --charcoal:   #1A2E3A;
+  --brown:      #3A5248;
+  --muted:      #7A8C88;
+  --white:      #FDFEFE;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--ivory);
+  color: var(--charcoal);
+  overflow-x: hidden;
+  font-weight: 300;
+}
+
+/* ═══════════════════════════════════════
+   NAV
+═══════════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  display: flex; justify-content: center; align-items: center;
+  gap: 36px;
+  padding: 18px 32px;
+  background: rgba(245,247,244,0.92);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(30,122,138,0.2);
+}
+nav a {
+  text-decoration: none;
+  font-size: 11px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--brown);
+  font-weight: 400;
+  transition: color 0.2s;
+}
+nav a:hover { color: var(--gold); }
+nav .nav-heart {
+  font-size: 14px;
+  color: var(--gold);
+  opacity: 0.7;
+}
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  background: var(--charcoal);
+}
+
+/* Layered tropical background via CSS */
+.hero-bg {
+  position: absolute; inset: 0; z-index: 0;
+}
+.hero-sky {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    180deg,
+    #08181E 0%,
+    #102A3A 20%,
+    #145060 40%,
+    #1A7870 60%,
+    #26A090 75%,
+    #68C8B8 85%,
+    #BEEAE0 100%
+  );
+}
+/* Sun glow */
+.hero-sun {
+  position: absolute;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #C0F2E8 0%, #28B0A0 40%, rgba(40,176,160,0) 70%);
+  top: 42%; left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  animation: sun-glow 4s ease-in-out infinite;
+}
+@keyframes sun-glow {
+  0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.9}
+  50%{transform:translate(-50%,-50%) scale(1.08);opacity:1}
+}
+/* Ocean */
+.hero-ocean {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 38%;
+  background: linear-gradient(180deg, #0E5068 0%, #082E42 40%, #041820 100%);
+  border-radius: 60% 60% 0 0 / 20px 20px 0 0;
+}
+/* Ocean shimmer */
+.hero-ocean::before {
+  content: '';
+  position: absolute;
+  top: 12px; left: 15%; right: 15%; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(255,220,140,0.6), rgba(255,240,180,0.9), rgba(255,220,140,0.6), transparent);
+  border-radius: 50%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+.hero-ocean::after {
+  content: '';
+  position: absolute;
+  top: 22px; left: 25%; right: 30%; height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255,220,140,0.4), rgba(255,240,180,0.7), transparent);
+  border-radius: 50%;
+  animation: shimmer 3s ease-in-out infinite 0.8s;
+}
+@keyframes shimmer {
+  0%,100%{opacity:.5;transform:scaleX(0.95)}
+  50%{opacity:1;transform:scaleX(1.05)}
+}
+
+/* Palm trees left */
+.palm-left {
+  position: absolute;
+  bottom: 32%; left: 4%;
+  width: 90px; height: 180px;
+  z-index: 2;
+}
+/* Palm trees right */
+.palm-right {
+  position: absolute;
+  bottom: 33%; right: 3%;
+  width: 80px; height: 160px;
+  z-index: 2;
+  transform: scaleX(-1);
+}
+
+/* Beach sand strip */
+.hero-beach {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 14%;
+  background: linear-gradient(180deg, #C8D8B0 0%, #A8C090 50%, #8AAA78 100%);
+  z-index: 1;
+}
+
+/* Floating petals */
+.petals-container {
+  position: absolute; inset: 0; pointer-events: none; z-index: 3;
+}
+.petal {
+  position: absolute;
+  width: 8px; height: 12px;
+  border-radius: 50% 0 50% 0;
+  background: rgba(238,196,184,0.65);
+  animation: fall linear infinite;
+}
+@keyframes fall {
+  0% { transform: translateY(-20px) rotate(0deg); opacity: 0; }
+  10% { opacity: 0.8; }
+  90% { opacity: 0.4; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+
+.hero-content {
+  position: relative; z-index: 10;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Gold ornament line */
+.ornament {
+  display: flex; align-items: center; justify-content: center; gap: 14px;
+  margin-bottom: 28px;
+  animation: fade-up 1s ease both;
+}
+.ornament-line {
+  width: 60px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.ornament-line.right {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.ornament span {
+  color: var(--gold);
+  font-size: 18px;
+  letter-spacing: 3px;
+}
+
+.hero h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(62px, 12vw, 130px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 0.95;
+  letter-spacing: -2px;
+  text-shadow: 0 2px 40px rgba(0,0,0,0.3);
+  margin-bottom: 8px;
+  animation: fade-up 1s ease 0.15s both;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+
+.hero-ampersand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(100px, 18vw, 200px);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--gold);
+  opacity: 0.25;
+  line-height: 0.7;
+  display: block;
+  margin: -10px 0;
+  animation: fade-up 1s ease 0.1s both;
+}
+
+.hero-date {
+  font-size: 13px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.8);
+  margin-top: 28px;
+  animation: fade-up 1s ease 0.3s both;
+}
+.hero-venue {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-style: italic;
+  color: var(--gold-light);
+  margin-top: 8px;
+  animation: fade-up 1s ease 0.4s both;
+}
+
+.hero-scroll {
+  position: absolute; bottom: 28px; left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  animation: fade-up 1s ease 1s both;
+}
+.hero-scroll span {
+  font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+}
+.scroll-dot {
+  width: 1px; height: 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.5), transparent);
+  animation: scroll-line 2s ease-in-out infinite;
+}
+@keyframes scroll-line {
+  0%{transform:scaleY(0);transform-origin:top} 50%{transform:scaleY(1)} 100%{transform:scaleY(0);transform-origin:bottom}
+}
+
+/* Countdown */
+.countdown-bar {
+  background: var(--charcoal);
+  padding: 28px 24px;
+  display: flex; justify-content: center; align-items: center; gap: 48px;
+  flex-wrap: wrap;
+}
+.count-item { text-align: center; }
+.count-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px;
+  font-weight: 300;
+  color: var(--gold-light);
+  line-height: 1;
+  display: block;
+}
+.count-label {
+  font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+  color: rgba(255,255,255,0.45);
+  margin-top: 4px;
+}
+.count-sep {
+  font-size: 36px;
+  color: rgba(30,122,138,0.35);
+  font-family: 'Cormorant Garamond', serif;
+}
+
+/* ═══════════════════════════════════════
+   SECTIONS SHARED
+═══════════════════════════════════════ */
+section { padding: 100px 32px; }
+
+.section-tag {
+  font-size: 10px; letter-spacing: 3.5px; text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: block;
+}
+h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(36px, 5vw, 58px);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+h2 em { font-style: italic; color: var(--rose); }
+
+.section-intro {
+  font-size: 16px; line-height: 1.8; color: var(--muted);
+  max-width: 540px; margin-bottom: 56px;
+}
+
+.divider {
+  display: flex; align-items: center; gap: 20px;
+  margin: 16px 0 48px;
+}
+.divider-line { flex: 1; height: 1px; background: var(--sand); }
+.divider-icon { color: var(--gold); font-size: 16px; }
+
+/* reveal */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.reveal.on { opacity: 1; transform: translateY(0); }
+
+/* ═══════════════════════════════════════
+   VENUE SECTION
+═══════════════════════════════════════ */
+.venue-section { background: var(--white); }
+.venue-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+
+.venue-visual {
+  position: relative;
+}
+.venue-card {
+  background: var(--charcoal);
+  border-radius: 4px 40px 4px 40px;
+  overflow: hidden;
+  aspect-ratio: 4/5;
+  display: flex; align-items: flex-end;
+  position: relative;
+}
+/* CSS tropical scene for venue card */
+.venue-scene {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg,
+    #0A1E30 0%,
+    #122C48 20%,
+    #165A78 40%,
+    #1E8A90 55%,
+    #28B0A0 65%,
+    #60C8B8 72%,
+    #A0E0D0 78%,
+    #D0F0E8 82%,
+    #C8E0C0 88%,
+    #B0C8A0 100%
+  );
+}
+.venue-scene::before {
+  content: '';
+  position: absolute;
+  bottom: 18%; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.6) 30%, rgba(255,255,255,0.9) 50%, rgba(255,255,255,0.6) 70%, transparent 90%);
+  border-radius: 50%;
+}
+.venue-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(20,15,10,0.85) 100%);
+}
+.venue-info {
+  position: relative; z-index: 2;
+  padding: 32px;
+}
+.venue-info h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 300; font-style: italic;
+  color: white; margin-bottom: 8px;
+}
+.venue-info p { font-size: 13px; color: rgba(255,255,255,0.6); letter-spacing: 1px; }
+
+.venue-badge {
+  position: absolute;
+  top: -16px; right: -16px;
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(197,163,90,0.4);
+}
+.venue-badge span:first-child { font-family: 'Cormorant Garamond', serif; font-size: 26px; font-weight: 300; color: white; line-height: 1; }
+.venue-badge span:last-child { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+
+.venue-details { display: grid; gap: 20px; }
+.detail-row {
+  display: flex; gap: 16px; align-items: flex-start;
+  padding: 20px;
+  background: var(--ivory);
+  border-radius: 12px;
+  border-left: 3px solid var(--gold);
+}
+.detail-icon { font-size: 20px; margin-top: 2px; }
+.detail-text strong { display: block; font-size: 13px; font-weight: 500; letter-spacing: 0.5px; margin-bottom: 4px; }
+.detail-text span { font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+@media(max-width:768px){ .venue-inner{grid-template-columns:1fr} }
+
+/* ═══════════════════════════════════════
+   TRAVEL SECTION
+═══════════════════════════════════════ */
+.travel-section { background: var(--ivory); }
+.travel-inner { max-width: 1000px; margin: 0 auto; }
+
+.travel-tabs {
+  display: flex; gap: 8px; margin-bottom: 36px;
+}
+.tab-btn {
+  padding: 10px 24px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sand);
+  background: transparent;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px; font-weight: 400;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.tab-btn.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: white;
+}
+
+.travel-panel { display: none; }
+.travel-panel.active { display: block; }
+
+.route-steps { display: grid; gap: 16px; }
+.route-step {
+  display: grid; grid-template-columns: 40px 1fr auto;
+  gap: 16px; align-items: center;
+  padding: 20px 24px;
+  background: var(--white);
+  border-radius: 14px;
+  border: 1px solid var(--cream);
+  transition: box-shadow 0.2s;
+}
+.route-step:hover { box-shadow: 0 4px 20px rgba(26,46,58,0.1); }
+.step-num-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--gold-pale);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px; color: var(--gold);
+}
+.step-body strong { display: block; font-size: 14px; font-weight: 500; margin-bottom: 3px; }
+.step-body span { font-size: 13px; color: var(--muted); line-height: 1.5; }
+.step-duration {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; color: var(--gold);
+  white-space: nowrap; text-align: right;
+}
+.step-duration small { display: block; font-family: 'Jost', sans-serif; font-size: 10px; letter-spacing: 1px; color: var(--muted); }
+
+.route-connector {
+  width: 2px; height: 16px; background: var(--sand);
+  margin: 0 0 0 38px;
+}
+
+.travel-tip {
+  margin-top: 24px;
+  padding: 20px 24px;
+  background: var(--ocean-pale);
+  border-radius: 14px;
+  border-left: 3px solid var(--ocean);
+  display: flex; gap: 14px; align-items: flex-start;
+}
+.tip-icon { font-size: 20px; }
+.travel-tip p { font-size: 14px; color: var(--ocean-dark); line-height: 1.6; }
+.travel-tip strong { font-weight: 500; }
+
+/* ═══════════════════════════════════════
+   THINGS TO DO
+═══════════════════════════════════════ */
+.todo-section { background: var(--charcoal); }
+.todo-section .section-tag { color: var(--gold-light); }
+.todo-section h2 { color: var(--white); }
+.todo-section .section-intro { color: rgba(255,255,255,0.5); }
+
+.todo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 1100px; margin: 0 auto;
+}
+.todo-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 20px;
+  padding: 28px 24px;
+  transition: background 0.25s, transform 0.2s;
+  cursor: default;
+}
+.todo-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+}
+.todo-emoji { font-size: 32px; margin-bottom: 16px; display: block; }
+.todo-card h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 400; color: var(--white);
+  margin-bottom: 10px;
+}
+.todo-card p { font-size: 13px; color: rgba(255,255,255,0.5); line-height: 1.65; }
+.todo-tag {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(30,122,138,0.35);
+  border-radius: 100px;
+  padding: 3px 12px;
+}
+
+/* ═══════════════════════════════════════
+   BUDGET
+═══════════════════════════════════════ */
+.budget-section { background: var(--cream); }
+.budget-inner { max-width: 1000px; margin: 0 auto; }
+
+.budget-toggle {
+  display: flex; gap: 8px; margin-bottom: 40px;
+}
+.currency-btn {
+  padding: 8px 20px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sand);
+  background: transparent;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px; font-weight: 400;
+  letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer;
+  color: var(--muted);
+  transition: all 0.2s;
+}
+.currency-btn.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: white;
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px; margin-bottom: 24px;
+}
+.budget-card {
+  background: var(--white);
+  border-radius: 16px;
+  padding: 24px 22px;
+  border: 1px solid var(--sand);
+}
+.budget-card-icon { font-size: 24px; margin-bottom: 12px; }
+.budget-card-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.budget-card-range {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 300; color: var(--charcoal);
+  line-height: 1.1;
+}
+.budget-card-sub { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+.budget-total {
+  background: var(--charcoal);
+  border-radius: 16px;
+  padding: 28px 32px;
+  display: flex; justify-content: space-between; align-items: center;
+  flex-wrap: wrap; gap: 16px;
+}
+.total-label { font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 6px; }
+.total-amount {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 42px; font-weight: 300; color: var(--gold-light);
+}
+.budget-note { font-size: 13px; color: rgba(255,255,255,0.45); max-width: 320px; line-height: 1.6; }
+
+/* ═══════════════════════════════════════
+   RSVP
+═══════════════════════════════════════ */
+.rsvp-section {
+  background: var(--white);
+  position: relative; overflow: hidden;
+}
+.rsvp-section::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(30,122,138,0.07) 0%, transparent 70%);
+  top: -200px; right: -200px;
+  pointer-events: none;
+}
+.rsvp-section::after {
+  content: '';
+  position: absolute;
+  width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,99,74,0.06) 0%, transparent 70%);
+  bottom: -150px; left: -100px;
+  pointer-events: none;
+}
+
+.rsvp-inner { max-width: 680px; margin: 0 auto; position: relative; z-index: 1; }
+
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.form-group { display: flex; flex-direction: column; gap: 7px; }
+.form-group.full { grid-column: 1 / -1; }
+
+label {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); font-weight: 400;
+}
+
+input[type=text], input[type=email], select, textarea {
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1.5px solid var(--sand);
+  background: var(--ivory);
+  font-family: 'Jost', sans-serif;
+  font-size: 15px; font-weight: 300;
+  color: var(--charcoal);
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+  width: 100%;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: var(--gold);
+  background: var(--white);
+}
+input::placeholder, textarea::placeholder { color: var(--muted); }
+
+textarea { resize: vertical; min-height: 100px; }
+
+.rsvp-choice { display: flex; gap: 12px; }
+.rsvp-opt { flex: 1; }
+.rsvp-opt input[type=radio] { display: none; }
+.rsvp-opt label {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px;
+  border: 1.5px solid var(--sand);
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 13px; letter-spacing: 1px; text-transform: uppercase;
+  color: var(--muted);
+  background: var(--ivory);
+  transition: all 0.2s;
+}
+.rsvp-opt input[type=radio]:checked + label {
+  border-color: var(--gold);
+  background: var(--gold-pale);
+  color: var(--brown);
+}
+.rsvp-opt label:hover { border-color: var(--gold); }
+
+.submit-btn {
+  width: 100%; padding: 18px;
+  background: var(--charcoal);
+  color: white; border: none;
+  border-radius: 10px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px; font-weight: 400;
+  letter-spacing: 3px; text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  margin-top: 8px;
+}
+.submit-btn:hover {
+  background: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(30,122,138,0.35);
+}
+
+.rsvp-success {
+  display: none;
+  text-align: center;
+  padding: 48px 24px;
+  background: var(--gold-pale);
+  border: 1px solid rgba(30,122,138,0.3);
+  border-radius: 20px;
+}
+.rsvp-success-icon { font-size: 48px; margin-bottom: 16px; }
+.rsvp-success h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px; font-weight: 300; font-style: italic;
+  color: var(--charcoal); margin-bottom: 12px;
+}
+.rsvp-success p { color: var(--muted); font-size: 15px; line-height: 1.7; }
+
+/* ═══════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════ */
+footer {
+  background: var(--charcoal);
+  text-align: center;
+  padding: 60px 32px;
+}
+.footer-names {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 48px; font-weight: 300; font-style: italic;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+}
+.footer-date { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+.footer-bottom { margin-top: 32px; font-size: 12px; color: rgba(255,255,255,0.2); }
+
+/* ═══════════════════════════════════════
+   FAQs SECTION
+═══════════════════════════════════════ */
+.faqs-section { background: var(--cream); }
+.faqs-inner { max-width: 860px; margin: 0 auto; }
+
+.faq-tab-nav { display: flex; gap: 8px; margin-bottom: 36px; flex-wrap: wrap; }
+.faq-tab-btn {
+  padding: 10px 22px;
+  border-radius: 100px;
+  border: 1.5px solid var(--sand);
+  background: transparent;
+  font-family: 'Jost', sans-serif;
+  font-size: 12px; font-weight: 400; letter-spacing: 0.5px;
+  cursor: pointer; color: var(--muted);
+  transition: all 0.2s;
+}
+.faq-tab-btn.active {
+  background: var(--charcoal);
+  border-color: var(--charcoal);
+  color: white;
+}
+.faq-tab-btn.active.teal-tab   { background: var(--gold);  border-color: var(--gold); }
+.faq-tab-btn.active.coral-tab  { background: var(--ocean); border-color: var(--ocean); }
+.faq-tab-btn.active.forest-tab { background: var(--brown); border-color: var(--brown); }
+
+.faq-panel { display: none; }
+.faq-panel.active { display: block; animation: fade-up .4s ease both; }
+
+.faq-panel-header {
+  margin-bottom: 40px; padding-bottom: 24px;
+  border-bottom: 1px solid var(--sand);
+}
+.faq-panel-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(24px, 4vw, 34px); font-weight: 300;
+  color: var(--charcoal); margin-bottom: 4px;
+}
+.faq-panel-header .faq-meta {
+  font-size: 11px; letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.topic-group { margin-bottom: 36px; }
+.topic-label {
+  font-size: 10px; font-weight: 500;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-bottom: 12px;
+  display: flex; align-items: center; gap: 12px;
+}
+.topic-label::after { content: ''; flex: 1; height: 1px; background: var(--sand); }
+
+.faq-item { border-bottom: 1px solid var(--sand); }
+.faq-q {
+  width: 100%; background: none; border: none; cursor: pointer;
+  text-align: left; display: flex; justify-content: space-between;
+  align-items: center; gap: 16px; padding: 18px 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.08rem; font-weight: 400;
+  color: var(--charcoal); line-height: 1.35;
+  transition: color .2s;
+}
+.faq-q:hover { color: var(--gold); }
+.faq-icon {
+  width: 22px; height: 22px; border-radius: 50%;
+  border: 1px solid var(--sand);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; font-size: .7rem; color: var(--muted);
+  transition: transform .3s, background .2s, border-color .2s;
+}
+.faq-item.open .faq-icon {
+  transform: rotate(45deg);
+  background: var(--gold); border-color: var(--gold); color: #fff;
+}
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-item.open .faq-a { max-height: 800px; }
+.faq-a-inner {
+  padding-bottom: 20px; font-size: .92rem;
+  color: var(--muted); line-height: 1.75;
+}
+.faq-a-inner a { color: var(--gold); text-decoration: underline; text-underline-offset: 2px; }
+.faq-a-inner strong { color: var(--charcoal); font-weight: 500; }
+
+/* ═══════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════ */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media(max-width:640px){
+  nav { gap: 18px; }
+  nav a { font-size: 9px; letter-spacing: 1.5px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .budget-total { flex-direction: column; }
+  .route-step { grid-template-columns: 36px 1fr; }
+  .step-duration { grid-column: 2; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#venue">Venue</a>
+  <a href="#travel">Travel</a>
+  <span class="nav-heart">✦</span>
+  <a href="#" style="font-family:'Cormorant Garamond',serif;font-size:17px;font-style:italic;letter-spacing:0;text-transform:none;color:var(--charcoal)">Sam & Marielle</a>
+  <span class="nav-heart">✦</span>
+  <a href="#todo">Explore</a>
+  <a href="#faqs">FAQs</a>
+  <a href="#rsvp">RSVP</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg">
+    <div class="hero-sky"></div>
+    <div class="hero-sun"></div>
+    <div class="hero-ocean"></div>
+    <div class="hero-beach"></div>
+    <!-- Palm Left (SVG) -->
+    <svg class="palm-left" viewBox="0 0 90 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M45 180 Q43 120 42 80 Q40 40 38 20" stroke="#1a3a18" stroke-width="4" stroke-linecap="round" fill="none"/>
+      <path d="M38 20 Q20 10 5 18 Q12 22 18 28 Q8 30 2 40 Q12 35 22 38 Q14 45 12 55 Q22 46 30 45" fill="#2a5a20" opacity="0.9"/>
+      <path d="M38 20 Q55 8 72 14 Q62 20 58 28 Q68 26 76 34 Q64 32 56 38 Q64 44 66 54 Q56 44 46 46" fill="#2a5a20" opacity="0.85"/>
+      <path d="M40 40 Q25 32 10 38 Q18 40 24 46 Q16 48 12 56 Q20 50 28 50" fill="#234a1a" opacity="0.8"/>
+      <path d="M42 55 Q30 45 16 48 Q24 52 28 60 Q20 60 16 68 Q24 63 34 62" fill="#1e421a" opacity="0.7"/>
+    </svg>
+    <!-- Palm Right (SVG) -->
+    <svg class="palm-right" viewBox="0 0 80 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M40 160 Q38 105 37 72 Q35 36 33 18" stroke="#1a3a18" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+      <path d="M33 18 Q16 8 2 16 Q10 20 16 26 Q6 28 1 38 Q11 33 20 36 Q12 43 10 52 Q20 43 28 42" fill="#2a5a20" opacity="0.9"/>
+      <path d="M33 18 Q50 6 66 12 Q56 18 52 26 Q62 24 70 32 Q58 30 50 36 Q58 42 60 52 Q50 42 40 44" fill="#2a5a20" opacity="0.85"/>
+    </svg>
+  </div>
+
+  <!-- Petals -->
+  <div class="petals-container" id="petals"></div>
+
+  <div class="hero-content">
+    <div class="ornament">
+      <div class="ornament-line"></div>
+      <span>✦</span>
+      <div class="ornament-line right"></div>
+    </div>
+    <h1>Sam</h1>
+    <span class="hero-ampersand">&amp;</span>
+    <h1><em>Marielle</em></h1>
+    <p class="hero-date">December 27, 2026</p>
+    <p class="hero-venue">Boracay, Philippines</p>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- COUNTDOWN BAR -->
+<div class="countdown-bar" id="countdown">
+  <div class="count-item"><span class="count-num" id="cd-days">—</span><span class="count-label">Days</span></div>
+  <span class="count-sep">·</span>
+  <div class="count-item"><span class="count-num" id="cd-hours">—</span><span class="count-label">Hours</span></div>
+  <span class="count-sep">·</span>
+  <div class="count-item"><span class="count-num" id="cd-mins">—</span><span class="count-label">Minutes</span></div>
+  <span class="count-sep">·</span>
+  <div class="count-item"><span class="count-num" id="cd-secs">—</span><span class="count-label">Seconds</span></div>
+</div>
+
+<!-- VENUE SECTION -->
+<section class="venue-section" id="venue">
+  <div class="venue-inner">
+    <div class="venue-visual reveal">
+      <div class="venue-card">
+        <div class="venue-scene"></div>
+        <div class="venue-overlay"></div>
+        <div class="venue-info">
+          <h3>White Beach, Boracay</h3>
+          <p>Aklan Province · Philippines</p>
+        </div>
+      </div>
+      <div class="venue-badge">
+        <span>27</span>
+        <span>Dec</span>
+      </div>
+    </div>
+    <div>
+      <span class="section-tag reveal">The Wedding</span>
+      <h2 class="reveal">A celebration<br>in <em>paradise.</em></h2>
+      <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">✦</span><div class="divider-line"></div></div>
+      <div class="venue-details">
+        <div class="detail-row reveal">
+          <span class="detail-icon">📅</span>
+          <div class="detail-text">
+            <strong>Wedding Date</strong>
+            <span>Sunday, December 27, 2026<br>Ceremony begins at 5:00 PM</span>
+          </div>
+        </div>
+        <div class="detail-row reveal">
+          <span class="detail-icon">📍</span>
+          <div class="detail-text">
+            <strong>Location</strong>
+            <span>White Beach, Boracay Island<br>Malay, Aklan, Philippines 5608</span>
+          </div>
+        </div>
+        <div class="detail-row reveal">
+          <span class="detail-icon">🌅</span>
+          <div class="detail-text">
+            <strong>Ceremony & Reception</strong>
+            <span>Beachfront ceremony followed by<br>a sunset dinner reception</span>
+          </div>
+        </div>
+        <div class="detail-row reveal">
+          <span class="detail-icon">👗</span>
+          <div class="detail-text">
+            <strong>Dress Code</strong>
+            <span>Tropical formal — light fabrics welcome.<br>Ladies: floral or pastel · Gents: barong or linen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRAVEL SECTION -->
+<section class="travel-section" id="travel">
+  <div class="travel-inner">
+    <span class="section-tag reveal">Getting Here</span>
+    <h2 class="reveal">Your journey<br>to <em>Boracay.</em></h2>
+    <p class="section-intro reveal">Boracay is a small island that requires a short journey from the mainland. Here's how to get there from both Calgary and Manila.</p>
+
+    <div class="travel-tabs reveal">
+      <button class="tab-btn active" onclick="switchTab('calgary')">✈️ From Calgary, Canada</button>
+      <button class="tab-btn" onclick="switchTab('manila')">🚢 From Manila, Philippines</button>
+    </div>
+
+    <!-- CALGARY -->
+    <div class="travel-panel active" id="panel-calgary">
+      <div class="route-steps">
+        <div class="route-step reveal">
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <strong>Calgary (YYC) → Manila (MNL)</strong>
+            <span>Fly from Calgary International Airport to Ninoy Aquino International Airport. Most routes connect via Tokyo, Seoul (ICN), Hong Kong, or Vancouver. Airlines: Air Canada, Philippine Airlines, Korean Air, Cathay Pacific.</span>
+          </div>
+          <div class="step-duration">~16–20h<small>with stopover</small></div>
+        </div>
+        <div class="route-connector"></div>
+        <div class="route-step reveal">
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <strong>Manila (MNL) → Caticlan (MPH)</strong>
+            <span>Fly from Manila to Godofredo P. Ramos Airport in Caticlan — the closest airport to Boracay. Several daily flights via Cebu Pacific, Philippine Airlines, or AirAsia. Alternatively, fly to Kalibo (KLO) for cheaper fares (longer transfer).</span>
+          </div>
+          <div class="step-duration">~1h<small>flight</small></div>
+        </div>
+        <div class="route-connector"></div>
+        <div class="route-step reveal">
+          <div class="step-num-circle">3</div>
+          <div class="step-body">
+            <strong>Caticlan Jetty Port → Boracay Island</strong>
+            <span>A short tricycle ride from Caticlan airport takes you to the jetty port. From there, take a bangka (outrigger boat) to Boracay's Cagban or Ilig-Iligan port.</span>
+          </div>
+          <div class="step-duration">~15 min<small>boat ride</small></div>
+        </div>
+        <div class="route-connector"></div>
+        <div class="route-step reveal">
+          <div class="step-num-circle">4</div>
+          <div class="step-body">
+            <strong>Boracay Port → Your Hotel / Venue</strong>
+            <span>E-trikes (electric tuktuks) operate island-wide from the port. White Beach is easily accessible from either port.</span>
+          </div>
+          <div class="step-duration">~10–20 min<small>by e-trike</small></div>
+        </div>
+      </div>
+      <div class="travel-tip reveal">
+        <span class="tip-icon">💡</span>
+        <p><strong>Tip for Calgary guests:</strong> Book flights at least 3–4 months in advance for December travel. Arrive in Boracay on December 25–26 to settle in before the big day. Budget roughly <strong>CAD $1,600–$2,800</strong> for round-trip airfare from Calgary depending on your airline and stopover city.</p>
+      </div>
+    </div>
+
+    <!-- MANILA -->
+    <div class="travel-panel" id="panel-manila">
+      <div class="route-steps">
+        <div class="route-step reveal">
+          <div class="step-num-circle">1</div>
+          <div class="step-body">
+            <strong>Option A — Fly: Manila (MNL) → Caticlan (MPH)</strong>
+            <span>The fastest option. Multiple daily flights from NAIA or Clark Airport on Cebu Pacific, Philippine Airlines, or AirAsia. Book early for the best fares, especially over the Christmas holiday season.</span>
+          </div>
+          <div class="step-duration">~1h<small>flight</small></div>
+        </div>
+        <div class="route-connector"></div>
+        <div class="route-step reveal">
+          <div class="step-num-circle">2</div>
+          <div class="step-body">
+            <strong>Option B — Bus + Ferry: Manila → Caticlan</strong>
+            <span>Take a bus from Manila to Roxas City or Iloilo, then a ferry to Caticlan. This is the budget option — takes significantly longer but is very affordable. Not ideal if joining right before the wedding.</span>
+          </div>
+          <div class="step-duration">~12–16h<small>total journey</small></div>
+        </div>
+        <div class="route-connector"></div>
+        <div class="route-step reveal">
+          <div class="step-num-circle">3</div>
+          <div class="step-body">
+            <strong>Caticlan Jetty → Boracay Island</strong>
+            <span>From Caticlan airport or jetty port, board a bangka boat to Boracay. Boats run regularly throughout the day. Environmental fee of ₱100 and terminal fee of ₱100 apply.</span>
+          </div>
+          <div class="step-duration">~15 min<small>boat ride</small></div>
+        </div>
+        <div class="route-connector"></div>
+        <div class="route-step reveal">
+          <div class="step-num-circle">4</div>
+          <div class="step-body">
+            <strong>Cagban Port → Your Hotel / Venue</strong>
+            <span>E-trikes meet all incoming boats and run along the main road to all beach stations. White Beach (Station 1–3) is a short ride from Cagban port.</span>
+          </div>
+          <div class="step-duration">~10–20 min<small>by e-trike</small></div>
+        </div>
+      </div>
+      <div class="travel-tip reveal">
+        <span class="tip-icon">💡</span>
+        <p><strong>Tip for Manila guests:</strong> December is peak season — book your Caticlan flights 2–3 months ahead. Cebu Pacific often has promos. Expect round-trip flights of around <strong>₱2,500–₱5,500</strong>. Consider flying into Kalibo (KLO) as a budget alternative (add ~1.5h bus transfer to Caticlan).</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THINGS TO DO -->
+<section class="todo-section" id="todo">
+  <div style="max-width:1100px;margin:0 auto">
+    <span class="section-tag reveal">Explore Boracay</span>
+    <h2 class="reveal" style="color:white">Things to do<br>before the <em style="color:var(--gold-light)">big day.</em></h2>
+    <p class="section-intro reveal">Arrive early and make the most of paradise. Boracay is packed with adventures and relaxation for every kind of guest.</p>
+    <div class="todo-grid">
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🏄</span>
+        <h3>Water Sports</h3>
+        <p>Kitesurfing, parasailing, windsurfing, paddleboarding, and banana boat rides are all available along White Beach and Bulabog Beach.</p>
+        <span class="todo-tag">Adventure</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🤿</span>
+        <h3>Island Hopping & Diving</h3>
+        <p>Snorkel the vibrant coral reefs of Crocodile Island or dive the WWII-era Yapak Wall. Island hopping tours depart daily from the beach.</p>
+        <span class="todo-tag">Nature</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🌅</span>
+        <h3>Sunset Sailing</h3>
+        <p>Board a traditional paraw (outrigger sailboat) for a magical golden hour cruise along White Beach — a Boracay signature experience.</p>
+        <span class="todo-tag">Romantic</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🍹</span>
+        <h3>D'Mall & Beach Bars</h3>
+        <p>Explore D'Mall, the island's lively shopping and dining hub. Enjoy fresh seafood, mango shakes, and cocktails with sand between your toes.</p>
+        <span class="todo-tag">Food & Drink</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">💆</span>
+        <h3>Spa & Massage</h3>
+        <p>Indulge in an affordable beachside massage or visit one of the island's wellness spas for a full relaxation treatment before the festivities.</p>
+        <span class="todo-tag">Relaxation</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🌊</span>
+        <h3>Puka Shell Beach</h3>
+        <p>Head north to Puka Shell Beach for a quieter, more rustic stretch of white sand away from the main tourist strip. Stunning and peaceful.</p>
+        <span class="todo-tag">Hidden Gem</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🪩</span>
+        <h3>Nightlife</h3>
+        <p>Boracay's fire dancers, beach parties, and clubs come alive after dark. Epic Bar and Bom Bom Beach Club are festive seasonal favourites.</p>
+        <span class="todo-tag">Nightlife</span>
+      </div>
+      <div class="todo-card reveal">
+        <span class="todo-emoji">🏔️</span>
+        <h3>Ariel's Point</h3>
+        <p>A full-day cliff diving and snorkelling excursion that includes all-you-can-eat BBQ and unlimited drinks on a remote island. A must-do.</p>
+        <span class="todo-tag">Day Trip</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET SECTION -->
+<section class="budget-section" id="budget">
+  <div class="budget-inner">
+    <span class="section-tag reveal">Travel Budget</span>
+    <h2 class="reveal">Estimated costs<br>per <em>person.</em></h2>
+    <p class="section-intro reveal">Below are estimated costs to help you plan your trip. Prices vary by season, booking timing, and preference. December is peak season — book early!</p>
+
+    <div class="budget-toggle reveal">
+      <button class="currency-btn active" onclick="setCurrency('cad')">🇨🇦 CAD</button>
+      <button class="currency-btn" onclick="setCurrency('php')">🇵🇭 PHP</button>
+      <button class="currency-btn" onclick="setCurrency('usd')">🇺🇸 USD</button>
+    </div>
+
+    <!-- FROM CALGARY -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:20px;color:var(--brown)" class="reveal">From Calgary, Canada</h3>
+    <div class="budget-grid" id="budget-calgary">
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">✈️</div>
+        <div class="budget-card-label">International Flights</div>
+        <div class="budget-card-range" id="bc-flights">CAD $1,600–$2,800</div>
+        <div class="budget-card-sub">Round-trip YYC–MNL + MNL–MPH</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🏨</div>
+        <div class="budget-card-label">Accommodation (5 nights)</div>
+        <div class="budget-card-range" id="bc-hotel">CAD $400–$1,200</div>
+        <div class="budget-card-sub">Guesthouses to beachfront resorts</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🍽️</div>
+        <div class="budget-card-label">Food & Drinks</div>
+        <div class="budget-card-range" id="bc-food">CAD $30–$80/day</div>
+        <div class="budget-card-sub">Budget to mid-range dining</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">⛵</div>
+        <div class="budget-card-label">Activities</div>
+        <div class="budget-card-range" id="bc-activities">CAD $80–$200</div>
+        <div class="budget-card-sub">Island hop, water sports, tours</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🛳️</div>
+        <div class="budget-card-label">Local Transport</div>
+        <div class="budget-card-range" id="bc-transport">CAD $30–$60</div>
+        <div class="budget-card-sub">Boats, e-trikes, buses</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🛂</div>
+        <div class="budget-card-label">Visa & Misc Fees</div>
+        <div class="budget-card-range" id="bc-misc">No visa required</div>
+        <div class="budget-card-sub">Canadians get 30-day visa-free entry</div>
+      </div>
+    </div>
+    <div class="budget-total reveal" style="margin-bottom:56px">
+      <div>
+        <div class="total-label">Estimated Total — Calgary Guest</div>
+        <div class="total-amount" id="total-calgary">CAD $2,400–$4,800</div>
+      </div>
+      <p class="budget-note">Includes flights, 5 nights accommodation, meals, activities, and local transport. Book early for the best rates!</p>
+    </div>
+
+    <!-- FROM MANILA -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;margin-bottom:20px;color:var(--brown)" class="reveal">From Manila, Philippines</h3>
+    <div class="budget-grid">
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">✈️</div>
+        <div class="budget-card-label">Domestic Flights</div>
+        <div class="budget-card-range" id="bm-flights">₱2,500–₱5,500</div>
+        <div class="budget-card-sub">Round-trip MNL–MPH or MNL–KLO</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🏨</div>
+        <div class="budget-card-label">Accommodation (3 nights)</div>
+        <div class="budget-card-range" id="bm-hotel">₱3,000–₱12,000</div>
+        <div class="budget-card-sub">Fan rooms to boutique resorts</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🍽️</div>
+        <div class="budget-card-label">Food & Drinks</div>
+        <div class="budget-card-range" id="bm-food">₱800–₱2,000/day</div>
+        <div class="budget-card-sub">Budget to mid-range dining</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">⛵</div>
+        <div class="budget-card-label">Activities</div>
+        <div class="budget-card-range" id="bm-activities">₱1,000–₱4,000</div>
+        <div class="budget-card-sub">Island hop, water sports, tours</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">🛳️</div>
+        <div class="budget-card-label">Local Transport</div>
+        <div class="budget-card-range" id="bm-transport">₱600–₱1,200</div>
+        <div class="budget-card-sub">Boat fees, e-trikes, terminals</div>
+      </div>
+      <div class="budget-card reveal">
+        <div class="budget-card-icon">📋</div>
+        <div class="budget-card-label">Env. & Terminal Fees</div>
+        <div class="budget-card-range" id="bm-misc">~₱200–₱300</div>
+        <div class="budget-card-sub">Boracay entrance & jetty fees</div>
+      </div>
+    </div>
+    <div class="budget-total reveal">
+      <div>
+        <div class="total-label">Estimated Total — Manila Guest</div>
+        <div class="total-amount" id="total-manila">₱12,000–₱28,000</div>
+      </div>
+      <p class="budget-note">Includes domestic flights, 3 nights accommodation, meals, activities, and local transport. Budget range for approx. 4-day trip.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQs SECTION -->
+<section class="faqs-section" id="faqs">
+  <div class="faqs-inner" style="max-width:860px;margin:0 auto;padding:100px 32px;">
+    <span class="section-tag reveal">Frequently Asked</span>
+    <h2 class="reveal">Everything you<br><em>need to know.</em></h2>
+    <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">✦</span><div class="divider-line"></div></div>
+    <p class="section-intro reveal">We've answered the most common questions across all our celebrations — select an event below to get started.</p>
+
+    <div class="faq-tab-nav reveal">
+      <button class="faq-tab-btn active teal-tab" onclick="switchFaqTab('calgary', this)">🎉 Engagement Party</button>
+      <button class="faq-tab-btn coral-tab" onclick="switchFaqTab('dinner', this)">🌅 Welcome Dinner</button>
+      <button class="faq-tab-btn forest-tab" onclick="switchFaqTab('wedding', this)">🌺 Wedding &amp; Reception</button>
+    </div>
+
+    <!-- ── CALGARY PANEL ── -->
+    <div class="faq-panel active" id="faq-calgary">
+      <div class="faq-panel-header">
+        <h3>Engagement Party &amp; Summer Celebration</h3>
+        <p class="faq-meta">August 23, 2026 · Calgary, Alberta</p>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">The Event</div>
+        <div class="faq-item"><button class="faq-q">What is this party for? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">This is our Calgary celebration for loved ones who may not be able to travel to the Philippines for the wedding. Think of it as our way of including everyone in the joy — a summer party in your honour as much as ours!</div></div></div>
+        <div class="faq-item"><button class="faq-q">What time does the party start? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The cocktail party begins at <strong>5:00 PM</strong>. Come ready to mingle, enjoy a drink, and celebrate with us!</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is this a family-friendly event? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes! Children are absolutely welcome. We ask that little ones are supervised at all times. If you're bringing kids, please indicate this on your RSVP so we can plan accordingly.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Venue &amp; Location</div>
+        <div class="faq-item"><button class="faq-q">Where exactly is the party being held? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The party is at <strong>The Ridout House</strong>, located at <strong>76 Woodhaven Crescent SW, Calgary</strong>. We'll include a map and any additional directions with your invitation.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is there parking available at the venue? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Street parking is available in the neighbourhood. We'll include any additional parking details and public transit options with your invitation.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Dress Code</div>
+        <div class="faq-item"><button class="faq-q">What should I wear? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Dress code is <strong>smart casual / summer festive</strong>. Think sundresses, linen blazers, or your favourite summer look. It's a celebration, so feel free to dress up a little — just keep it comfortable for an outdoor August evening in Calgary.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Are there any colours to avoid? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">No strict colour rules here — it's a party! That said, we kindly ask guests not to wear all-white, as that's traditionally reserved for the bride.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Food &amp; Drinks</div>
+        <div class="faq-item"><button class="faq-q">Will food and drinks be provided? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes! We'll be hosting the food and drinks for the evening. More details on the menu will be shared closer to the date.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Can you accommodate dietary restrictions or allergies? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutely. Please note any dietary restrictions or allergies on your RSVP form and we'll do our best to make sure there's something delicious for everyone.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">RSVP &amp; Gifts</div>
+        <div class="faq-item"><button class="faq-q">How do I RSVP? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Please RSVP using the form on this website. We kindly ask that you respond by <strong>July 15, 2026</strong> so we can plan accordingly.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Should I bring a gift? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Your presence is the greatest gift of all — truly! Please do not feel any obligation to bring anything. Just come ready to celebrate with us.</div></div></div>
+      </div>
+    </div>
+
+    <!-- ── WELCOME DINNER PANEL ── -->
+    <div class="faq-panel" id="faq-dinner">
+      <div class="faq-panel-header">
+        <h3>Welcome Dinner</h3>
+        <p class="faq-meta">December 26, 2026 · Boracay, Philippines</p>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">The Event</div>
+        <div class="faq-item"><button class="faq-q">What is the Welcome Dinner? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The Welcome Dinner is our way of kicking off the wedding celebrations! It's a relaxed, intimate gathering for guests who have made the trip to Boracay, giving everyone a chance to arrive, settle in, and connect before the big day.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is attendance at the Welcome Dinner mandatory? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">It's not mandatory, but it's highly encouraged! It's a wonderful opportunity to meet other guests and spend quality time with us before the wedding day gets busy.</div></div></div>
+        <div class="faq-item"><button class="faq-q">What time does the Welcome Dinner start and end? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Timing details will be confirmed closer to the date. Plan for a sunset dinner — Boracay sunsets in December are truly magical.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Venue &amp; Getting There</div>
+        <div class="faq-item"><button class="faq-q">Where will the Welcome Dinner be held? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The venue details will be shared in your formal invitation. It will be somewhere beautiful on the island — Boracay has no shortage of stunning settings!</div></div></div>
+        <div class="faq-item"><button class="faq-q">How do I get to the dinner from my accommodation? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Boracay is a small island — most places are reachable by tricycle, e-bike, or a short walk. We'll include transport tips in your event details. If you're staying nearby, we may also arrange a group meetup point.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Dress Code</div>
+        <div class="faq-item"><button class="faq-q">What is the dress code for the Welcome Dinner? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We're going <strong>all white and beige</strong>! Beach casual attire is very much encouraged — think linen shirts, sundresses, shorts, sandals, and light fabrics. You'll be on a tropical beach, so dress comfortably and embrace the island vibe. Just keep it in those white and beige tones.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will the dinner be outdoors? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes — the Welcome Dinner will be held <strong>outdoors, weather permitting</strong>. December is Boracay's dry season, so evenings are typically warm and breezy. Expect temperatures around 26–30°C. Light, breathable fabrics are your best friend, and sandals are very much welcome!</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Travel &amp; Boracay</div>
+        <div class="faq-item"><button class="faq-q">When should I arrive in Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We recommend arriving by <strong>December 25 or 26</strong> to give yourself time to settle in and enjoy the island before the Welcome Dinner. Don't rush — arriving frazzled is never fun!</div></div></div>
+        <div class="faq-item"><button class="faq-q">How do I get to Boracay from Manila? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Fly into <strong>Caticlan Airport (MPH)</strong> — it's the closest airport to Boracay, just minutes from the port. Because Boracay is an island, getting there requires a <strong>land and sea transfer</strong>: a short drive to the port, followed by a bangka (outrigger boat) ride of roughly 15 minutes across to the island. Your hotel can arrange this transfer for you directly, so we recommend getting in touch with them ahead of your arrival.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Do I need a visa to visit the Philippines? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Many nationalities, including Canadian citizens, can enter the Philippines visa-free for up to 30 days. We recommend verifying your specific country's requirements with the nearest Philippine embassy or consulate well in advance of travel.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Where should I stay in Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Boracay has a wonderful range of accommodations at different price points — from boutique guesthouses to luxury beachfront resorts. The wedding ceremony and reception will be held at the <strong>Movenpick Resort &amp; Spa</strong>, but you are absolutely not required to stay there. If you choose to stay elsewhere on the island, the Movenpick is only a quick e-tricycle ride away.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Food &amp; Drinks</div>
+        <div class="faq-item"><button class="faq-q">Will the Welcome Dinner be hosted (food and drinks included)? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes — dinner and drinks are on us. Come hungry and ready to celebrate!</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will there be Filipino food? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We wouldn't have it any other way! Expect a spread that showcases delicious Filipino flavours alongside other dishes. If you have food allergies or restrictions, please let us know in your RSVP.</div></div></div>
+      </div>
+    </div>
+
+    <!-- ── WEDDING PANEL ── -->
+    <div class="faq-panel" id="faq-wedding">
+      <div class="faq-panel-header">
+        <h3>Wedding &amp; Reception</h3>
+        <p class="faq-meta">December 27, 2026 · Movenpick Resort, Boracay</p>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Ceremony</div>
+        <div class="faq-item"><button class="faq-q">What time does the ceremony begin? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Ceremony time will be confirmed in your formal invitation. We recommend arriving <strong>at least 20–30 minutes early</strong> to get seated and soak in the beautiful surroundings.</div></div></div>
+        <div class="faq-item"><button class="faq-q">How long will the ceremony last? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The ceremony will be approximately <strong>45 minutes to 1 hour</strong>. Following the ceremony, there will be a cocktail hour before the reception begins.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will the ceremony be indoors or outdoors? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The ceremony will be held <strong>beachfront</strong> — right on the sand with the ocean as our backdrop. The reception will be held at the <strong>Sol Marina Beachfront Garden</strong> at the Movenpick Resort. December is Boracay's dry season, so conditions should be stunning. A contingency plan is always in place — your comfort is our priority.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is photography and videography allowed during the ceremony? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We are having an <strong>unplugged ceremony</strong> — we kindly ask all guests to put phones and cameras away during the ceremony itself, so everyone can be fully present. Our professional team will capture every moment beautifully. There will be plenty of time for photos at the reception!</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Reception</div>
+        <div class="faq-item"><button class="faq-q">Where is the reception being held? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The reception will be held at the <strong>Sol Marina Beachfront Garden</strong> at Movenpick Resort &amp; Spa Boracay — the same property as the ceremony. No travel between locations needed!</div></div></div>
+        <div class="faq-item"><button class="faq-q">What is the schedule for the reception? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Following the ceremony, there will be a <strong>cocktail hour</strong> with drinks and canapés. The reception dinner, speeches, first dance, and celebrations will follow. Exact timings will be listed on your invitation.</div></div></div>
+        <div class="faq-item"><button class="faq-q">What time does the reception end? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We plan to party until late! The venue has a set end time which we'll confirm closer to the date. Keep the full day and evening free.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Will there be a seating chart? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes, we will have assigned seating for dinner. Your table number will be displayed at the entrance. If you have seating preferences or need to be seated near specific guests, please mention it in your RSVP notes.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Dress Code</div>
+        <div class="faq-item"><button class="faq-q">What is the dress code for the wedding? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Dress code is <strong>Tropical Cocktail Attire</strong> — and we highly encourage colours and prints! Think vibrant florals, tropical patterns, and rich island hues.<br><br><strong>Ladies:</strong> Cocktail dresses, tea-length gowns, hi-low hemlines, or floor-length tropical prints — all welcome.<br><strong>Gentlemen:</strong> Dress shirts, tropical printed long-sleeve shirts, or a smart barong tagalog. Pair with brown or khaki trousers.<br><br><strong>Heels are entirely optional.</strong> You will be on beachfront grounds — elegant flats, strappy sandals, and block heels are all great choices.<br><br>We only ask that guests kindly avoid wearing <strong>white, ivory, or cream</strong>, which are reserved for the bride.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Can I wear a barong tagalog or filipiniana? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Absolutely, yes — we would love it! Wearing Filipino traditional formal attire is not only appropriate, it is warmly encouraged and a beautiful way to honour the setting and culture.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Venue &amp; Logistics</div>
+        <div class="faq-item"><button class="faq-q">What is Movenpick Resort Boracay like? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Movenpick Resort &amp; Spa Boracay is a luxury beachfront resort located at the quieter <strong>Station 0</strong> end of the island — the most serene and uncrowded stretch of White Beach. It features lush tropical gardens, stunning ocean views, and world-class facilities. Truly a breathtaking setting for a wedding.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Do I need to stay at Movenpick Resort? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Staying at Movenpick is not required — Boracay has wonderful accommodations available at a range of price points. If you choose to stay elsewhere on the island, the Movenpick is only a quick e-tricycle ride away. That said, staying on-site does add a special convenience on the wedding day!</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Food &amp; Drinks</div>
+        <div class="faq-item"><button class="faq-q">Will dietary restrictions be accommodated? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Yes. Please indicate any dietary restrictions (vegetarian, vegan, gluten-free, allergies, etc.) on your RSVP form. We'll pass these along to the Movenpick catering team to ensure you're well taken care of.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Gifts</div>
+        <div class="faq-item"><button class="faq-q">Is there anything on your wish list? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Your presence at our wedding is already the most meaningful gift we could ever ask for. We do not have a gift registry. If you would like to give something, a monetary gift is truly and warmly appreciated, as it will go towards building our life together. That said, please know there is absolutely no expectation whatsoever.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Should I bring a physical gift to Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We kindly suggest skipping physical gifts — travelling internationally with items can be quite the adventure! If you'd like to give, a card with a heartfelt note (or a monetary gift) is more than enough and will be treasured.</div></div></div>
+      </div>
+      <div class="topic-group">
+        <div class="topic-label">Other Practicalities</div>
+        <div class="faq-item"><button class="faq-q">What currency should I bring to Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">The currency in the Philippines is the <strong>Philippine Peso (PHP)</strong>. There are ATMs on the island, but we recommend exchanging some cash before arriving or at the airport in Manila. Many larger establishments also accept credit cards.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Is it safe to drink the tap water in Boracay? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">We recommend drinking bottled or filtered water during your stay, as tap water in the Philippines is generally not safe for drinking. Bottled water is widely available and inexpensive throughout the island.</div></div></div>
+        <div class="faq-item"><button class="faq-q">Who should I contact if I have questions not answered here? <span class="faq-icon">+</span></button><div class="faq-a"><div class="faq-a-inner">Please reach out through the <strong>Contact</strong> page of this website or send us a message directly. We'll get back to you as soon as we can — just try not to message us in the hour before the ceremony! 😄</div></div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RSVP -->
+<section class="rsvp-section" id="rsvp">
+  <div class="rsvp-inner">
+    <span class="section-tag reveal">Kindly Reply</span>
+    <h2 class="reveal">Will you join<br><em>our celebration?</em></h2>
+    <div class="divider reveal"><div class="divider-line"></div><span class="divider-icon">✦</span><div class="divider-line"></div></div>
+    <p class="section-intro reveal" style="margin-bottom:36px">Please RSVP by <strong>October 27, 2026</strong> so we can celebrate with you in Boracay. We'd love to know you're coming!</p>
+
+    <form id="rsvp-form" onsubmit="handleRSVP(event)">
+      <div class="form-grid">
+        <div class="form-group reveal">
+          <label>First Name</label>
+          <input type="text" placeholder="Your first name" required>
+        </div>
+        <div class="form-group reveal">
+          <label>Last Name</label>
+          <input type="text" placeholder="Your last name">
+        </div>
+        <div class="form-group full reveal">
+          <button type="submit" class="submit-btn">Send My RSVP ✦</button>
+        </div>
+      </div>
+    </form>
+
+    <div class="rsvp-success" id="rsvp-success">
+      <div class="rsvp-success-icon">🌺</div>
+      <h3>We can't wait to see you!</h3>
+      <p>Thank you for your RSVP. Sam & Marielle are thrilled you'll be celebrating this special day with them in beautiful Boracay.<br><br>Keep an eye on your email for updates and more details closer to the date.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-names">Sam & Marielle</div>
+  <div class="footer-date">December 27, 2026 · Boracay, Philippines</div>
+  <div class="footer-bottom">Made with love 🤍 for the most beautiful day</div>
+</footer>
+
+<script>
+// ─── PETAL RAIN ─────────────────────────────
+const petalContainer = document.getElementById('petals');
+for (let i = 0; i < 18; i++) {
+  const p = document.createElement('div');
+  p.className = 'petal';
+  const left = Math.random() * 100;
+  const delay = Math.random() * 12;
+  const duration = 8 + Math.random() * 10;
+  const size = 6 + Math.random() * 8;
+  const hue = Math.random() > 0.5 ? 'rgba(238,196,184,0.6)' : 'rgba(58,155,176,0.3)';
+  p.style.cssText = `left:${left}%;animation-delay:${delay}s;animation-duration:${duration}s;width:${size}px;height:${size*1.4}px;background:${hue};`;
+  petalContainer.appendChild(p);
+}
+
+// ─── COUNTDOWN ──────────────────────────────
+function updateCountdown() {
+  const wed = new Date('2026-12-27T17:00:00+08:00');
+  const now = new Date();
+  const diff = wed - now;
+  if (diff <= 0) {
+    document.getElementById('cd-days').textContent = '0';
+    document.getElementById('cd-hours').textContent = '0';
+    document.getElementById('cd-mins').textContent = '0';
+    document.getElementById('cd-secs').textContent = '0';
+    return;
+  }
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-days').textContent = d;
+  document.getElementById('cd-hours').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-mins').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-secs').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+// ─── TRAVEL TABS ────────────────────────────
+function switchTab(city) {
+  document.querySelectorAll('.travel-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('panel-' + city).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ─── CURRENCY TOGGLE ────────────────────────
+const rates = { cad: 1, php: 41.5, usd: 0.73 };
+const sym = { cad: 'CAD $', php: '₱', usd: 'USD $' };
+
+const calgaryData = {
+  flights:    { cad: [1600, 2800] },
+  hotel:      { cad: [400, 1200] },
+  food:       { cad: [30, 80], suffix: '/day' },
+  activities: { cad: [80, 200] },
+  transport:  { cad: [30, 60] },
+  misc:       { text: { cad: 'No visa required', php: 'No visa required', usd: 'No visa required' } },
+};
+const manilaData = {
+  flights:    { php: [2500, 5500] },
+  hotel:      { php: [3000, 12000] },
+  food:       { php: [800, 2000], suffix: '/day' },
+  activities: { php: [1000, 4000] },
+  transport:  { php: [600, 1200] },
+  misc:       { php: [200, 300] },
+};
+const manilaTotal = { php: [12000, 28000] };
+const calgaryTotal = { cad: [2400, 4800] };
+
+function fmt(amount, curr) {
+  const v = Math.round(amount * rates[curr] / 100) * 100;
+  return sym[curr] + v.toLocaleString();
+}
+
+function setCurrency(curr) {
+  document.querySelectorAll('.currency-btn').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+
+  // Calgary budget
+  const cf = calgaryData.flights.cad;
+  document.getElementById('bc-flights').textContent = fmt(cf[0],'cad') + ' – ' + fmt(cf[1],'cad'); // Keep CAD for calgary flights
+
+  // Only sensibly convert hotel/food/activities
+  const ch = calgaryData.hotel.cad;
+  document.getElementById('bc-hotel').textContent = fmt(ch[0], curr) + ' – ' + fmt(ch[1], curr);
+  const cfd = calgaryData.food.cad;
+  document.getElementById('bc-food').textContent = fmt(cfd[0], curr) + ' – ' + fmt(cfd[1], curr) + '/day';
+  const ca = calgaryData.activities.cad;
+  document.getElementById('bc-activities').textContent = fmt(ca[0], curr) + ' – ' + fmt(ca[1], curr);
+  const ct = calgaryData.transport.cad;
+  document.getElementById('bc-transport').textContent = fmt(ct[0], curr) + ' – ' + fmt(ct[1], curr);
+
+  const cgtot = calgaryTotal.cad;
+  document.getElementById('total-calgary').textContent = fmt(cgtot[0], curr) + ' – ' + fmt(cgtot[1], curr);
+
+  // Manila budget (PHP base)
+  const mf = manilaData.flights.php;
+  document.getElementById('bm-flights').textContent = fmt(mf[0]/rates.php*rates[curr],'cad').replace(sym.cad, sym[curr]) + ' – ' + fmt(mf[1]/rates.php*rates[curr],'cad').replace(sym.cad, sym[curr]);
+
+  function phpTo(arr) {
+    return sym[curr] + Math.round(arr[0]/rates.php*rates[curr]/100)*100 + ' – ' + sym[curr] + Math.round(arr[1]/rates.php*rates[curr]/100)*100;
+  }
+
+  document.getElementById('bm-flights').textContent = (sym[curr]) + Math.round(manilaData.flights.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaData.flights.php[1]/rates.php*rates[curr]).toLocaleString();
+  document.getElementById('bm-hotel').textContent = sym[curr] + Math.round(manilaData.hotel.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaData.hotel.php[1]/rates.php*rates[curr]).toLocaleString();
+  document.getElementById('bm-food').textContent = sym[curr] + Math.round(manilaData.food.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaData.food.php[1]/rates.php*rates[curr]).toLocaleString() + '/day';
+  document.getElementById('bm-activities').textContent = sym[curr] + Math.round(manilaData.activities.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaData.activities.php[1]/rates.php*rates[curr]).toLocaleString();
+  document.getElementById('bm-transport').textContent = sym[curr] + Math.round(manilaData.transport.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaData.transport.php[1]/rates.php*rates[curr]).toLocaleString();
+  document.getElementById('bm-misc').textContent = sym[curr] + Math.round(manilaData.misc.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaData.misc.php[1]/rates.php*rates[curr]).toLocaleString();
+  document.getElementById('total-manila').textContent = sym[curr] + Math.round(manilaTotal.php[0]/rates.php*rates[curr]).toLocaleString() + ' – ' + sym[curr] + Math.round(manilaTotal.php[1]/rates.php*rates[curr]).toLocaleString();
+}
+
+// ─── RSVP ───────────────────────────────────
+function handleRSVP(e) {
+  e.preventDefault();
+  document.getElementById('rsvp-form').style.display = 'none';
+  document.getElementById('rsvp-success').style.display = 'block';
+}
+
+// ─── FAQ TABS ───────────────────────────────
+function switchFaqTab(id, btn) {
+  document.querySelectorAll('.faq-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.faq-tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('faq-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+
+// ─── FAQ ACCORDION ──────────────────────────
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    btn.closest('.faq-panel').querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+// ─── SCROLL REVEAL ──────────────────────────
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((en, i) => {
+    if (en.isIntersecting) {
+      setTimeout(() => en.target.classList.add('on'), i * 70);
+      obs.unobserve(en.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
