@@ -28,7 +28,7 @@
                     We wanted a relaxed night where friends and family from both sides could meet properly before the wedding day.
                 </p>
                 <p>
-                    No formalities. No big schedule. just good food, drinks, karaoke, and a Boracay sunset with people we love.
+                    No formalities. No big schedule. Just good food, drinks, karaoke, and a Boracay sunset with people we love.
                 </p>
             `
         },
@@ -56,7 +56,7 @@
             label: 'Where is it being held?',
             content: `
                 <p>
-                    The Welcome Party will be at Seawind Boracay in Station 1. About a 9-minute tricycle ride from Mövenpick.
+                    The Welcome Party will be at SeaWind Boracay in Station 1, a 9-minute tricycle ride from Mövenpick.
                 </p>
             `
         },

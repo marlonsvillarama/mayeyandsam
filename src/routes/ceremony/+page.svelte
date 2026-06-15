@@ -130,7 +130,7 @@
                     <li>
                         <strong>Station 1</strong>
                         <p>
-                            The prettiest stretch of White Beach with soft powdery sand and lots of higher-end resorts. Greate if you want a more relaxed and scenic area while still being close to restaurants and activity.
+                            The prettiest stretch of White Beach with soft powdery sand and lots of higher-end resorts. Great if you want a more relaxed and scenic area while still being close to restaurants and activity.
                         </p>
                     </li>
                     <li>
