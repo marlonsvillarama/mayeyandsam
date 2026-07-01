@@ -24,7 +24,7 @@ export async function load({ setHeaders, depends }) {
             'apikey': PUBLIC_ANON_PUBLIC_KEY,
             'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
             'Pragma': 'no-cache',
-            'Expires': '0'
+            'Expires': '0',
             'Authorization': `Bearer ${PUBLIC_ANON_PUBLIC_KEY}`,
         }
     });
