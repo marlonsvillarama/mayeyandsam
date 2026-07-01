@@ -3,6 +3,7 @@
     import { Check, WheatOff } from "@lucide/svelte";
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import ListNav from "$lib/components/v2/global/list-nav.svelte";
+    import { onMount } from "svelte";
 
     let { data } = $props();
     // console.log('list page data', data);
@@ -12,6 +13,12 @@
         if (filter === 'present') return data.rows.filter(r => r.attending === true);
         else if (filter === 'absent') return data.rows.filter(r => r.attending === false);
         else return data.rows;
+    });
+
+    onMount(() => {
+        const interval = setInterval(() => { invalidateAll() }, 1000);
+
+        return () => { clearInterval(interval) };
     });
 </script>
 
