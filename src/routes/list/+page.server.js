@@ -9,7 +9,7 @@ import { PUBLIC_SUPABASE_API_URL, PUBLIC_ANON_PUBLIC_KEY } from "$env/static/pub
     // }; */
 
 export async function load() {
-    let url = `${PUBLIC_SUPABASE_API_URL}/rest/v1/mns_attendees?select=*&dt=${(new Date()).getTime().toString()}`;
+    let url = `${PUBLIC_SUPABASE_API_URL}/rest/v1/mns_attendees?select=*`;
     console.log('url', url);
     const response = await fetch(url, {
         headers: {
