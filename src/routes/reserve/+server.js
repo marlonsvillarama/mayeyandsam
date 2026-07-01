@@ -47,8 +47,8 @@ export async function POST({ request }) {
     try {
         const { data, error } = await resend.emails.send({
             from: 'reservation@samandmarielle.com',
-            to: ['herald.lajo@movenpick.com', 'marlonsvillarama@gmail.com'],
-            cc: ['marielle.villarama@gmail.com', 'marlonsvillarama.biz@gmail.com'],
+            to: ['herald.lajo@movenpick.com'],
+            cc: ['marielle.villarama@gmail.com', 'marlonsvillarama@gmail.com'],
             replyTo: ['marielle.villarama@gmail.com'],
             subject: 'RIDOUT - VILLARAMA WEDDING',
             html: buildEmail(requestData)
