@@ -1,5 +1,6 @@
 <script>
-    import { PUBLIC_SUPABASE_API_URL, PUBLIC_ANON_PUBLIC_KEY } from "$env/static/public";
+    // import { PUBLIC_SUPABASE_API_URL, PUBLIC_ANON_PUBLIC_KEY } from "$env/static/public";
+    import { supabase } from "../../../../supabaseClient";
     import FieldRadio from "./field-radio.svelte";
     import FieldText from "./field-text.svelte";
     import AddGuest from "./add-guest.svelte";
@@ -124,22 +125,24 @@
         attendees = [];
 
         try {
-            const response = await fetch(`${PUBLIC_SUPABASE_API_URL}/mns_attendees`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'apikey': PUBLIC_ANON_PUBLIC_KEY,
-                    'Authorization': `Bearer ${PUBLIC_ANON_PUBLIC_KEY}`,
-                    'Prefer': 'return=minimal',
-                },
-                body: JSON.stringify(finalAttendees)
-            });
+            // const response = await fetch(`${PUBLIC_SUPABASE_API_URL}/mns_attendees`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         'apikey': PUBLIC_ANON_PUBLIC_KEY,
+            //         'Authorization': `Bearer ${PUBLIC_ANON_PUBLIC_KEY}`,
+            //         'Prefer': 'return=minimal',
+            //     },
+            //     body: JSON.stringify(finalAttendees)
+            // });
             // console.log(`code = ${response.code}`, response);
 
-            if (!response.ok) {
-                alert('Oops... something went wrong!');
-                return;
-            }
+            // if (!response.ok) {
+            //     alert('Oops... something went wrong!');
+            //     return;
+            // }
+            const { error } = await supabase.from('mns_attendees').insert(finalAttendees);
+            console.log('rsvp error', error);
 
             alert('Thank you for confirming!');
             dialog.close();
