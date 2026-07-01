@@ -4,6 +4,7 @@
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import ListNav from "$lib/components/v2/global/list-nav.svelte";
     import { onMount } from "svelte";
+    import { invalidate } from "$app/navigation";
 
     let { data } = $props();
     // console.log('list page data', data);
@@ -16,9 +17,10 @@
     });
 
     onMount(() => {
-        const interval = setInterval(() => { invalidateAll() }, 1000);
+        invalidate('app:fresh-data');
+        // const interval = setInterval(() => { invalidateAll() }, 1000);
 
-        return () => { clearInterval(interval) };
+        // return () => { clearInterval(interval) };
     });
 </script>
 
