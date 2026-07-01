@@ -14,6 +14,7 @@ export async function load() {
     const response = await fetch(url, {
         headers: {
             'apikey': PUBLIC_ANON_PUBLIC_KEY,
+            'Cache-Control': 'no-cache',
             'Authorization': `Bearer ${PUBLIC_ANON_PUBLIC_KEY}`,
         }
     });
