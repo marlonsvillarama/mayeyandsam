@@ -12,7 +12,9 @@ const buildEmail = (data) => {
     return `
     Hello Hero,
 
+    <p>
     A new guest has submitted a request for the wedding room rate. Please find the details below.
+    </p>
 
     <p><b>Guest Name</b><br/>${data.name}</p>
     <p><b>Email Address</b><br/>${data.email}</p>
@@ -27,16 +29,14 @@ const buildEmail = (data) => {
     <p><b>Number of Guests</b><br/>${data.guestCount}</p>
     <p><b>Number of Transfers</b><br/>${data.transferCount}</p>
     <p><b>Room Preference</b><br/>${data.roomName}</p>
-    <p><b>Additional Notes or Requests</b><br/>${data.requests}</p>
+    <p><b>Additional Notes or Requests</b><br/>${data.requests || 'NONE'}</p>
 
     <p>This request was submitted through the wedding website booking form and is intended for direct follow-up with the guest.</p>
     <p>Thank you very much for your assistance.</p>
 
-    Best regards,
-
-    Sam Ridout and Marielle Villarama
-
-    <b>NOTE:</b> This is an auto-generated email. Please do not reply to this message.
+    <p>Best regards,</p>
+    <p>Sam Ridout and Marielle Villarama<p>
+    <p><b>NOTE:</b> This is an auto-generated email. Please do not reply to this message.</p>
     `;
 };
 
@@ -47,7 +47,6 @@ export async function POST({ request }) {
     try {
         const { data, error } = await resend.emails.send({
             from: 'reservation@samandmarielle.com',
-            // to: ['marlonsvillarama@gmail.com'],
             to: ['herald.lajo@movenpick.com'],
             cc: ['marlonsvillarama@gmail.com', 'marielle.villarama@gmail.com'],
             replyTo: ['marielle.villarama@gmail.com'],
