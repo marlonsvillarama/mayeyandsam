@@ -49,7 +49,7 @@ export async function POST({ request }) {
             from: 'reservation@samandmarielle.com',
             to: ['marlonsvillarama@gmail.com'],
             // to: ['herald.lajo@movenpick.com'],
-            // cc: ['marlonsvillarama@gmail.com', 'marielle.villarama@gmail.com'],
+            cc: ['marlonsvillarama@gmail.com', 'marielle.villarama@gmail.com'],
             replyTo: ['marielle.villarama@gmail.com'],
             subject: 'RIDOUT - VILLARAMA WEDDING',
             html: buildEmail(requestData)
