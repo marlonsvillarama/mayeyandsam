@@ -1,4 +1,5 @@
 <script>
+    import { enhance } from "$app/forms";
     import { X } from "@lucide/svelte";
     import { createBookingData } from "$lib/data/store.svelte";
     import BookingName from "./booking-name.svelte";
@@ -6,6 +7,7 @@
     import BookingSummary from "./booking-summary.svelte";
     import BookingTransfer from "./booking-transfer.svelte";
     import Spinner from "./spinner.svelte";
+  import { onDestroy, onMount } from "svelte";
 
     let {
         oncloseclick,
@@ -16,6 +18,9 @@
     $effect(() => {
         if (show) {
             dialog.showModal();
+        }
+        else {
+            dialog.close();
         }
     });
 
@@ -37,18 +42,36 @@
         isSubmitting = true;
 
         bookingData.roomType = bookingData.roomType;
-        const API_URL = 'https://23quo4pddg.execute-api.ap-southeast-2.amazonaws.com/default/mayeyandsam';
-        let postResp = await fetch(API_URL, {
+
+        const resp = await fetch('/reserve', {
             headers: {
                 'Content-Type': 'application/json'
             },
             method: 'POST',
             body: JSON.stringify(bookingData.data)
         });
-        console.log('postResp', postResp);
+        let respJson = await resp.json();
+        console.log('respJson', respJson);
+
+        // const { error } = await supabaseWrite.from('mns_attendees').insert(bookingData.data);
+        // console.log('server data', data);
+
+        // const API_URL = 'https://23quo4pddg.execute-api.ap-southeast-2.amazonaws.com/default/mayeyandsam';
+        // const API_URL = 'https://dfgnmwkmafbjqllhtzgf.supabase.co/rest/v1/mns_attendees';
+        // let postResp = await fetch(API_URL, {
+        //     headers: {
+        //         'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRmZ25td2ttYWZianFsbGh0emdmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTA4MzcxMzIsImV4cCI6MjA2NjQxMzEzMn0.qUFsshqOAZN8oLWsqUkdsasfeEKMPK00qEaIwrJK-Ko`,
+        //         'Content-Type': 'application/json'
+        //     },
+        //     method: 'POST',
+        //     body: JSON.stringify(bookingData.data)
+        // });
+        // console.log('postResp', postResp);
+        // const { error } = await supabaseWrite.from('mns_attendees').insert(bookingData.data);
+        // console.log('post error', error);
+
         bookingData.submitted = true;
         isSubmitting = false;
-        bookingData.reset();
     };
 
     const MAX_STEP = 4;
@@ -90,6 +113,11 @@
         return result;
     };
 
+    const resetForm = () => {
+        bookingData.reset();
+        bookingData.step = 1;
+    };
+
     const validateStep = () => {
         switch(bookingData.step) {
             case 1: {
@@ -118,6 +146,14 @@
             default: return true;
         }
     }
+
+    const hideDialog = () => {
+        bookingData.reset();
+        show = false;
+    };
+
+    onMount(() => bookingData.reset());
+    onDestroy(() => bookingData.reset());
 </script>
 
 <!-- <dialog method="dialog"> -->
@@ -134,6 +170,7 @@
         </div>
 
         <div class="form">
+        <!-- <form method="POST" action="/?submit" use:enhance> -->
             {#if isSubmitting}
                 <Spinner />
             {:else}
@@ -142,6 +179,11 @@
                         <p>Thank you for submitting your reservation! We look forward to having you there.</p><br/>
                         <p>With love,</p>
                         <p>Marielle & Sam</p>
+                        <br/>
+                        <button onclick={(e) => {
+                            e.preventDefault();
+                            resetForm();
+                        }}>Reserve Again</button>
                     </div>
                 {:else}
                     <!-- <div id="form-fields"> -->
@@ -158,25 +200,29 @@
                         <!-- <div class={bookingData.step > 1 ? 'buttons' : ''}> -->
                         <div class="buttons">
                             {#if bookingData.step > 1}
-                            <button class="btn-back" onclick={(e) => {
-                                e.preventDefault();
-                                nextPage(false);
-                            }}>
-                                Back
-                            </button>
+                                <button class="btn-back" onclick={(e) => {
+                                    e.preventDefault();
+                                    nextPage(false);
+                                }}>
+                                    Back
+                                </button>
                             {:else}
-                            <span>&nbsp;</span>
+                                <span>&nbsp;</span>
                             {/if}
-                            <button onclick={(e) => {
-                                e.preventDefault();
-                                nextPage();
-                            }}>
-                                {bookingData.step < MAX_STEP ? 'Next' : 'Confirm'}
-                            </button>
+
+                            <!-- {#if bookingData.step < MAX_STEP} -->
+                                <button onclick={(e) => {
+                                    e.preventDefault();
+                                    nextPage();
+                                }}>Next</button>
+                            <!-- {:else}
+                                <button type="submit">Confirm</button>
+                            {/if} -->
                         </div>
                     <!-- </div> -->
                 {/if}
             {/if}
+        <!-- </form> -->
         </div>
 
         <!-- <div class="header">
