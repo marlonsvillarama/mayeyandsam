@@ -11,7 +11,9 @@ import { PUBLIC_SUPABASE_API_URL, PUBLIC_ANON_PUBLIC_KEY } from "$env/static/pub
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ setHeaders, depends }) {
     setHeaders({
-        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0'
+        'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+        'Pragma': 'no-cache',
+        'Expires': '0'
     });
     depends('app:fresh-data');
 
@@ -20,7 +22,9 @@ export async function load({ setHeaders, depends }) {
     const response = await fetch(url, {
         headers: {
             'apikey': PUBLIC_ANON_PUBLIC_KEY,
-            'Cache-Control': 'no-cache',
+            'Cache-Control': 'no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0',
+            'Pragma': 'no-cache',
+            'Expires': '0'
             'Authorization': `Bearer ${PUBLIC_ANON_PUBLIC_KEY}`,
         }
     });
