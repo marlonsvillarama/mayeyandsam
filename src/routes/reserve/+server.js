@@ -59,7 +59,7 @@ export async function POST({ request }) {
             return json({ status: 400, ok: false, error: error.message })
         }
 
-        return json({ status: 201, ok: true, data: data.toString() });
+        return json({ status: 201, ok: true, data: data.message });
     }
     catch (ex) {
             return json({ status: 500, ok: false, error: ex.toString() })
