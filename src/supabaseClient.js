@@ -1,7 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
-import { PUBLIC_SUPABASE_URL, PUBLIC_PUBLISHABLE_KEY } from '$env/static/public';
+import { PUBLIC_SUPABASE_URL, PUBLIC_ANON_PUBLIC_KEY } from '$env/static/public';
 
-export const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_PUBLISHABLE_KEY, {
+export const supabase = createClient(PUBLIC_SUPABASE_URL, PUBLIC_ANON_PUBLIC_KEY, {
     global: {
         fetch: (url, options) => {
             // Prevents the browser and SvelteKit from storing this fetch in cache
