@@ -82,6 +82,9 @@ export const createBookingData = () => {
         set step (value) { bookingData.step = value },
         set submitted (value) { bookingData.submitted = value },
 
-        reset: () => { bookingData = DEFAULT_DATA }
+        reset: () => {
+            bookingData = Object.assign({}, DEFAULT_DATA);
+            console.log('store reset', bookingData);
+        }
     };
 };

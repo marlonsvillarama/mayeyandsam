@@ -1,6 +1,5 @@
 <script>
     import { enhance } from "$app/forms";
-    import { supabaseWrite } from "../../../../supabaseClient";
     import { X } from "@lucide/svelte";
     import { createBookingData } from "$lib/data/store.svelte";
     import BookingName from "./booking-name.svelte";
@@ -8,6 +7,7 @@
     import BookingSummary from "./booking-summary.svelte";
     import BookingTransfer from "./booking-transfer.svelte";
     import Spinner from "./spinner.svelte";
+  import { onDestroy, onMount } from "svelte";
 
     let {
         oncloseclick,
@@ -18,6 +18,9 @@
     $effect(() => {
         if (show) {
             dialog.showModal();
+        }
+        else {
+            dialog.close();
         }
     });
 
@@ -40,6 +43,16 @@
 
         bookingData.roomType = bookingData.roomType;
 
+        const resp = await fetch('/reserve', {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'POST',
+            body: JSON.stringify(bookingData.data)
+        });
+        let respJson = await resp.json();
+        console.log('respJson', respJson);
+
         // const { error } = await supabaseWrite.from('mns_attendees').insert(bookingData.data);
         // console.log('server data', data);
 
@@ -55,10 +68,10 @@
         // });
         // console.log('postResp', postResp);
         // const { error } = await supabaseWrite.from('mns_attendees').insert(bookingData.data);
-        console.log('post error', error);
+        // console.log('post error', error);
+
         bookingData.submitted = true;
         isSubmitting = false;
-        bookingData.reset();
     };
 
     const MAX_STEP = 4;
@@ -100,6 +113,11 @@
         return result;
     };
 
+    const resetForm = () => {
+        bookingData.reset();
+        bookingData.step = 1;
+    };
+
     const validateStep = () => {
         switch(bookingData.step) {
             case 1: {
@@ -128,6 +146,14 @@
             default: return true;
         }
     }
+
+    const hideDialog = () => {
+        bookingData.reset();
+        show = false;
+    };
+
+    onMount(() => bookingData.reset());
+    onDestroy(() => bookingData.reset());
 </script>
 
 <!-- <dialog method="dialog"> -->
@@ -153,6 +179,11 @@
                         <p>Thank you for submitting your reservation! We look forward to having you there.</p><br/>
                         <p>With love,</p>
                         <p>Marielle & Sam</p>
+                        <br/>
+                        <button onclick={(e) => {
+                            e.preventDefault();
+                            resetForm();
+                        }}>Reserve Again</button>
                     </div>
                 {:else}
                     <!-- <div id="form-fields"> -->
