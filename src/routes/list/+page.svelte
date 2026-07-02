@@ -178,7 +178,7 @@
     .list-wrapper > .rows > .row {
         display: flex;
         align-items: center;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 0.75rem;
         /* grid-template-columns: 40% 1fr; */
         /* justify-content: space-between; */
     }
@@ -187,18 +187,17 @@
         font-size: 0.875rem;
         font-weight: 400;
         letter-spacing: 0.25px;
-        padding: 0.25rem 0.5rem;
+        padding: 0.5rem 0.75rem;
     }
     .rows > .row:nth-child(odd) {
         background-color: var(--white);
     }
-    .row > span {
+    /* .row > span {
         color: var(--espresso);
         font-size: 0.825rem;
         font-weight: 300;
         letter-spacing: 0.25px;
-        /* padding: 0.25rem 0.5rem; */
-    }
+    } */
     .guest {
         display: flex;
         align-items: center;
