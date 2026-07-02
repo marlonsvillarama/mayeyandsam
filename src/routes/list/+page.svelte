@@ -4,6 +4,7 @@
     import Anahaw from "$lib/components/v2/global/anahaw.svelte";
     import ListNav from "$lib/components/v2/global/list-nav.svelte";
     import { onMount } from "svelte";
+    import { invalidate } from "$app/navigation";
 
     let { data } = $props();
     // console.log('list page data', data);
@@ -16,9 +17,10 @@
     });
 
     onMount(() => {
-        const interval = setInterval(() => { invalidateAll() }, 1000);
+        invalidate('app:fresh-data');
+        // const interval = setInterval(() => { invalidateAll() }, 1000);
 
-        return () => { clearInterval(interval) };
+        // return () => { clearInterval(interval) };
     });
 </script>
 
@@ -41,10 +43,12 @@
                 {#each listRows as row}
                 <div class="row guest">
                     <div class="name">
-                        <span>{row.last_name}, {row.first_name}</span>
                         {#if row.attending}
                         <Check size={16} color="#382a20" />
+                        {:else}
+                        <span>&nbsp;</span>
                         {/if}
+                        <span>{row.last_name}, {row.first_name}</span>
                     </div>
 
                     {#if row.restrictions}
@@ -172,7 +176,7 @@
     }
 
     .list-wrapper > .rows > .row {
-        display: grid;
+        display: flex;
         align-items: center;
         padding: 0.25rem 0.5rem;
         /* grid-template-columns: 40% 1fr; */
@@ -195,14 +199,29 @@
         letter-spacing: 0.25px;
         /* padding: 0.25rem 0.5rem; */
     }
+    .guest {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    /* @media (min-width: 30rem) {
+        .guest {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+    } */
     .guest > .name,
     .guest > .restrictions {
         display: flex;
         align-items: center;
     }
     .guest > .name {
+        display: grid;
+        grid-template-columns: 1rem auto;
+        align-items: center;
         font-size: 0.875rem;
-        justify-content: space-between;
+        gap: 1rem;
+        /* justify-content: space-between; */
         letter-spacing: 0.25px;
     }
     .guest > .restrictions {
