@@ -8,6 +8,8 @@ import { PUBLIC_SUPABASE_API_URL, PUBLIC_ANON_PUBLIC_KEY } from "$env/static/pub
     //     rows: data ?? []
     // }; */
 
+export const prerender = false;
+
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ setHeaders, depends }) {
     setHeaders({
