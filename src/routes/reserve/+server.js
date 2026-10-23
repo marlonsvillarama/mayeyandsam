@@ -10,7 +10,7 @@ const buildEmail = (data) => {
     let nightCount = (checkOutDate.getTime() - checkInDate.getTime()) / (24 * 60 * 60 * 1000);
 
     return `
-    Hello Hero,
+    Hello Joyce Anne,
 
     <p>
     A new guest has submitted a request for the wedding room rate. Please find the details below.
@@ -47,8 +47,8 @@ export async function POST({ request }) {
     try {
         const { data, error } = await resend.emails.send({
             from: 'reservation@samandmarielle.com',
-            to: ['herald.lajo@movenpick.com'],
-            cc: ['marielle.villarama@gmail.com', 'marlonsvillarama@gmail.com'],
+            to: ['joyceanne.saludo@movenpick.com'],
+            cc: ['hotel.boracay.reservations@movenpick.com', 'marielle.villarama@gmail.com', 'marlonsvillarama@gmail.com'],
             replyTo: ['marielle.villarama@gmail.com'],
             subject: 'RIDOUT - VILLARAMA WEDDING',
             html: buildEmail(requestData)
